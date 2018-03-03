@@ -1,0 +1,7 @@
+.PostCard {
+}
+
+.PostCard:hover{
+  transform: scale(1.01) translateY(-2px);
+  cursor: pointer;
+}
