@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import {Button} from 'semantic-ui-react';
 import styled from "styled-components";
 import {viewport} from 'utils/viewport';
 
 const Navbar = styled.div `
-  padding-top: 5vh; 
+  transition: all 300ms ease;
   width: ${viewport.DESKTOP};
   margin: auto;
   z-Index: 100;
@@ -14,20 +13,33 @@ const Navbar = styled.div `
 `;
 
 const NavbarButtons = styled.div `
-  width: ${viewport.DESKTOP};
+  display: inline-block;
 `;
 
 const StyledButton = styled.div `
-  /* border: solid;
-  border-color: red;
-  border-width: 1px; */
-  height: 48px;
+
+  transition: 0.1s ease-in-out;
+
   display: inline-block;
-  margin-left: 10px;
-  margin-right: 20px;
-  > h6 {
-    float: left;
+  height: 48px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  :hover {
+    background-color: darkblue;
   }
+
+`;
+
+const NavUnderlineBar = styled.div `
+  width: 100%;
+  height: 5px;
+  background-color: #4c6bba;
+  transition: transform 500ms ease;
+  transform: scaleX(${props => props.navDrawer === 'open'
+  ? '1'
+  : '8'});
+  
 `;
 
 class Nav extends Component {
@@ -38,53 +50,26 @@ class Nav extends Component {
     };
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = () => {
-    var rect = ReactDOM
-      .findDOMNode(this)
-      .getBoundingClientRect()
-
-    rect.top <= 0
-      ? this.setState({position: 'fixed'})
-      : this.setState({position: 'relative'})
-  }
-
-  toRoute = (url) => {
-    this
-      .props
-      .history
-      .push('/' + url);
-  }
-
   render() {
 
     return (
-      <div>
-        <Navbar position={this.state.position}>
-          <NavbarButtons>
-            <StyledButton>
-              <h6>About Me</h6>
-            </StyledButton>
-            <StyledButton>
-              <h6>My Work</h6>
-            </StyledButton>
-            <StyledButton>
-              <h6>Journal</h6>
-            </StyledButton>
-            <StyledButton>
-              <h6>Resume</h6>
-            </StyledButton>
-          </NavbarButtons>
-        </Navbar>
-        {/* <NavbarPlaceholder position={this.state.position}/> */}
-      </div>
+      <Navbar position={this.state.position}>
+        <NavbarButtons>
+          <StyledButton>
+            <h2>About Me</h2>
+          </StyledButton>
+          <StyledButton>
+            <h2>My Work</h2>
+          </StyledButton>
+          <StyledButton>
+            <h2>Journal</h2>
+          </StyledButton>
+          <StyledButton>
+            <h2>Resume</h2>
+          </StyledButton>
+          <NavUnderlineBar navDrawer={this.props.navDrawer}/>
+        </NavbarButtons>
+      </Navbar>
     )
   }
 }

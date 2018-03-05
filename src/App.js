@@ -8,7 +8,6 @@ import Nav from 'Header/components/Nav';
 import MainPage from 'Body/containers/MainPage';
 import PageHOC from 'Body/containers/PageHOC';
 
-import 'semantic-ui-css/semantic.min.css';
 import 'App.css';
 
 class App extends Component {

@@ -5,15 +5,17 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
-  font-family: raleway;
-  font-size: 76px;
+  font-family: raleway regular;
+  font-style: light;
+  font-size: calc(5vh + 3vw);
   color: white;
 }
 
-h6 {
+h2 {
   font-family: roboto;
   font-size: 16px;
   color: white;
@@ -24,3 +26,9 @@ p {
   font-size: 16px;
   color: white;
 }
+/* 
+div { border: 1px dotted pink }
+p   { border: 1px solid green }
+a   { border: 2px solid yellow }
+li  { border: 1px dashed cyan }
+img { border: 1px solid purple} */
