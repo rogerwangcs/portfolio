@@ -32,7 +32,7 @@ const StyledHeader = styled.div `
     width: 90vw;
     left: 5vw;
     right: 5vw;
-    margin: 0;
+    margin: auto;
   }
   @media (min-width: ${viewport.MOBILE}){
     width: 80vw;
@@ -107,13 +107,13 @@ class Header extends Component {
 const HeaderText = () => {
 
   const HeaderTextContainer = styled.div `
-
-    float: left;
-    width: 70%;  
-    text-align: left;
     
     @media (max-width: ${viewport.MOBILE}) {
-      padding-top: 5vh;
+      float: none;
+      text-align: center;
+      width: 100%;
+
+      padding-top: 15px;
       > h1 {
         font-size: 48px;
       }
@@ -122,18 +122,22 @@ const HeaderText = () => {
       }
     }
     @media (min-width: ${viewport.MOBILE}) {
-      padding-top: 8vh;
+      float: left;
+      width: 75%;  
+      padding-top: 50px;
       > h1 {
-        font-size: 62px;
+        font-size: 8vw;
       }
       > h2 {
         font-size: 14px;
       }
     }
     @media (min-width: ${viewport.DESKTOP}) {
-      padding-top: 10vh;
+      float: left;
+      width: 75%;  
+      padding-top: 50px;
       > h1 {
-        font-size: 72px;
+        font-size: 96px;
       }
       > h2 {
         font-size: 16px;

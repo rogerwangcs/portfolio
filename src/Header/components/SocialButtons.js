@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import styled from 'styled-components';
+import MediaQuery from 'react-responsive';
 import {viewport} from 'utils/viewport';
 
 import github from 'images/github.png';
@@ -8,33 +9,62 @@ import linkedin from 'images/linkedin.png';
 import gmail from 'images/gmail.png';
 
 const StyledSocialButtons = styled.div `
-  float: left;
-
-  width: 30%;
-  height: 100%;
-  margin: auto;
-
   @media (max-width: ${viewport.MOBILE}) {
-    padding-top: 6vh;
+    padding-top: none;
+    float: none;
+    text-align: center;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    padding-top: 10vh;
+    padding-top: 10vw;
+    float: right;
+    width: 25%;
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    padding-top: 12vh;
+    padding-top: 120px;
+    float: right;
+    width: 25%;
   }
 `;
 
 const StyledIcon = styled.div `
-
-  > div > img {
-    vertical-align: middle;
-      width: 50px;
-      height: 50px;
-  }
-  >div > h5 {
-    margin-left: 10px;
-    display: inline;
+    @media (max-width: ${viewport.MOBILE}) {
+      display: inline;
+      margin: 15px;
+      > div {
+        display: inline;
+      }
+      > div > img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+      }
+      > div > h5 {
+        margin-left: 8px;
+        display: inline;
+      }
+    }
+    @media (min-width: ${viewport.MOBILE}) {
+      > div > img {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+      }
+      > div > h5 {
+        margin-left: 8px;
+        display: inline;
+      }
+    }
+    @media (min-width: ${viewport.DESKTOP}) {
+      > div > img {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+      }
+      > div > h5 {
+        margin-left: 10px;
+        display: inline;
+      }
+    }
   }
 `;
 
@@ -44,25 +74,31 @@ const SocialButtons = () => {
       <StyledIcon href="https://github.com/rogerwangcs">
         <div>
           <img src={github}/>
-          <h5>
-            <span>Github</span>
-          </h5>
+          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
+            <h5>
+              <span>Github</span>
+            </h5>
+          </MediaQuery>
         </div>
       </StyledIcon>
       <StyledIcon href="https://www.linkedin.com/in/rogerwangcs/">
         <div>
           <img src={linkedin}/>
-          <h5>
-            <span>Github</span>
-          </h5>
+          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
+            <h5>
+              <span>LinkedIn</span>
+            </h5>
+          </MediaQuery>
         </div>
       </StyledIcon>
       <StyledIcon href="mailto:rogerwangcs@gmail.com">
         <div>
           <img src={gmail}/>
-          <h5>
-            <span>Github</span>
-          </h5>
+          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
+            <h5>
+              <span>Email</span>
+            </h5>
+          </MediaQuery>
         </div>
       </StyledIcon>
     </StyledSocialButtons>

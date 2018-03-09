@@ -16,7 +16,7 @@ h1 {
   color: white;
 }
 
-h2 {
+h2,h3,h4,h5,h6 {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 200;
@@ -30,8 +30,8 @@ p {
   color: white;
 }
 
-div { outline: 1px dotted pink }
+/* div { outline: 1px dotted pink }
 p   { outline: 1px solid green }
 a   { outline: 2px solid yellow }
 li  { outline: 1px dashed cyan }
-img { outline: 1px solid purple}
+img { outline: 1px solid purple} */
