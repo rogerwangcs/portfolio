@@ -16,7 +16,7 @@ const initialState = {
           " commodo est. Aliqua labore magna nostrud magna consequat incididunt excepteur a" +
           "dipisicing est aliqua ex reprehenderit. Pariatur duis duis quis dolore cupidatat" +
           " laboris adipisicing aliquip amet pariatur proident ipsum commodo."
-    }
+    },
   ]
 };
 

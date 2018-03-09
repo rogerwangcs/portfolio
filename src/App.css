@@ -5,30 +5,33 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  background-color: #e5e5e5;
 }
 
 h1 {
-  font-family: raleway regular;
-  font-style: light;
-  font-size: calc(5vh + 3vw);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 5vw;
   color: white;
 }
 
 h2 {
-  font-family: roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  font-weight: 200;
   color: white;
 }
 
 p {
-  font-family: roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  font-weight: 200;
   color: white;
 }
-/* 
-div { border: 1px dotted pink }
-p   { border: 1px solid green }
-a   { border: 2px solid yellow }
-li  { border: 1px dashed cyan }
-img { border: 1px solid purple} */
+
+div { outline: 1px dotted pink }
+p   { outline: 1px solid green }
+a   { outline: 2px solid yellow }
+li  { outline: 1px dashed cyan }
+img { outline: 1px solid purple}

@@ -4,24 +4,19 @@ import {viewport} from 'utils/viewport';
 
 const Page = (Comp) => {
 
-  const PageSpacer = styled.div `
-    width: 100vw;
-    height: 25px;
-    background-color: white;
-  `;
-  const HeaderCover = styled.div `
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-  `;
   const PageStyle = styled.div `
-    width: ${viewport.DESKTOP};
+    background-color: gray;
     margin: auto;
-    background-color: white;
-    
-    @media (max-width: ${viewport.DESKTOP}) {
-      padding: 0px 0.5vw;
-      width: 100vw;
+    margin-top: 50px;
+   
+    @media (max-width: ${viewport.MOBILE}) {
+      width: 96vw;
+    }
+    @media (min-width: ${viewport.MOBILE}) {
+      width: 80vw;
+    }
+    @media (min-width: ${viewport.DESKTOP}) {
+      width: ${viewport.DESKTOP_CONTENT_WIDTH + 'px'};
     }
   `;
 
@@ -29,12 +24,9 @@ const Page = (Comp) => {
     render() {
       return (
         <div>
-          <PageSpacer/>
-          <HeaderCover>
             <PageStyle>
               <Comp {...this.props}/>
             </PageStyle>
-          </HeaderCover>
         </div>
       );
     }

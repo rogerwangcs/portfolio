@@ -24,6 +24,15 @@ class MainPage extends Component {
           <ProjectCard
             title={this.state.projects[1].title}
             content={this.state.projects[1].content}></ProjectCard>
+          <ProjectCard
+            title={this.state.projects[1].title}
+            content={this.state.projects[1].content}></ProjectCard>
+          <ProjectCard
+            title={this.state.projects[1].title}
+            content={this.state.projects[1].content}></ProjectCard>
+          <ProjectCard
+            title={this.state.projects[1].title}
+            content={this.state.projects[1].content}></ProjectCard>
         </Card.Group>
       </div>
     );
