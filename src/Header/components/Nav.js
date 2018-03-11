@@ -11,14 +11,11 @@ const NavbarBg = styled.div `
 
   left: -20vw;
 
-  width: 100vw;
+  width: 150vw;
   height: 45px;
-  display: ${props => props.navSticky
-  ? 'block'
-  : 'none'};
 `;
 
-const Navbar = styled.div `
+const MainStyledNavbar = styled.div `
   z-Index: 1000;
 
   transition: all 300ms ease;
@@ -35,6 +32,19 @@ const Navbar = styled.div `
   top: ${props => props.navSticky
         ? '0px'
         : '0px'};
+
+`;
+
+const StickyStyledNavbar = styled.div `
+  z-Index: 1000;
+  position: fixed;
+
+  transition: ${props => props.navSticky
+  ? 'all 300ms ease'
+  : 'all 0ms ease'};
+  top: ${props => props.navSticky
+  ? '0px'
+  : '-50px'};
 
 `;
 
@@ -59,7 +69,7 @@ const StyledButton = styled.div `
   }
 `;
 
-const NavUnderlineBar = styled.div `
+const NavUnderline = styled.div `
   width: 100%;
   height: 5px;
   margin-top: -5px;
@@ -72,6 +82,26 @@ const NavUnderlineBar = styled.div `
   : '8'});
   
 `;
+
+const Navbar = (props) => {
+  return (
+    <NavbarButtons navSticky={props.navSticky}>
+      <StyledButton>
+        <h2>About Me</h2>
+      </StyledButton>
+      <StyledButton>
+        <h2>My Work</h2>
+      </StyledButton>
+      <StyledButton>
+        <h2>Journal</h2>
+      </StyledButton>
+      <StyledButton>
+        <h2>Resume</h2>
+      </StyledButton>
+      <NavUnderline nav={props.nav}/>
+    </NavbarButtons>
+  );
+}
 
 class Nav extends Component {
   constructor(props) {
@@ -94,9 +124,11 @@ class Nav extends Component {
       .findDOMNode(this)
       .getBoundingClientRect()
 
-    if (window.scrollY >= window.innerHeight / 2) {
+    console.log(rect)
+
+    if (rect.bottom < 0) {
       this.setState({navSticky: true})
-    } else if (window.scrollY < window.innerHeight / 2 - 80) {
+    } else if (rect.top >= 0) {
       this.setState({navSticky: false})
     }
   }
@@ -104,24 +136,15 @@ class Nav extends Component {
   render() {
 
     return (
-      <Navbar navSticky={this.state.navSticky} nav={this.props.nav}>
-        <NavbarBg navSticky={this.state.navSticky}/>
-        <NavbarButtons navSticky={this.state.navSticky}>
-          <StyledButton>
-            <h2>About Me</h2>
-          </StyledButton>
-          <StyledButton>
-            <h2>My Work</h2>
-          </StyledButton>
-          <StyledButton>
-            <h2>Journal</h2>
-          </StyledButton>
-          <StyledButton>
-            <h2>Resume</h2>
-          </StyledButton>
-          <NavUnderlineBar nav={this.props.nav}/>
-        </NavbarButtons>
-      </Navbar>
+      <div>
+        <MainStyledNavbar navSticky={this.props.navSticky} nav={this.props.nav}>
+          <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
+        </MainStyledNavbar>
+        <StickyStyledNavbar navSticky={this.state.navSticky}>
+          <NavbarBg/>
+          <Navbar/>
+        </StickyStyledNavbar>
+      </div>
     )
   }
 }
