@@ -10,7 +10,7 @@ const StyledOpenArrow = styled.img `
   position: absolute;
   display: block;
   margin: auto;
-  top: 60vh;
+  top: 400px;
   left: 0;
   right: 0;
 
@@ -26,7 +26,7 @@ const StyledOpenArrow = styled.img `
   ? 1
   : 0};
   transform-origin: 50% 50%;
-  transform: scale(0.3,0.3) translateY(${props => props.nav
+  transform: scale(0.2,0.2) translateY(${props => props.nav
     ? 0
     : '-50vh'});
   @media (max-height: 500px) {
