@@ -1,18 +1,22 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
-import {viewport} from 'utils/viewport';
-import styled, {keyframes} from "styled-components";
+import {viewport} from 'utils/viewport'
+import styled, {css} from "styled-components"
 
-import Nav from 'Header/components/Nav';
-import SocialButtons from 'Header/components/SocialButtons';
-import OpenArrow from 'Header/components/OpenArrow';
-
-const HeaderBg = styled.div `
-  width: 100vw;
-  background-color: #141c30;
-`;
+import HeaderBg from 'Header/components/HeaderBg'
+import HeaderText from 'Header/components/HeaderText'
+import Nav from 'Header/components/Nav'
+import HeaderCover from 'Header/components/HeaderCover'
+import SocialButtons from 'Header/components/SocialButtons'
+import OpenArrow from 'Header/components/OpenArrow'
 
 const HeaderGroup = styled.div `
+  transition: transform 300ms ease;
+
+  transform: ${props => props.nav === true
+  ? 'translateY(100px)'
+  : 'translateY(0px)'};
+
   :after {
     clear:both;
     content:" ";
@@ -21,12 +25,6 @@ const HeaderGroup = styled.div `
 `;
 
 const StyledHeader = styled.div `
-  background-color: #141c30;
-
-  transition: height 300ms ease;
-  height: ${props => props.navDrawer === 'open'
-  ? '100vh'
-  : 'auto'};
 
   @media (max-width: ${viewport.MOBILE}){
     width: 90vw;
@@ -45,20 +43,15 @@ const StyledHeader = styled.div `
     margin: auto;
   }
   @media (max-height: ${viewport.MIN_HEIGHT}){
-    height: ${props => props.navDrawer === 'open'
-    ? viewport.MIN_HEIGHT
-    : 'calc(' + viewport.MIN_HEIGHT * 0.30 + 'px ' + viewport.MIN_HEIGHT * 0.10 + 'px + 48px)'};
+   
   }
 `;
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      navDrawer: 'open'
-    }
     if (window.scrollY > 0) 
-      this.setState({navdrawer: 'closed'})
+      this.setState({nav: false})
   }
 
   componentDidMount() {
@@ -70,19 +63,19 @@ class Header extends Component {
   }
 
   handleDrawer = () => {
-    this.state.navDrawer === 'open'
-      ? this.setState({navDrawer: 'closed'})
-      : this.setState({navDrawer: 'open'})
+    this.props.nav === true
+      ? this.props.updateNav(false)
+      : this.props.updateNav(true)
   }
 
   handleScroll = () => {
     if (window.scrollY <= 300) {
       console.log(window.scrollY);
-      console.log(this.state.navDrawer);
+      console.log(this.props.nav);
       if (window.scrollY > 0) {
-        this.setState({navDrawer: 'closed'})
+        this.props.updateNav(false)
       } else {
-        this.setState({navDrawer: 'open'})
+        this.props.updateNav(true)
       }
     }
 
@@ -90,67 +83,18 @@ class Header extends Component {
 
   render() {
     return (
-      <HeaderBg>
-        <StyledHeader navDrawer={this.state.navDrawer}>
-          <HeaderGroup>
-            <HeaderText/>
-            <SocialButtons/>
-          </HeaderGroup>
-          <Nav navDrawer={this.state.navDrawer}/>
-          <OpenArrow handleDrawer={this.handleDrawer} navDrawer={this.state.navDrawer}/>
-        </StyledHeader>
-      </HeaderBg>
+      <StyledHeader nav={this.props.nav}>
+        <HeaderBg/>
+        <HeaderGroup nav={this.props.nav}>
+          <HeaderText nav={this.props.nav}/>
+          <SocialButtons/>
+        </HeaderGroup>
+        <Nav nav={this.props.nav}/>
+        <HeaderCover nav={this.props.nav}/>
+        <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
+      </StyledHeader>
     );
   }
 }
-
-const HeaderText = () => {
-
-  const HeaderTextContainer = styled.div `
-    
-    @media (max-width: ${viewport.MOBILE}) {
-      float: none;
-      text-align: center;
-      width: 100%;
-
-      padding-top: 15px;
-      > h1 {
-        font-size: 48px;
-      }
-      > h2 {
-        font-size: 14px;
-      }
-    }
-    @media (min-width: ${viewport.MOBILE}) {
-      float: left;
-      width: 75%;  
-      padding-top: 50px;
-      > h1 {
-        font-size: 8vw;
-      }
-      > h2 {
-        font-size: 14px;
-      }
-    }
-    @media (min-width: ${viewport.DESKTOP}) {
-      float: left;
-      width: 75%;  
-      padding-top: 50px;
-      > h1 {
-        font-size: 96px;
-      }
-      > h2 {
-        font-size: 16px;
-      }
-    }
-`;
-
-  return (
-    <HeaderTextContainer>
-      <h1>Hey, I'm Roger</h1>
-      <h2>I am a Full Stack Software Engineer and AI enthusiast.</h2>
-    </HeaderTextContainer>
-  );
-};
 
 export default Header;

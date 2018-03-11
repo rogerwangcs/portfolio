@@ -15,18 +15,21 @@ const StyledSocialButtons = styled.div `
     text-align: center;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    padding-top: 10vw;
+    padding-top: 5vw;
     float: right;
     width: 25%;
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    padding-top: 120px;
+    padding-top: 50px;
     float: right;
     width: 25%;
   }
 `;
 
 const StyledIcon = styled.div `
+    :hover {
+      cursor: pointer;
+    }
     @media (max-width: ${viewport.MOBILE}) {
       display: inline;
       margin: 15px;

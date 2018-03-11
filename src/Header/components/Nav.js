@@ -4,26 +4,37 @@ import ReactDOM from 'react-dom';
 import styled from "styled-components";
 import {viewport} from 'utils/viewport';
 
-const Navbar = styled.div `
-  z-Index: 100;
+const NavbarBg = styled.div `
   background-color: #141c30;
+  position: fixed;
+  z-index: -20;
 
-  transition: ${props => props.navSticky
-  ? 'transform'
-  : 'none'} 300ms ease;
+  left: -20vw;
 
+  width: 100vw;
+  height: 45px;
+  display: ${props => props.navSticky
+  ? 'block'
+  : 'none'};
+`;
+
+const Navbar = styled.div `
+  z-Index: 1000;
+
+  transition: all 300ms ease;
+
+  transform: ${props => props.nav
+  ? 'translateY(100px)'
+  : 'translateY(0px)'};
   position: ${props => props.navSticky
     ? 'fixed'
     : 'relative'};
   width: ${props => props.navSticky
-    ? '100vw'
-    : '100%'};
+      ? '100vw'
+      : '100%'};
   top: ${props => props.navSticky
-    ? '-100px'
-    : '0px'};
-  transform: translateY(${props => props.navSticky
-    ? '100px'
-    : '0px'});
+        ? '0px'
+        : '0px'};
 
 `;
 
@@ -32,8 +43,6 @@ const NavbarButtons = styled.div `
 `;
 
 const StyledButton = styled.div `
-
-  transition: 0.1s ease-in-out;
 
   display: inline-block;
   user-select: none;
@@ -48,7 +57,6 @@ const StyledButton = styled.div `
       color: red;
     }
   }
-
 `;
 
 const NavUnderlineBar = styled.div `
@@ -59,7 +67,7 @@ const NavUnderlineBar = styled.div `
   
   transition: transform 700ms ease;
   transform-origin: 30% 50%;
-  transform: scaleX(${props => props.navDrawer === 'open'
+  transform: scaleX(${props => props.nav
   ? '1'
   : '8'});
   
@@ -96,7 +104,8 @@ class Nav extends Component {
   render() {
 
     return (
-      <Navbar navSticky={this.state.navSticky}>
+      <Navbar navSticky={this.state.navSticky} nav={this.props.nav}>
+        <NavbarBg navSticky={this.state.navSticky}/>
         <NavbarButtons navSticky={this.state.navSticky}>
           <StyledButton>
             <h2>About Me</h2>
@@ -110,7 +119,7 @@ class Nav extends Component {
           <StyledButton>
             <h2>Resume</h2>
           </StyledButton>
-          <NavUnderlineBar navDrawer={this.props.navDrawer}/>
+          <NavUnderlineBar nav={this.props.nav}/>
         </NavbarButtons>
       </Navbar>
     )

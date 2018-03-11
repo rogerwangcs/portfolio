@@ -1,32 +1,41 @@
-import React, {Component} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import React, {Component} from 'react'
+import {Switch, Route} from 'react-router-dom'
 
-import DATA from 'utils/DATA';
+import DATA from 'utils/DATA'
 
-import Header from 'Header/components/Header';
-import Nav from 'Header/components/Nav';
-import MainPage from 'Body/containers/MainPage';
-import PageHOC from 'Body/containers/PageHOC';
-
-import 'App.css';
+import Header from 'Header/components/Header'
+import Nav from 'Header/components/Nav'
+import MainPage from 'Body/containers/MainPage'
+import StyledPage from 'Body/containers/StyledPage'
+import 'App.css'
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      nav: true
+    }
+  }
 
+  updateNav = (state) => {
+    this.setState({nav: state});
   }
 
   render() {
-    const MainPageHOC = PageHOC(MainPage);
+
     return (
       <div className="App">
-        <Header/>
+        <Header nav={this.state.nav} updateNav={this.updateNav}/>
         <Switch>
           <Route
             exact
             path='/'
             render={() => {
-            return (<MainPageHOC/>)
+            return (
+              <StyledPage nav={this.state.nav} updateNav={this.updateNav}>
+                <MainPage/>
+              </StyledPage>
+            )
           }}/>
           <Route
             path='/posts/'
