@@ -29,10 +29,10 @@ const MainStyledNavbar = styled.div `
   width: ${props => props.navSticky
       ? '100vw'
       : '100%'};
-  top: ${props => props.navSticky
-        ? '0px'
-        : '0px'};
 
+  @media (max-width: ${viewport.MOBILE}){
+    text-align: center;
+  }
 `;
 
 const StickyStyledNavbar = styled.div `
@@ -46,6 +46,9 @@ const StickyStyledNavbar = styled.div `
   ? '0px'
   : '-50px'};
 
+  @media (max-width: ${viewport.MOBILE}){
+    text-align: center;
+  }
 `;
 
 const NavbarButtons = styled.div `
@@ -59,11 +62,16 @@ const StyledButton = styled.div `
 
   height: 48px;
   padding-left: 0px;
-  padding-right: 15px;
+  padding-right: 20px;
+
+  @media (max-width: ${viewport.MOBILE}){
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   :hover {
     cursor: pointer;
-    > h2 {
+    > h4 {
       color: red;
     }
   }
@@ -87,16 +95,16 @@ const Navbar = (props) => {
   return (
     <NavbarButtons navSticky={props.navSticky}>
       <StyledButton>
-        <h2>About Me</h2>
+        <h4>About Me</h4>
       </StyledButton>
       <StyledButton>
-        <h2>My Work</h2>
+        <h4>My Work</h4>
       </StyledButton>
       <StyledButton>
-        <h2>Journal</h2>
+        <h4>Journal</h4>
       </StyledButton>
       <StyledButton>
-        <h2>Resume</h2>
+        <h4>Resume</h4>
       </StyledButton>
       <NavUnderline nav={props.nav}/>
     </NavbarButtons>
@@ -109,6 +117,15 @@ class Nav extends Component {
     this.state = {
       navSticky: false
     };
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.navSticky !== nextState.navSticky) {
+      return true;
+    }
+    if (this.props.nav !== nextProps.nav) {
+      return true;
+    }
+    return false;
   }
 
   componentDidMount() {
@@ -124,7 +141,7 @@ class Nav extends Component {
       .findDOMNode(this)
       .getBoundingClientRect()
 
-    console.log(rect)
+    // console.log(rect)
 
     if (rect.bottom < 0) {
       this.setState({navSticky: true})

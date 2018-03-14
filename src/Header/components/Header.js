@@ -14,7 +14,7 @@ const HeaderGroup = styled.div `
   transition: transform 300ms ease;
 
   transform: ${props => props.nav === true
-  ? 'translateY(100px)'
+  ? 'translateY(50px)'
   : 'translateY(0px)'};
 
   :after {
@@ -70,8 +70,8 @@ class Header extends Component {
 
   handleScroll = () => {
     if (window.scrollY <= 300) {
-      console.log(window.scrollY);
-      console.log(this.props.nav);
+      // console.log(window.scrollY);
+      // console.log(this.props.nav);
       if (window.scrollY > 0) {
         this.props.updateNav(false)
       } else {

@@ -14,7 +14,7 @@ const StyledText = styled.div `
     > h1 {
       font-size: 48px;
     }
-    > h2 {
+    > h4 {
       font-size: 14px;
     }
   }
@@ -26,7 +26,7 @@ const StyledText = styled.div `
     > h1 {
       font-size: 8vw;
     }
-    > h2 {
+    > h4 {
       font-size: 14px;
     }
   }
@@ -38,7 +38,7 @@ const StyledText = styled.div `
     > h1 {
       font-size: 96px;
     }
-    > h2 {
+    > h4 {
       font-size: 16px;
     }
   }
@@ -49,7 +49,7 @@ const HeaderText = (props) => {
   return (
     <StyledText nav={props.navDrawer}>
       <h1>Hey, I'm Roger</h1>
-      <h2>I am a Full Stack Software Engineer.</h2>
+      <h4>I am a Full Stack Software Engineer.</h4>
     </StyledText>
   );
 };

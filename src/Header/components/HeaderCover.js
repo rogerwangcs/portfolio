@@ -4,15 +4,15 @@ import styled, {keyframes} from 'styled-components'
 
 const StyledHeaderCover = styled.div `
   z-index: 5;
-  background-color: #c0c0c0;
+  background-color: white;
 
   position: absolute;
   left: 0;
   
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
 
-  transition: transform 400ms ease;
+  transition: transform 500ms ease;
   transform-origin: 0% 100%;
   transform: ${props => props.nav === true
   ? 'scaleY(0)'

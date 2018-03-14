@@ -14,7 +14,7 @@ const StyledHeaderBg = styled.div `
   left: 0;
   
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
 
 `;
 
@@ -67,7 +67,6 @@ const StyledLogoFg = styled.img `
     left: 80px;
     padding-top: 15px;
     padding-left: 15px;
-    background-color: rgb(255,255,255,.5);
 
     transform: scale(1.2)
   }
@@ -77,6 +76,9 @@ class HeaderBg extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    return false;
   }
   render() {
     return (

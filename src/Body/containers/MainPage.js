@@ -1,55 +1,29 @@
 import React, {Component} from 'react';
 
-import DATA from 'utils/DATA.js';
-
-import ProjectCard from 'Body/components/ProjectCard';
-import {Card} from 'semantic-ui-react';
+import StyledPage from 'Body/containers/StyledPage'
+import StyledPageContents from 'Body/containers/StyledPageContents'
+import StyledPageSection from 'Body/containers/StyledPageSection'
+import AboutMe from 'Body/components/AboutMe'
 
 class MainPage extends Component {
   constructor(props) {
     super(props);
-
-    this.state = DATA;
-    console.log(DATA);
   }
 
   render() {
-
     return (
-      <div>
-        <Card.Group itemsPerRow={1}>
-          <ProjectCard
-            title={this.state.projects[0].title}
-            content={this.state.projects[0].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[0].title}
-            content={this.state.projects[0].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-          <ProjectCard
-            title={this.state.projects[1].title}
-            content={this.state.projects[1].content}></ProjectCard>
-        </Card.Group>
-      </div>
+      <StyledPage nav={this.props.nav} updateNav={this.props.updateNav}>
+        <StyledPageSection color='white'>
+          <StyledPageContents>
+            <AboutMe/>
+          </StyledPageContents>
+        </StyledPageSection>
+        <StyledPageSection color='lightgray'>
+          <StyledPageContents>
+            <h2>Projects</h2>
+          </StyledPageContents>
+        </StyledPageSection>
+      </StyledPage>
     );
   }
 }
