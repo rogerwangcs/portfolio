@@ -10,7 +10,7 @@ const StyledPage = styled.div `
   width: 100vw;
   margin-top: 0;
 
-  transition: transform 500ms ease;
+  transition: transform 500ms ease-in-out;
 
   transform: ${props => props.nav === true
   ? 'translateY(100vh)'

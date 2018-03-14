@@ -20,7 +20,7 @@ const StyledOpenArrow = styled.img `
     cursor: pointer;
   }
 
-  transition: all 300ms ease;
+  transition: all 300ms ease-in-out;
   transition-property: transform, opacity;
   opacity: ${props => props.nav
   ? 1

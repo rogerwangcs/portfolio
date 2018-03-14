@@ -11,7 +11,7 @@ import SocialButtons from 'Header/components/SocialButtons'
 import OpenArrow from 'Header/components/OpenArrow'
 
 const HeaderGroup = styled.div `
-  transition: transform 300ms ease;
+  transition: transform 300ms ease-in-out;
 
   transform: ${props => props.nav === true
   ? 'translateY(50px)'

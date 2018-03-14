@@ -6,7 +6,7 @@ import {viewport} from 'utils/viewport';
 const StyledPageContents = styled.div `
   margin: auto;
 
-  transition: transform 500ms ease;
+  transition: transform 500ms ease-in-out;
 
   transform: ${props => props.nav === true
   ? 'translateY(100vh)'

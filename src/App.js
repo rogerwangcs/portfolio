@@ -13,6 +13,14 @@ class App extends Component {
       nav: true
     }
   }
+  componentDidMount() {
+    if(window.scrollY > 0) {
+      this.setState({nav: false});
+    }
+    window.scrollTo(0, -100);
+    console.log('working');
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     if (this.state.nav !== nextState.nav) {
       return true;

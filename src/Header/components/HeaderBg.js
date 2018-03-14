@@ -3,8 +3,11 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
 
+import Cubes from 'Header/components/Cubes'
+
 import logoFg from 'images/bg-logo-foreground.png'
 import logoBg from 'images/bg-logo-background.png'
+
 
 const StyledHeaderBg = styled.div `
   z-index: -100;
@@ -20,7 +23,7 @@ const StyledHeaderBg = styled.div `
 
 const StyledLogoBg = styled.img `
   position: absolute;
-  z-index: -102;
+  z-index: -99;
 
   @media (max-width: ${viewport.MOBILE}){
     top: -70px;
@@ -44,7 +47,7 @@ const StyledLogoBg = styled.img `
 
 const StyledLogoFg = styled.img `
   position: absolute;
-  z-index: -101;
+  z-index: -98;
 
   @media (max-width: ${viewport.MOBILE}){
     top: -70px;
@@ -75,7 +78,6 @@ const StyledLogoFg = styled.img `
 class HeaderBg extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
   }
   shouldComponentUpdate(nextProps, nextState) {
     return false;
@@ -83,6 +85,7 @@ class HeaderBg extends Component {
   render() {
     return (
       <StyledHeaderBg>
+        <Cubes/>
         <StyledLogoBg src={logoBg}/>
         <StyledLogoFg src={logoFg}/>
       </StyledHeaderBg>

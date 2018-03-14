@@ -18,7 +18,7 @@ const NavbarBg = styled.div `
 const MainStyledNavbar = styled.div `
   z-Index: 1000;
 
-  transition: all 300ms ease;
+  transition: all 300ms ease-in-out;
 
   transform: ${props => props.nav
   ? 'translateY(100px)'
@@ -40,8 +40,8 @@ const StickyStyledNavbar = styled.div `
   position: fixed;
 
   transition: ${props => props.navSticky
-  ? 'all 300ms ease'
-  : 'all 0ms ease'};
+  ? 'all 300ms ease-in-out'
+  : 'all 0ms ease-in-out'};
   top: ${props => props.navSticky
   ? '0px'
   : '-50px'};
@@ -83,7 +83,7 @@ const NavUnderline = styled.div `
   margin-top: -5px;
   background-color: #4c6bba;
   
-  transition: transform 700ms ease;
+  transition: transform 700ms ease-in-out;
   transform-origin: 30% 50%;
   transform: scaleX(${props => props.nav
   ? '1'

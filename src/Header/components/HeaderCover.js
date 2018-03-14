@@ -12,7 +12,7 @@ const StyledHeaderCover = styled.div `
   width: 100vw;
   height: 100vh;
 
-  transition: transform 500ms ease;
+  transition: transform 500ms ease-in-out;
   transform-origin: 0% 100%;
   transform: ${props => props.nav === true
   ? 'scaleY(0)'
