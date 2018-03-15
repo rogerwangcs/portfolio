@@ -21,13 +21,13 @@ const Cube = styled.img `
   z-index: -200;
   position: absolute;
 
-  left: ${props => props.x + 'px'};
-  top: ${props => props.y + 'px'};
+  left: ${props => props.x + 'vw'};
+  top: ${props => props.y + 'vh'};
 
   opacity: 0;
 
   animation: ${cubeAnimation} 1000ms ease-in-out;
-  animation-delay: ${props => props.animationDelay + 'ms'};
+  animation-delay: ${props => props.delay + 'ms'};
   animation-fill-mode: forwards;
 
   @media (max-width: ${viewport.MOBILE}) {
@@ -40,8 +40,8 @@ const generateCubeCoords = (number) => {
   let coordArray = [];
 
   for (var i = 0; i < number; i++) {
-    var xCoord = Math.floor(Math.random() * window.innerWidth);
-    var yCoord = Math.floor(Math.random() * window.innerHeight);
+    var xCoord = Math.random() * 100;
+    var yCoord = Math.random() * 100;
     coordArray.push({index: i, x: xCoord, y: yCoord});
   }
 
@@ -54,7 +54,7 @@ const generateCube = (cube) => {
     key={cube.index}
     x={cube.x}
     y={cube.y}
-    animationDelay={cube.index * 50 + 500}/>
+    delay={cube.index * 50 + 500}/>
 }
 
 class Cubes extends Component {

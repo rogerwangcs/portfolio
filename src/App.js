@@ -14,7 +14,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    if(window.scrollY > 0) {
+    if (window.scrollY > 0) {
       this.setState({nav: false});
     }
     window.scrollTo(0, -100);

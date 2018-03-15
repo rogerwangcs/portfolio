@@ -2,12 +2,13 @@ import React, {Component} from 'react'
 
 import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
+import {animationTimings} from 'utils/animationTimings'
+import FadeIn from 'utils/FadeIn'
 
 import Cubes from 'Header/components/Cubes'
 
 import logoFg from 'images/bg-logo-foreground.png'
 import logoBg from 'images/bg-logo-background.png'
-
 
 const StyledHeaderBg = styled.div `
   z-index: -100;
@@ -86,8 +87,12 @@ class HeaderBg extends Component {
     return (
       <StyledHeaderBg>
         <Cubes/>
-        <StyledLogoBg src={logoBg}/>
-        <StyledLogoFg src={logoFg}/>
+        <FadeIn delay={animationTimings.loadDelay + 0}>
+          <StyledLogoBg src={logoBg}/>
+        </FadeIn>
+        <FadeIn delay={animationTimings.loadDelay + 50}>
+          <StyledLogoFg src={logoFg}/>
+        </FadeIn>
       </StyledHeaderBg>
     );
   }

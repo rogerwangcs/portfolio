@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import styled from "styled-components";
 import {viewport} from 'utils/viewport';
+import {animationTimings} from 'utils/animationTimings'
+import FadeIn from 'utils/FadeIn'
 
 const NavbarBg = styled.div `
   background-color: #141c30;
@@ -12,11 +14,10 @@ const NavbarBg = styled.div `
   left: -20vw;
 
   width: 150vw;
-  height: 45px;
+  height: 50px;
 `;
 
 const MainStyledNavbar = styled.div `
-  z-Index: 1000;
 
   transition: all 300ms ease-in-out;
 
@@ -43,8 +44,8 @@ const StickyStyledNavbar = styled.div `
   ? 'all 300ms ease-in-out'
   : 'all 0ms ease-in-out'};
   top: ${props => props.navSticky
-  ? '0px'
-  : '-50px'};
+    ? '0px'
+    : '-60px'};
 
   @media (max-width: ${viewport.MOBILE}){
     text-align: center;
@@ -63,6 +64,8 @@ const StyledButton = styled.div `
   height: 48px;
   padding-left: 0px;
   padding-right: 20px;
+  margin-top: -5px;
+  margin-bottom: 5px;
 
   @media (max-width: ${viewport.MOBILE}){
     padding-left: 10px;
@@ -80,7 +83,7 @@ const StyledButton = styled.div `
 const NavUnderline = styled.div `
   width: 100%;
   height: 5px;
-  margin-top: -5px;
+
   background-color: #4c6bba;
   
   transition: transform 700ms ease-in-out;
@@ -154,9 +157,11 @@ class Nav extends Component {
 
     return (
       <div>
-        <MainStyledNavbar navSticky={this.props.navSticky} nav={this.props.nav}>
-          <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
-        </MainStyledNavbar>
+        <FadeIn delay={animationTimings.loadDelay + 450}>
+          <MainStyledNavbar navSticky={this.props.navSticky} nav={this.props.nav}>
+            <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
+          </MainStyledNavbar>
+        </FadeIn>
         <StickyStyledNavbar navSticky={this.state.navSticky}>
           <NavbarBg/>
           <Navbar/>
