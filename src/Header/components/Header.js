@@ -12,6 +12,15 @@ import HeaderCover from 'Header/components/HeaderCover'
 import SocialButtons from 'Header/components/SocialButtons'
 import OpenArrow from 'Header/components/OpenArrow'
 
+const OverflowContainer = styled.div `
+  overflow: hidden;
+  /* background-color: rgba(255,0,0,.2); */
+  width: 100vw;
+
+  padding-bottom: 80px;
+
+`;
+
 const HeaderGroup = styled.div `
   transition: transform 300ms ease-in-out;
 
@@ -58,13 +67,17 @@ class Header extends Component {
   }
 
   handleDrawer = () => {
-    this.props.nav === true
-      ? this
+    if (this.props.nav) {
+      this
         .props
         .updateNav(false)
-      : this
+      window.scrollTo(0, 3);
+    } else {
+      this
         .props
         .updateNav(true)
+      window.scrollTo(0, 0);
+    }
   }
 
   handleScroll = () => {
@@ -85,20 +98,22 @@ class Header extends Component {
 
   render() {
     return (
-      <StyledHeader nav={this.props.nav}>
-        <HeaderBg/>
-        <HeaderGroup nav={this.props.nav}>
-          <FadeIn delay={animationTimings.loadDelay + 400}>
-            <HeaderText nav={this.props.nav}/>
-          </FadeIn>
-          <FadeIn delay={animationTimings.loadDelay + 800}>
-            <SocialButtons/>
-          </FadeIn>
-        </HeaderGroup>
-        <Nav nav={this.props.nav}/>
-        <HeaderCover nav={this.props.nav}/>
-        <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
-      </StyledHeader>
+      <OverflowContainer>
+        <StyledHeader nav={this.props.nav}>
+          <HeaderBg/>
+          <HeaderGroup nav={this.props.nav}>
+            <FadeIn delay={animationTimings.loadDelay + 700}>
+              <HeaderText nav={this.props.nav}/>
+            </FadeIn>
+            <FadeIn delay={animationTimings.loadDelay + 700}>
+              <SocialButtons/>
+            </FadeIn>
+          </HeaderGroup>
+          <Nav nav={this.props.nav}/>
+          <HeaderCover nav={this.props.nav}/>
+          <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
+        </StyledHeader>
+      </OverflowContainer>
     );
   }
 }

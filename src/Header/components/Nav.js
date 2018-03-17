@@ -6,6 +6,14 @@ import {viewport} from 'utils/viewport';
 import {animationTimings} from 'utils/animationTimings'
 import FadeIn from 'utils/FadeIn'
 
+// const NavContainer = styled.div `
+//   position: fixed;
+//   margin-left: 0;
+
+
+//   background-color: rgba(255,0,0,.2);
+// `;
+
 const NavbarBg = styled.div `
   background-color: #141c30;
   position: fixed;
@@ -22,14 +30,8 @@ const MainStyledNavbar = styled.div `
   transition: all 300ms ease-in-out;
 
   transform: ${props => props.nav
-  ? 'translateY(100px)'
+  ? 'translateY(50px)'
   : 'translateY(0px)'};
-  position: ${props => props.navSticky
-    ? 'fixed'
-    : 'relative'};
-  width: ${props => props.navSticky
-      ? '100vw'
-      : '100%'};
 
   @media (max-width: ${viewport.MOBILE}){
     text-align: center;
@@ -49,6 +51,9 @@ const StickyStyledNavbar = styled.div `
 
   @media (max-width: ${viewport.MOBILE}){
     text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 `;
 
@@ -65,7 +70,7 @@ const StyledButton = styled.div `
   padding-left: 0px;
   padding-right: 20px;
   margin-top: -5px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 
   @media (max-width: ${viewport.MOBILE}){
     padding-left: 10px;
@@ -88,7 +93,7 @@ const NavUnderline = styled.div `
   
   transition: transform 700ms ease-in-out;
   transform-origin: 30% 50%;
-  transform: scaleX(${props => props.nav
+  transform: scaleX(${props => props.nav && !props.sticky
   ? '1'
   : '8'});
   
@@ -109,7 +114,7 @@ const Navbar = (props) => {
       <StyledButton>
         <h4>Resume</h4>
       </StyledButton>
-      <NavUnderline nav={props.nav}/>
+      <NavUnderline sticky={props.sticky} nav={props.nav}/>
     </NavbarButtons>
   );
 }
@@ -144,11 +149,11 @@ class Nav extends Component {
       .findDOMNode(this)
       .getBoundingClientRect()
 
-    // console.log(rect)
+    // console.log(window.scrollX)
 
     if (rect.bottom < 0) {
       this.setState({navSticky: true})
-    } else if (rect.top >= 0) {
+    } else if (rect.bottom >= 50) {
       this.setState({navSticky: false})
     }
   }
@@ -157,14 +162,14 @@ class Nav extends Component {
 
     return (
       <div>
-        <FadeIn delay={animationTimings.loadDelay + 450}>
-          <MainStyledNavbar navSticky={this.props.navSticky} nav={this.props.nav}>
-            <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
-          </MainStyledNavbar>
+        <FadeIn delay={animationTimings.loadDelay + 400}>
+            <MainStyledNavbar nav={this.props.nav}>
+              <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
+            </MainStyledNavbar>
         </FadeIn>
         <StickyStyledNavbar navSticky={this.state.navSticky}>
           <NavbarBg/>
-          <Navbar/>
+          <Navbar sticky = {false} />
         </StickyStyledNavbar>
       </div>
     )

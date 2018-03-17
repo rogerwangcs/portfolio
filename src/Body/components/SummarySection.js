@@ -63,9 +63,9 @@ const StyledSummarySection = styled.div `
 const SummarySection = (props) => {
   return (
       <StyledSummarySection>
-        <PortraitGroup>
+        {/* <PortraitGroup>
           <img src={RogerPortrait}/>
-        </PortraitGroup>
+        </PortraitGroup> */}
         <p>I'm a computer science student at Boston College. I love things with elegant
           designs and things with cool features. In the future, I wish to work on apps
           that combine the two that makes our every day lives easier.<br/><br/>

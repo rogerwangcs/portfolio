@@ -11,6 +11,7 @@ import logoFg from 'images/bg-logo-foreground.png'
 import logoBg from 'images/bg-logo-background.png'
 
 const StyledHeaderBg = styled.div `
+  overflow-x: hidden;
   z-index: -100;
   position: absolute;
   background-color: #141c30;
