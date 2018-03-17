@@ -13,10 +13,14 @@ const StyledPageContents = styled.div `
   : 'translateY(0px)'};
 
   @media (max-width: ${viewport.MOBILE}) {
-    width: 96vw;
+    width: 92vw;
+    h2 {
+      text-align: center;
+    }
   }
   @media (min-width: ${viewport.MOBILE}) {
     width: 80vw;
+    text-align: left;
   }
   @media (min-width: ${viewport.DESKTOP}) {
     width: ${viewport.DESKTOP_CONTENT_WIDTH + 'px'};

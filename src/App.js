@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import Header from 'Header/components/Header'
+import Footer from 'Header/components/Footer'
 import Nav from 'Header/components/Nav'
 import MainPage from 'Body/containers/MainPage'
 import 'App.css'
@@ -45,6 +46,7 @@ class App extends Component {
             return (<MainPage nav={this.state.nav} updateNav={this.updateNav}/>)
           }}/>
         </Switch>
+        <Footer/>
       </div>
     );
   }

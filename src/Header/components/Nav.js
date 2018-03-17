@@ -1,21 +1,14 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
-import styled from "styled-components";
-import {viewport} from 'utils/viewport';
+import styled from "styled-components"
+import {viewport} from 'utils/viewport'
+import {mainColors} from 'utils/theme'
 import {animationTimings} from 'utils/animationTimings'
 import FadeIn from 'utils/FadeIn'
 
-// const NavContainer = styled.div `
-//   position: fixed;
-//   margin-left: 0;
-
-
-//   background-color: rgba(255,0,0,.2);
-// `;
-
 const NavbarBg = styled.div `
-  background-color: #141c30;
+  background-color: ${mainColors.darkblue};
   position: fixed;
   z-index: -20;
 
@@ -89,7 +82,7 @@ const NavUnderline = styled.div `
   width: 100%;
   height: 5px;
 
-  background-color: #4c6bba;
+  background-color: ${mainColors.lightblue};
   
   transition: transform 700ms ease-in-out;
   transform-origin: 30% 50%;
@@ -162,7 +155,7 @@ class Nav extends Component {
 
     return (
       <div>
-        <FadeIn delay={animationTimings.loadDelay + 400}>
+        <FadeIn delay={animationTimings.loadDelay + 900}>
             <MainStyledNavbar nav={this.props.nav}>
               <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
             </MainStyledNavbar>

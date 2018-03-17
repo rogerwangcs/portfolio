@@ -8,7 +8,7 @@ const StyledPage = styled.div `
   background-color: white;
   
   width: 100vw;
-  margin-top: 0;
+  margin-top: -50px;
 
   transition: transform 500ms ease-in-out;
 

@@ -102,7 +102,7 @@ class Header extends Component {
         <StyledHeader nav={this.props.nav}>
           <HeaderBg/>
           <HeaderGroup nav={this.props.nav}>
-            <FadeIn delay={animationTimings.loadDelay + 700}>
+            <FadeIn delay={animationTimings.loadDelay + 600}>
               <HeaderText nav={this.props.nav}/>
             </FadeIn>
             <FadeIn delay={animationTimings.loadDelay + 700}>

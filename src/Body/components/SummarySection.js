@@ -39,7 +39,7 @@ const PortraitGroup = styled.div `
 
 const StyledSummarySection = styled.div `
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   /* align-items: center; */
   justify-content: center;
@@ -50,8 +50,7 @@ const StyledSummarySection = styled.div `
     white-space: wrap;
     order: 2;
     width: calc(100% - 335px);
-
-    padding-left: 35px;
+    margin-right: 25px;
 
     @media (max-width: 750px) {
       width: 100%;
@@ -63,9 +62,9 @@ const StyledSummarySection = styled.div `
 const SummarySection = (props) => {
   return (
       <StyledSummarySection>
-        {/* <PortraitGroup>
+        <PortraitGroup>
           <img src={RogerPortrait}/>
-        </PortraitGroup> */}
+        </PortraitGroup>
         <p>I'm a computer science student at Boston College. I love things with elegant
           designs and things with cool features. In the future, I wish to work on apps
           that combine the two that makes our every day lives easier.<br/><br/>

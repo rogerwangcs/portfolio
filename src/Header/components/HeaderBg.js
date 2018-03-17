@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
+import {mainColors} from 'utils/theme'
 import {animationTimings} from 'utils/animationTimings'
 import FadeIn from 'utils/FadeIn'
 
@@ -14,7 +15,7 @@ const StyledHeaderBg = styled.div `
   overflow-x: hidden;
   z-index: -100;
   position: absolute;
-  background-color: #141c30;
+  background-color: ${mainColors.darkblue};
   top: 0;
   left: 0;
   

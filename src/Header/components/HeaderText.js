@@ -48,8 +48,8 @@ const HeaderText = (props) => {
 
   return (
     <StyledText nav={props.navDrawer}>
-      <h1>Hey, I'm Roger</h1>
-      <h4>I am a Full Stack Software Engineer.</h4>
+      <h1>Roger Wang</h1>
+      <h4>Full Stack Software Engineer</h4>
     </StyledText>
   );
 };
