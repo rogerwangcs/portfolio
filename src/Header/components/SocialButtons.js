@@ -9,6 +9,8 @@ import linkedin from 'images/linkedin.png';
 import gmail from 'images/gmail.png';
 
 const StyledSocialButtons = styled.div `
+  z-index: 100;
+  
   @media (max-width: ${viewport.MOBILE}) {
     padding-top: none;
     float: none;

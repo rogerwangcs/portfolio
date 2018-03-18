@@ -3,14 +3,15 @@ import React, {Component} from 'react'
 import styled, {keyframes} from 'styled-components'
 
 const StyledHeaderCover = styled.div `
-  z-index: 5;
+  /* z-index: -1; */
   background-color: white;
 
   position: absolute;
   left: 0;
   
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
+  opacity: 0;
 
   transition: transform 500ms ease-in-out;
   transform-origin: 0% 100%;

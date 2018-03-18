@@ -10,7 +10,7 @@ import FadeIn from 'utils/FadeIn'
 const NavbarBg = styled.div `
   background-color: ${mainColors.darkblue};
   position: fixed;
-  z-index: -20;
+  z-index: -1;
 
   left: -20vw;
 
@@ -19,6 +19,8 @@ const NavbarBg = styled.div `
 `;
 
 const MainStyledNavbar = styled.div `
+
+  margin-top: 25px;
 
   transition: all 300ms ease-in-out;
 
@@ -57,7 +59,6 @@ const NavbarButtons = styled.div `
 const StyledButton = styled.div `
 
   display: inline-block;
-  user-select: none;
 
   height: 48px;
   padding-left: 0px;
@@ -156,13 +157,13 @@ class Nav extends Component {
     return (
       <div>
         <FadeIn delay={animationTimings.loadDelay + 900}>
-            <MainStyledNavbar nav={this.props.nav}>
-              <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
-            </MainStyledNavbar>
+          <MainStyledNavbar nav={this.props.nav}>
+            <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
+          </MainStyledNavbar>
         </FadeIn>
         <StickyStyledNavbar navSticky={this.state.navSticky}>
           <NavbarBg/>
-          <Navbar sticky = {false} />
+          <Navbar sticky={false}/>
         </StickyStyledNavbar>
       </div>
     )

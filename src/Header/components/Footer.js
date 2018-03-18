@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import styled from 'styled-components';
 import {mainColors} from 'utils/theme'
-import MediaQuery from 'react-responsive';
 import {viewport} from 'utils/viewport';
 
 import github from 'images/github.png';
@@ -34,11 +33,11 @@ const StyledIcon = styled.a `
 
   background-color: ${mainColors.fadedblue};
 
+  margin: 15px;
   padding: 10px;
 
-  margin: 15px;
   img {
-    transition: all 200ms ease-in-out;
+    transition: transform 200ms ease-in-out;
     vertical-align: middle;
     width:40px;
     height: 40px;
@@ -51,18 +50,26 @@ const StyledIcon = styled.a `
       transform: scale(1.3);
     }
   }
+
+  @media (max-width: ${viewport.MOBILE}) {
+    padding: 8px;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 const SocialButtons = () => {
   return (
     <StyledSocialButtons>
       <StyledIcon href="https://github.com/rogerwangcs" target="_blank">
-        <img src={github}/>
+        <img draggable="false" src={github}/>
       </StyledIcon>
       <StyledIcon href="https://www.linkedin.com/in/rogerwangcs/" target="_blank">
-        <img src={linkedin}/>
+        <img draggable="false" src={linkedin}/>
       </StyledIcon>
       <StyledIcon href="mailto:rogerwangcs@gmail.com">
-        <img src={gmail}/>
+        <img draggable="false" src={gmail}/>
       </StyledIcon>
     </StyledSocialButtons>
   );

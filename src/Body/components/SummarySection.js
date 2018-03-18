@@ -28,6 +28,8 @@ const PortraitGroup = styled.div `
     width: 300px;
     height: 300px;
 
+    box-shadow: 5px 5px 30px -10px;
+
     @media (max-width: ${viewport.MOBILE}) {
       width: 250px;
       height: 250px;
@@ -41,10 +43,9 @@ const StyledSummarySection = styled.div `
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  /* align-items: center; */
   justify-content: center;
 
-  margin-top: 0px;
+  margin-top: 50px;
 
   >p {
     white-space: wrap;

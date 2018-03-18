@@ -14,14 +14,19 @@ import OpenArrow from 'Header/components/OpenArrow'
 
 const OverflowContainer = styled.div `
   overflow: hidden;
-  /* background-color: rgba(255,0,0,.2); */
   width: 100vw;
 
-  padding-bottom: 80px;
+  transition: padding-bottom 300ms ease-in-out;
+
+  padding-bottom: ${props => props.nav === true
+  ? '80px'
+  : '0px'};
 
 `;
 
 const HeaderGroup = styled.div `
+  overflow: hidden;
+
   transition: transform 300ms ease-in-out;
 
   transform: ${props => props.nav === true
@@ -34,8 +39,6 @@ const StyledHeader = styled.div `
 
   @media (max-width: ${viewport.MOBILE}){
     width: 90vw;
-    left: 5vw;
-    right: 5vw;
     margin: auto;
   }
   @media (min-width: ${viewport.MOBILE}){
@@ -44,8 +47,6 @@ const StyledHeader = styled.div `
   }
   @media (min-width: ${viewport.DESKTOP}){
     width: ${viewport.DESKTOP_CONTENT_WIDTH + 'px'};
-    left: 0;
-    right: 0;
     margin: auto;
   }
 
@@ -98,7 +99,7 @@ class Header extends Component {
 
   render() {
     return (
-      <OverflowContainer>
+      <OverflowContainer nav={this.props.nav}>
         <StyledHeader nav={this.props.nav}>
           <HeaderBg/>
           <HeaderGroup nav={this.props.nav}>
@@ -110,7 +111,7 @@ class Header extends Component {
             </FadeIn>
           </HeaderGroup>
           <Nav nav={this.props.nav}/>
-          <HeaderCover nav={this.props.nav}/>
+          {/* <HeaderCover nav={this.props.nav}/> */}
           <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
         </StyledHeader>
       </OverflowContainer>

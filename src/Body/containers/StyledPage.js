@@ -3,12 +3,11 @@ import React, {Component} from 'react';
 import styled from 'styled-components'
 
 const StyledPage = styled.div `
-  z-index: 10;
   position: relative;
   background-color: white;
   
   width: 100vw;
-  margin-top: -50px;
+  margin-top: 0px;
 
   transition: transform 500ms ease-in-out;
 

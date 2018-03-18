@@ -18,7 +18,7 @@ const cubeAnimation = keyframes `
 `;
 
 const Cube = styled.img `
-  z-index: -200;
+  z-index: -101;
   position: absolute;
 
   left: ${props => props.x + 'vw'};
