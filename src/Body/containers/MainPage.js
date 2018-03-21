@@ -1,4 +1,8 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+
+import {Element} from 'react-scroll'
+import Waypoint from 'react-waypoint'
+import NavLocation from 'Header/components/NavLocation'
 
 import StyledPage from 'Body/containers/StyledPage'
 import StyledPageContents from 'Body/containers/StyledPageContents'
@@ -16,9 +20,14 @@ class MainPage extends Component {
 
   render() {
     return (
-      <StyledPage nav={this.props.nav} updateNav={this.props.updateNav}>
+      <StyledPage id='element' nav={this.props.nav} updateNav={this.props.updateNav}>
         <StyledPageSection color='white'>
           <StyledPageContents>
+            <NavLocation
+              waypointID='About'
+              sectionID='1'
+              setSectionID={this.props.setSectionID}/>
+              <Element name='About' className='element'/>
             <h2>Hey, I'm Roger</h2>
             <Divider/>
             <SummarySection/>
@@ -35,6 +44,11 @@ class MainPage extends Component {
         </StyledPageSection>
         <StyledPageSection color='lightgray'>
           <StyledPageContents>
+            <NavLocation
+              waypointID='Projects'
+              sectionID='2'
+              setSectionID={this.props.setSectionID}/>
+            <Element name='Projects' className='element'/>
             <h2>Projects</h2>
             <Divider/>
             <ProjectsSection/>

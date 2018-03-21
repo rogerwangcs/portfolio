@@ -11,7 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nav: true
+      nav: true,
+      activeSection: '1'
     }
   }
   componentDidMount() {
@@ -26,6 +27,9 @@ class App extends Component {
     if (this.state.nav !== nextState.nav) {
       return true;
     }
+    if (this.state.activeSection !== nextState.activeSection) {
+      return true;
+    }
     return false;
   }
 
@@ -33,17 +37,30 @@ class App extends Component {
     this.setState({nav: state});
   }
 
+  handleWaypoint = (id, waypointTop) => {
+    console.log(id + " " + waypointTop)
+  }
+  setActiveSection = (sectionID) => {
+    this.setState({activeSection: sectionID});
+  }
+
   render() {
 
     return (
       <div className="App">
-        <Header nav={this.state.nav} updateNav={this.updateNav}/>
+        <Header
+          nav={this.state.nav}
+          updateNav={this.updateNav}
+          activeSection={this.state.activeSection}/>
         <Switch>
           <Route
             exact
             path='/'
             render={() => {
-            return (<MainPage nav={this.state.nav} updateNav={this.updateNav}/>)
+            return (<MainPage
+              nav={this.state.nav}
+              updateNav={this.updateNav}
+              setSectionID={this.setActiveSection}/>)
           }}/>
         </Switch>
         <Footer/>

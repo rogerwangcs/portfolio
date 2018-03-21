@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
+import {Link, scroller} from 'react-scroll'
+
 import styled from "styled-components"
 import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
@@ -71,10 +73,16 @@ const StyledButton = styled.div `
     padding-right: 10px;
   }
 
+  h4 {
+    transition: color 150ms ease-in-out;
+    color: ${props => props.activeSection === props.sectionID
+  ? mainColors.lightblue
+  : 'white'};
+  }
   :hover {
     cursor: pointer;
     > h4 {
-      color: red;
+      color: ${mainColors.lightblue};
     }
   }
 `;
@@ -96,22 +104,36 @@ const NavUnderline = styled.div `
 const Navbar = (props) => {
   return (
     <NavbarButtons navSticky={props.navSticky}>
-      <StyledButton>
+      <StyledButton
+        sectionID='1'
+        activeSection={props.activeSection}
+        onClick={() => props.handleNavButton('About', props.nav)}>
         <h4>About Me</h4>
       </StyledButton>
-      <StyledButton>
-        <h4>My Work</h4>
+      <StyledButton
+        sectionID='2'
+        activeSection={props.activeSection}
+        onClick={() => props.handleNavButton('Projects', props.nav)}>
+        <h4>Projects</h4>
       </StyledButton>
-      <StyledButton>
+      <StyledButton
+        sectionID='3'
+        activeSection={props.activeSection}
+        onClick={() => props.handleNavButton('Journal', props.nav)}>
         <h4>Journal</h4>
       </StyledButton>
-      <StyledButton>
+      <StyledButton
+        sectionID='4'
+        activeSection={props.activeSection}
+        onClick={() => props.handleNavButton('Resume', props.nav)}>
         <h4>Resume</h4>
       </StyledButton>
       <NavUnderline sticky={props.sticky} nav={props.nav}/>
     </NavbarButtons>
   );
 }
+
+let navDisabler = false;
 
 class Nav extends Component {
   constructor(props) {
@@ -125,6 +147,9 @@ class Nav extends Component {
       return true;
     }
     if (this.props.nav !== nextProps.nav) {
+      return true;
+    }
+    if (this.props.activeSection !== nextProps.activeSection) {
       return true;
     }
     return false;
@@ -152,18 +177,62 @@ class Nav extends Component {
     }
   }
 
+  handleNavButton = (element, nav) => {
+    if (!navDisabler) {
+
+      navDisabler = true;
+
+      if (nav) {
+        this
+          .props
+          .updateNav(false);
+
+        window.scrollTo(0, 3);
+
+        setTimeout(() => {
+          scroller.scrollTo(element, {
+            duration: 1000,
+            offset: -75,
+            smooth: 'easeInOutCubic'
+          });
+          navDisabler = false;
+        }, 500);
+      } else {
+        scroller.scrollTo(element, {
+          duration: 1000,
+          offset: -75,
+          smooth: 'easeInOutCubic'
+        });
+        navDisabler = false;
+      }
+    }
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({activeSection: nextProps.activeSection})
+  }
+
   render() {
 
     return (
       <div>
         <FadeIn delay={animationTimings.loadDelay + 900}>
           <MainStyledNavbar nav={this.props.nav}>
-            <Navbar navSticky={this.state.navSticky} nav={this.props.nav}/>
+            <Navbar
+              navSticky={this.state.navSticky}
+              nav={this.props.nav}
+              updateNav={this.props.updateNav}
+              handleNavButton={this.handleNavButton}
+              activeSection={this.props.activeSection}/>
           </MainStyledNavbar>
         </FadeIn>
         <StickyStyledNavbar navSticky={this.state.navSticky}>
           <NavbarBg/>
-          <Navbar sticky={false}/>
+          <Navbar
+            sticky={false}
+            updateNav={this.props.updateNav}
+            handleNavButton={this.handleNavButton}
+            activeSection={this.props.activeSection}/>
         </StickyStyledNavbar>
       </div>
     )

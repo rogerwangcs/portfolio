@@ -110,8 +110,7 @@ class Header extends Component {
               <SocialButtons/>
             </FadeIn>
           </HeaderGroup>
-          <Nav nav={this.props.nav}/>
-          {/* <HeaderCover nav={this.props.nav}/> */}
+          <Nav nav={this.props.nav} updateNav={this.props.updateNav} activeSection={this.props.activeSection}/>
           <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
         </StyledHeader>
       </OverflowContainer>
