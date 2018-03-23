@@ -27,9 +27,9 @@ class MainPage extends Component {
               waypointID='About'
               sectionID='1'
               setSectionID={this.props.setSectionID}/>
-              <Element name='About' className='element'/>
+            <Element name='About' className='element'/>
             <h2>Hey, I'm Roger</h2>
-            <Divider/>
+            <Divider align='center'/>
             <SummarySection/>
           </StyledPageContents>
         </StyledPageSection>
@@ -38,11 +38,11 @@ class MainPage extends Component {
             <h2 style={{
               color: 'white'
             }}>Tech Stack</h2>
-            <Divider/>
+            <Divider align='center'/>
             <SkillsSection/>
           </StyledPageContents>
         </StyledPageSection>
-        <StyledPageSection color='lightgray'>
+        <StyledPageSection color='white'>
           <StyledPageContents>
             <NavLocation
               waypointID='Projects'
@@ -50,7 +50,7 @@ class MainPage extends Component {
               setSectionID={this.props.setSectionID}/>
             <Element name='Projects' className='element'/>
             <h2>Projects</h2>
-            <Divider/>
+            <Divider align='center'/>
             <ProjectsSection/>
           </StyledPageContents>
         </StyledPageSection>

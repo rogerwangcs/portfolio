@@ -16,6 +16,7 @@ const StyledPageContents = styled.div `
     width: 92vw;
     h2 {
       text-align: center;
+      margin: auto;
     }
   }
   @media (min-width: ${viewport.MOBILE}) {

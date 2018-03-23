@@ -43,7 +43,7 @@ const StickyStyledNavbar = styled.div `
   ? 'all 300ms ease-in-out'
   : 'all 0ms ease-in-out'};
   top: ${props => props.navSticky
-    ? '0px'
+    ? '-2px'
     : '-60px'};
 
   @media (max-width: ${viewport.MOBILE}){
@@ -172,7 +172,7 @@ class Nav extends Component {
 
     if (rect.bottom < 0) {
       this.setState({navSticky: true})
-    } else if (rect.bottom >= 50) {
+    } else if (rect.bottom >= 48) {
       this.setState({navSticky: false})
     }
   }

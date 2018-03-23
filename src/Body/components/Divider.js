@@ -4,15 +4,20 @@ import {mainColors} from 'utils/theme'
 
 const StyledDivider = styled.div `
   background-color: ${mainColors.lightblue};
+  height: 4px;
   width: 100px;
-  height: 3px;
+
+  /* border-bottom: ${ '4px solid ' + mainColors.lightblue}; */
   
-  margin-top: -20px;
-  margin-bottom: 10px;
+  display: block;
+  margin-top: 5px;
+
 
 
   @media (max-width: ${viewport.MOBILE}) {
-    margin: auto;
+    margin: ${props => props.align === 'center'
+    ? 'auto'
+    : '0px'};
   }
 `;
 

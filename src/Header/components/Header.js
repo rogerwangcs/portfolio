@@ -19,7 +19,7 @@ const OverflowContainer = styled.div `
   transition: padding-bottom 300ms ease-in-out;
 
   padding-bottom: ${props => props.nav === true
-  ? '80px'
+  ? '150px'
   : '0px'};
 
 `;

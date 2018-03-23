@@ -59,7 +59,7 @@ const SkillsSection = (props) => {
           <p>HTML</p>
           <p>CSS</p>
           <p>Javascript</p>
-          <p>React.js</p>
+          <p>React.js + Redux.js</p>
           <p>Node.js</p>
           <p>Express.js</p>
           <p>MongoDB</p>
