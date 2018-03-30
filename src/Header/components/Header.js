@@ -8,30 +8,28 @@ import FadeIn from 'utils/FadeIn'
 import HeaderBg from 'Header/components/HeaderBg'
 import HeaderText from 'Header/components/HeaderText'
 import Nav from 'Header/components/Nav'
-import HeaderCover from 'Header/components/HeaderCover'
 import SocialButtons from 'Header/components/SocialButtons'
 import OpenArrow from 'Header/components/OpenArrow'
 
 const OverflowContainer = styled.div `
   overflow: hidden;
   width: 100vw;
-
-  transition: padding-bottom 300ms ease-in-out;
+  
+  /* transition: padding-bottom 300ms ease-in-out;
 
   padding-bottom: ${props => props.nav === true
-  ? '150px'
-  : '0px'};
+  ? '60vh'
+  : '0px'}; */
 
 `;
 
 const HeaderGroup = styled.div `
-  overflow: hidden;
 
-  transition: transform 300ms ease-in-out;
+  /* transition: transform 300ms ease-in-out;
 
   transform: ${props => props.nav === true
   ? 'translateY(50px)'
-  : 'translateY(0px)'};
+  : 'translateY(0px)'}; */
 }
 `;
 
@@ -99,21 +97,28 @@ class Header extends Component {
 
   render() {
     return (
-      <OverflowContainer nav={this.props.nav}>
-        <StyledHeader nav={this.props.nav}>
-          <HeaderBg/>
-          <HeaderGroup nav={this.props.nav}>
-            <FadeIn delay={animationTimings.loadDelay + 600}>
-              <HeaderText nav={this.props.nav}/>
-            </FadeIn>
-            <FadeIn delay={animationTimings.loadDelay + 700}>
-              <SocialButtons/>
-            </FadeIn>
-          </HeaderGroup>
-          <Nav nav={this.props.nav} updateNav={this.props.updateNav} activeSection={this.props.activeSection}/>
+      <div>
+        <OverflowContainer nav={this.props.nav}>
+          <StyledHeader nav={this.props.nav}>
+            <HeaderBg/>
+            <HeaderGroup nav={this.props.nav}>
+              <FadeIn delay={animationTimings.loadDelay + 600}>
+                <HeaderText nav={this.props.nav}/>
+              </FadeIn>
+              <FadeIn delay={animationTimings.loadDelay + 700}>
+                <SocialButtons/>
+              </FadeIn>
+            </HeaderGroup>
+            <Nav
+              nav={this.props.nav}
+              updateNav={this.props.updateNav}
+              activeSection={this.props.activeSection}/>
+          </StyledHeader>
+        </OverflowContainer>
+        <FadeIn delay={animationTimings.loadDelay + 1200}>
           <OpenArrow handleDrawer={this.handleDrawer} nav={this.props.nav}/>
-        </StyledHeader>
-      </OverflowContainer>
+        </FadeIn>
+      </div>
     );
   }
 }

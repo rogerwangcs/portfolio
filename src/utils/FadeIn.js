@@ -3,21 +3,24 @@ import styled, {keyframes} from 'styled-components'
 const fadeAnimation = keyframes `
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: scale(0);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0px);
+    transform: scale(1);
   }
 `;
 
 const FadeIn = styled.div `
-  opacity: 0;
-
-  animation: ${fadeAnimation} 600ms ease-in-out;
-  animation-delay: ${props => props.delay + 'ms'};
-  animation-fill-mode: forwards;
+  > * {
+    opacity: 0;
+    transform-origin: center;
+    animation: ${fadeAnimation} 600ms;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-delay: ${props => props.delay + 'ms'};
+    animation-fill-mode: forwards;  
+  }
 `;
 
 export default FadeIn;

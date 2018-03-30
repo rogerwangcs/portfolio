@@ -4,6 +4,7 @@ import styled, {keyframes} from 'styled-components'
 import {viewport} from 'utils/viewport'
 
 import cubeImg from 'images/cube.png'
+import FadeIn from 'utils/FadeIn'
 
 const cubeAnimation = keyframes `
   from {
@@ -24,15 +25,15 @@ const Cube = styled.img `
   left: ${props => props.x + 'vw'};
   top: ${props => props.y + 'vh'};
 
-  opacity: 0;
+  /* opacity: 0;
 
   animation: ${cubeAnimation} 1000ms ease-in-out;
   animation-delay: ${props => props.delay + 'ms'};
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 
   @media (max-width: ${viewport.MOBILE}) {
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
   }
 `;
 
@@ -49,12 +50,12 @@ const generateCubeCoords = (number) => {
 }
 
 const generateCube = (cube) => {
-  return <Cube
+  return <FadeIn delay={cube.index * 50 + 500}><Cube
     src={cubeImg}
     key={cube.index}
     x={cube.x}
     y={cube.y}
-    delay={cube.index * 50 + 500}/>
+    delay={cube.index * 50 + 500}/></FadeIn>
 }
 
 class Cubes extends Component {

@@ -25,7 +25,7 @@ h1 {
 h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 400;
   color: black;
   text-align: left;
 }
@@ -53,10 +53,9 @@ p {
 }
 
 
-/* div { outline: 1px dotted pink }
+/* div { outline: 1px dotted pink } */
 
-
-p   { outline: 1px solid green }
+/* p   { outline: 1px solid green }
 a   { outline: 2px solid yellow }
 li  { outline: 1px dashed cyan }
 img { outline: 1px solid purple} */

@@ -22,13 +22,13 @@ const NavbarBg = styled.div `
 
 const MainStyledNavbar = styled.div `
 
-  margin-top: 25px;
+  margin-top: 75px;
 
-  transition: all 300ms ease-in-out;
+  /* transition: all 300ms ease-in-out;
 
   transform: ${props => props.nav
   ? 'translateY(50px)'
-  : 'translateY(0px)'};
+  : 'translateY(0px)'}; */
 
   @media (max-width: ${viewport.MOBILE}){
     text-align: center;
@@ -119,8 +119,8 @@ const Navbar = (props) => {
       <StyledButton
         sectionID='3'
         activeSection={props.activeSection}
-        onClick={() => props.handleNavButton('Journal', props.nav)}>
-        <h4>Journal</h4>
+        onClick={() => props.handleNavButton('Blog', props.nav)}>
+        <h4>Blog</h4>
       </StyledButton>
       <StyledButton
         sectionID='4'
@@ -216,16 +216,16 @@ class Nav extends Component {
 
     return (
       <div>
-        <FadeIn delay={animationTimings.loadDelay + 900}>
-          <MainStyledNavbar nav={this.props.nav}>
+        <MainStyledNavbar nav={this.props.nav}>
+          <FadeIn delay={animationTimings.loadDelay + 900}>
             <Navbar
               navSticky={this.state.navSticky}
               nav={this.props.nav}
               updateNav={this.props.updateNav}
               handleNavButton={this.handleNavButton}
               activeSection={this.props.activeSection}/>
-          </MainStyledNavbar>
-        </FadeIn>
+          </FadeIn>
+        </MainStyledNavbar>
         <StickyStyledNavbar navSticky={this.state.navSticky}>
           <NavbarBg/>
           <Navbar

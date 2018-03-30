@@ -29,14 +29,20 @@ const ImageGroup = styled.div `
 `;
 
 const MernDesktopImg = styled.img `
-  box-shadow: 5px 5px 30px -10px;
+  box-shadow: 3px 3px 20px -10px;
   width: 70%;
+  @media (max-width: ${viewport.MOBILE}) {
+    box-shadow: 2px 2px 10px -6px;
+  }
 `;
 const MernMobileImg = styled.img `
   position: absolute;
-  box-shadow: 5px 5px 30px -10px;
+  box-shadow: 3px 3px 20px -10px;
   margin-left: 2%;
   width: 25%;
+  @media (max-width: ${viewport.MOBILE}) {
+    box-shadow: 2px 2px 10px -6px;
+  }
 `;
 
 const StyledProjectsSection = styled.div `

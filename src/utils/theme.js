@@ -4,4 +4,5 @@ export const mainColors = {
   lightblue: '#437eff',
   hoverblue: '#437eff',
   textfadedblue: '#2b6180',
+  creme: '#f9f9f4'
 }

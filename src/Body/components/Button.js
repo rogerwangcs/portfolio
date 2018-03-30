@@ -10,8 +10,8 @@ const StyledButton = styled.div `
   ? 'white'
   : mainColors.fadedblue};
 
-  height: 40px;
-  width: 100px;
+  height: 35px;
+  width: 70px;
 
   border: ${props => props === 'outline'
     ? 'solid 2px' + mainColors.fadedblue
@@ -19,7 +19,7 @@ const StyledButton = styled.div `
 
   p {
     font-family: 'Raleway', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
 
     color: ${props => props.type === 'outline'

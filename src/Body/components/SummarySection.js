@@ -45,7 +45,7 @@ const StyledSummarySection = styled.div `
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-top: 50px;
+  margin-top: 10px;
 
   >p {
     white-space: wrap;

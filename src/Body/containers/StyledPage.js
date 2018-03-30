@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components'
 
 const StyledPage = styled.div `
+  overflow-x: hidden;
   position: relative;
   background-color: white;
   

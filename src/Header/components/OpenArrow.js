@@ -8,9 +8,10 @@ import downArrow from 'images/down-arrow.png';
 const StyledOpenArrow = styled.img `
 
   position: absolute;
-  display: block;
   margin: auto;
-  top: 400px;
+  width: 40px;
+  height: 20px;
+  bottom: 20vh;
   left: 0;
   right: 0;
 
@@ -22,34 +23,17 @@ const StyledOpenArrow = styled.img `
 
   transition: all 300ms ease-in-out;
   transition-property: transform, opacity;
-  opacity: ${props => props.nav
-  ? 1
-  : 0};
-  transform-origin: 50% 50%;
-  transform: scale(0.2,0.2) translateY(${props => props.nav
+
+  transform: translateY(${props => props.nav
     ? 0
-    : '-50vh'});
+    : '100px'});
   @media (max-height: 500px) {
     top: 300px;
   }
 `;
 
-class OpenArrow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <div>
-        <StyledOpenArrow
-          src={downArrow}
-          onClick={this.props.handleDrawer}
-          nav={this.props.nav}></StyledOpenArrow>
-      </div>
-    );
-  }
+const OpenArrow = (props) => {
+  return (<StyledOpenArrow src={downArrow} onClick={props.handleDrawer} nav={props.nav}/>);
 }
 
 export default OpenArrow;

@@ -12,7 +12,7 @@ const StyledSkillsSection = styled.div `
   flex-wrap: wrap;
   justify-content: space-around;
 
-  margin-top: 50px;
+  margin-top: 20px;
 
   @media (max-width: 750px) {
     flex-direction: column;
@@ -27,7 +27,7 @@ const SkillBox = styled.div `
   width: 30%;
 
   padding-left: 10px;
-  margin-bottom: 35px;
+  margin-bottom: 15px;
 
   h3 {
     color: white;

@@ -29,22 +29,27 @@ const StyledLogoBg = styled.img `
   z-index: -99;
 
   @media (max-width: ${viewport.MOBILE}){
-    top: -70px;
-    left: -60px;
+    top: 20px;
+    left: 20px;
 
-    transform: scale(0.7)
+    width: 350px;
+    height: 350px;
+
   }
   @media (min-width: ${viewport.MOBILE}){
     top: 20px;
     left: 20px;
 
-    transform: scale(0.7)
+    width: 50vw;
+    height: 50vw;
+
   }
   @media (min-width: ${viewport.DESKTOP}){
     top: 80px;
     left: 80px;
 
-    transform: scale(1.2)
+    width: 500px;
+    height: 500px;
   }
 `;
 
@@ -53,28 +58,32 @@ const StyledLogoFg = styled.img `
   z-index: -98;
 
   @media (max-width: ${viewport.MOBILE}){
-    top: -70px;
-    left: -60px;
-    padding-top: 15px;
-    padding-left: 15px;
+    top: 20px;
+    left: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
 
-    transform: scale(0.7)
+    width: 350px;
+    height: 350px;
+
   }
   @media (min-width: ${viewport.MOBILE}){
     top: 20px;
     left: 20px;
-    padding-top: 1vw;
-    padding-left: 1vw;
+    padding-top: 1.2vw;
+    padding-left: 1.2vw;
 
-    transform: scale(0.7)
+    width: 50vw;
+    height: 50vw;
   }
   @media (min-width: ${viewport.DESKTOP}){
     top: 80px;
     left: 80px;
-    padding-top: 15px;
-    padding-left: 15px;
+    padding-top: 16px;
+    padding-left: 16px;
 
-    transform: scale(1.2)
+    width: 500px;
+    height: 500px;
   }
 `;
 

@@ -10,8 +10,12 @@ import gmail from 'images/gmail.png';
 
 const StyledFooter = styled.div `
   user-select: none;
-  background-color: ${mainColors.darkblue};
 
+  z-index: 100;
+  position: relative;
+
+  background-color: ${mainColors.darkblue};
+  
   padding-top: 30px;
 
   height: 150px;

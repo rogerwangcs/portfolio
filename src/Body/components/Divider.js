@@ -10,13 +10,15 @@ const StyledDivider = styled.div `
   /* border-bottom: ${ '4px solid ' + mainColors.lightblue}; */
   
   display: block;
-  margin-top: 5px;
+  margin-bottom: 15px;
 
-
+  margin: ${props => props.align === 'center'
+  ? '10px auto 15px auto'
+  : '0px'};
 
   @media (max-width: ${viewport.MOBILE}) {
-    margin: ${props => props.align === 'center'
-    ? 'auto'
+    margin: ${props => props.mobileAlign === 'center'
+    ? '10px auto 15px auto'
     : '0px'};
   }
 `;
