@@ -2,7 +2,7 @@
   "name": "React-Personal-Website",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://rogerwangcs.github.io",
+  "homepage": "https://rogerwangcs.github.io/React-Personal-Website",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
