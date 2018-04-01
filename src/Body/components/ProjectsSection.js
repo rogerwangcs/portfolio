@@ -68,7 +68,7 @@ const ProjectsSection = (props) => {
         }}
           href="https://github.com/rogerwangcs/MERN-Article-Manager"
           target="_blank">
-          <Button type='solid'>
+          <Button type='solid' width='70px' height='35px'>
             <p>Demo</p>
           </Button>
         </a>
@@ -78,7 +78,7 @@ const ProjectsSection = (props) => {
         }}
           href="https://github.com/rogerwangcs/MERN-Article-Manager"
           target="_blank">
-          <Button type='solid'>
+          <Button type='solid' width='70px' height='35px'>
             <p>Code</p>
           </Button>
         </a>

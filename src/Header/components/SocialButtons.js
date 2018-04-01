@@ -30,13 +30,21 @@ const StyledSocialButtons = styled.div `
 `;
 
 const StyledIcon = styled.div `
+    transition: transform 200ms ease-in-out;
+    transform-origin: 0% 50%;
+
+    > a > h5 {
+      transition: color 200ms ease-in-out;
+    }
+
     :hover {
       cursor: pointer;
-      background-color: ${mainColors.hoverblue}
+      transform: scale(1.1);
+      > a > h5 {
+        color: ${mainColors.hoverblue};
+      }
     }
-    > a {
-      text-decoration: none;
-    }
+
     @media (max-width: ${viewport.MOBILE}) {
       display: inline;
       margin: 15px;

@@ -62,7 +62,7 @@ class Cubes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cubes: generateCubeCoords(10)
+      cubes: generateCubeCoords(15)
     }
   }
 

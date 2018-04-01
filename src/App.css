@@ -16,6 +16,7 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 15px;
 }
 h1 {
+  user-select: none;
   font-family: 'Raleway', sans-serif;
   font-weight: 100;
   font-size: 5vw;
@@ -23,6 +24,7 @@ h1 {
 }
 
 h2 {
+  user-select: none;
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
   font-weight: 400;
@@ -52,6 +54,9 @@ p {
   color: rgb(50, 50, 50);
 }
 
+a {
+  text-decoration: none;
+}
 
 /* div { outline: 1px dotted pink } */
 

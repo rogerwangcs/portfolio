@@ -10,8 +10,8 @@ const StyledButton = styled.div `
   ? 'white'
   : mainColors.fadedblue};
 
-  height: 35px;
-  width: 70px;
+  height: ${props => props.height};
+  width: ${props => props.width};
 
   border: ${props => props === 'outline'
     ? 'solid 2px' + mainColors.fadedblue
