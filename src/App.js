@@ -20,7 +20,6 @@ class App extends Component {
       this.setState({nav: false});
     }
     window.scrollTo(0, -100);
-    console.log('working');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
