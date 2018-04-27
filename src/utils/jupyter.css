@@ -1,10 +1,19 @@
+/* Font family for code lines: line 2010 */
+
+/* div.input_area - style for input cell*/
+/* div.output_area - style for output cell*/
+
+/* div.input_prompt - style for input cell left hand side bar */
+/* div.output_prompt - style for output cell left hand side bar */
+
 code {
-    color: #000
+    color: rgb(25, 25, 25)
 }
 
 pre {
     font-size: inherit;
-    line-height: inherit
+    line-height: inherit;
+    color: #f5f5f5;
 }
 
 label {
@@ -245,7 +254,6 @@ body {
 
 #header {
     display: none;
-    background-color: #fff;
     position: relative;
     z-index: 100
 }
@@ -534,7 +542,7 @@ ul.breadcrumb span {
 
 .list_header {
     font-weight: 700;
-    background-color: #eee
+    /* background-color: #eee */
 }
 
 .list_placeholder {
@@ -813,7 +821,7 @@ ul#new-menu {
 }
 
 #running .panel-group .panel .panel-heading {
-    background-color: #eee;
+    /* background-color: #eee; */
     line-height: 22px;
     padding: 4px 7px
 }
@@ -1144,11 +1152,10 @@ div.inner_cell {
 }
 
 div.input_area {
-    /* border: 1px solid red; */
     border-radius: 5px;
-    /* background: #f7f7f7; */
     line-height: 1.3em;
-    background-color: #eeeeee;
+    padding: 5px;
+    background-color: rgb(39, 40, 44);
 }
 
 div.prompt:empty {
@@ -1224,7 +1231,8 @@ div.input {
 
 div.input_prompt {
     color: navy;
-    border-top: 1px solid transparent
+    border-top: 1px solid transparent;
+    display: none;
 }
 
 div.input_area>div.highlight {
@@ -1504,7 +1512,9 @@ div.out_prompt_overlay:hover {
 }
 
 div.output_prompt {
-    color: #8b0000
+    color: #8b0000;
+    /* Output sidebar */
+    display: none;
 }
 
 div.output_area {
@@ -1519,7 +1529,9 @@ div.output_area {
     box-align: stretch;
     display: flex;
     flex-direction: row;
-    align-items: stretch
+    align-items: stretch;
+
+    width: 95%;
 }
 
 div.output_area .MathJax_Display {
@@ -1585,7 +1597,7 @@ div.output_subarea {
     -moz-box-flex: 1;
     box-flex: 1;
     flex: 1;
-    max-width: calc(100% - 14ex)
+    /* max-width: calc(100% - 14ex) */
 }
 
 div.output_text {
@@ -1639,12 +1651,6 @@ div.output_unrecognized {
     padding: 5px;
     font-weight: 700;
     color: red
-}
-
-div.output_unrecognized a,
-div.output_unrecognized a:hover {
-    color: inherit;
-    text-decoration: none
 }
 
 .rendered_html {
@@ -1779,7 +1785,7 @@ div.output_unrecognized a:hover {
 .rendered_html code,
 .rendered_html pre {
     border: 0;
-    background-color: #fff;
+    /* background-color: #fff; */
     color: #000;
     font-size: 100%;
     padding: 0
@@ -1885,15 +1891,6 @@ a.anchor-link:link {
     visibility: hidden
 }
 
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-    visibility: visible
-}
-
 .text_cell.rendered .input_area {
     display: none
 }
@@ -1985,7 +1982,7 @@ div#notebook_panel {
 @media not print {
     #notebook-container {
         padding: 15px;
-        background-color: #fff;
+        /* background-color: #fff; */
         min-height: 0;
         -webkit-box-shadow: 0 0 12px 1px rgba(87, 87, 87, .2);
         box-shadow: 0 0 12px 1px rgba(87, 87, 87, .2)
@@ -2007,12 +2004,14 @@ pre.dialog {
 p.dialog {
     padding: .2em
 }
-
 code,
 kbd,
 pre,
 samp {
-    white-space: pre-wrap
+    /* Font Family for code lines here */
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier;
+    font-size: 16px;
 }
 
 #fonttest {
@@ -2099,7 +2098,7 @@ p {
 
 .celltoolbar select {
     color: #555;
-    background-color: #fff;
+    /* background-color: #fff; */
     background-image: none;
     border: 1px solid #ccc;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
@@ -2722,7 +2721,7 @@ fieldset[disabled] .notification_widget.danger:hover {
 }
 
 div#pager {
-    background-color: #fff;
+    /* background-color: #fff; */
     font-size: 14px;
     line-height: 20px;
     overflow: hidden;
@@ -2741,7 +2740,7 @@ div#pager {
 div#pager pre {
     line-height: 1.21429em;
     color: #000;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
     padding: .4em
 }
 
@@ -3106,7 +3105,7 @@ span.checkpoint_status {
 /* Keyword */
 
 .highlight .o {
-    color: #666666
+    color: #f5f5f5
 }
 
 /* Operator */

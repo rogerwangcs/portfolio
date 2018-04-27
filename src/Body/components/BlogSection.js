@@ -26,7 +26,7 @@ const BlogSection = (props) => {
         description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a lorem aliquet, euismod turpis a, euismod ante. Sed non mauris a augue volutpat dictum. In vitae eleifend magna. Maecenas vitae lacus et purus vestibulum fringilla suscipit in leo. Nulla facilisi. Duis ut ultricies enim, non tempus nisl. Morbi mattis eget velit ac accumsan. Aenean vitae ullamcorper dui. Sed in luctus metus. Aliquam eget nisl non erat sodales dignissim. Morbi fermentum odio ac nisl tempor vulputate. Vestibulum a fringilla erat, eget facilisis quam. Curabitur imperdiet ex quis lacinia porttitor. Quisque suscipit aliquam consectetur. Vestibulum porta ex quis dapibus elementum.'
         link=''/>
 
-      <div class="highlight">
+      {/* <div class="highlight">
         <pre>
                  <code class="language-jsx">
                  {`
@@ -54,8 +54,8 @@ const BlogCard = (props) => {
                  `}
                  </code>
              </pre>
-        <Jupyter></Jupyter>
-      </div>
+      </div> */}
+      <Jupyter></Jupyter>
     </StyledBlogSection>
   );
 }
