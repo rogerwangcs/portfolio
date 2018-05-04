@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
 
-import Button from 'Body/components/Button'
+import Button from 'components/Body/Button'
 
 const StyledBlogCard = styled.div `
   position: relative;

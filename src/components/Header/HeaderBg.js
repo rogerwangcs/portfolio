@@ -6,7 +6,7 @@ import {mainColors} from 'utils/theme'
 import {animationTimings} from 'utils/animationTimings'
 import FadeIn from 'utils/FadeIn'
 
-import Cubes from 'Header/components/Cubes'
+import Cubes from 'components/Header/Cubes'
 
 import logoFg from 'images/bg-logo-foreground.png'
 import logoBg from 'images/bg-logo-background.png'

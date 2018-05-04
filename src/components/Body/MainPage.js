@@ -3,18 +3,18 @@ import React, {Component} from 'react'
 import {mainColors} from 'utils/theme'
 import {Element} from 'react-scroll'
 import Waypoint from 'react-waypoint'
-import NavLocation from 'Header/components/NavLocation'
+import NavLocation from 'components/Header/NavLocation'
+import Fade from 'react-reveal/Fade';
 
-import StyledPage from 'Body/containers/StyledPage'
-import StyledPageContents from 'Body/containers/StyledPageContents'
-import StyledPageSection from 'Body/containers/StyledPageSection'
-import Divider from 'Body/components/Divider'
-import AboutMe from 'Body/components/AboutMe'
-import SummarySection from 'Body/components/SummarySection'
-import SkillsSection from 'Body/components/SkillsSection'
-import ProjectsSection from 'Body/components/ProjectsSection'
-import BlogSection from 'Body/components/BlogSection'
-import ResumeSection from 'Body/components/ResumeSection'
+import StyledPage from 'components/Body/StyledPage'
+import StyledPageContents from 'components/Body/StyledPageContents'
+import StyledPageSection from 'components/Body/StyledPageSection'
+import Divider from 'components/Body/Divider'
+import SummarySection from 'components/Body/SummarySection'
+import SkillsSection from 'components/Body/SkillsSection'
+import ProjectsSection from 'components/Body/ProjectsSection'
+import BlogSection from 'components/Body/BlogSection'
+import ResumeSection from 'components/Body/ResumeSection'
 
 class MainPage extends Component {
   constructor(props) {
@@ -33,7 +33,9 @@ class MainPage extends Component {
             <Element name='About' className='element'/>
             <h2>Hey, I'm Roger</h2>
             <Divider mobileAlign='center'/>
+            <Fade top>
             <SummarySection/>
+            </Fade>
           </StyledPageContents>
         </StyledPageSection>
         <StyledPageSection

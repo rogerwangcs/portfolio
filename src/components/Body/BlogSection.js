@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
 
-import BlogCard from 'Body/components/BlogCard'
-import Jupyter from 'Body/components/Jupyter'
+import BlogCard from 'components/Body/BlogCard'
+import Jupyter from 'components/Body/Jupyter'
 
 const StyledBlogSection = styled.div `
   /* display: flex;
