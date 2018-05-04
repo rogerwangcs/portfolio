@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom'
 import {HashRouter} from 'react-router-dom'
 
-import App from 'App.js';
+import App from 'screens/App.js';
 
 import registerServiceWorker from './registerServiceWorker';
 

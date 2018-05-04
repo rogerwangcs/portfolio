@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import Header from 'Header/components/Header'
-import Footer from 'Header/components/Footer'
-import Nav from 'Header/components/Nav'
-import MainPage from 'Body/containers/MainPage'
-import 'App.css'
+import Header from 'components/Header/Header'
+import Footer from 'components/Header/Footer'
+import Nav from 'components/Header/Nav'
+import MainPage from 'components/Body/MainPage'
+import 'screens/App.css'
 
 class App extends Component {
   constructor(props) {

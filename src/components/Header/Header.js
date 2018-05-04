@@ -5,11 +5,11 @@ import styled from "styled-components"
 import {animationTimings} from 'utils/animationTimings'
 import FadeIn from 'utils/FadeIn'
 
-import HeaderBg from 'Header/components/HeaderBg'
-import HeaderText from 'Header/components/HeaderText'
-import Nav from 'Header/components/Nav'
-import SocialButtons from 'Header/components/SocialButtons'
-import OpenArrow from 'Header/components/OpenArrow'
+import HeaderBg from 'components/Header/HeaderBg'
+import HeaderText from 'components/Header/HeaderText'
+import Nav from 'components/Header/Nav'
+import SocialButtons from 'components/Header/SocialButtons'
+import OpenArrow from 'components/Header/OpenArrow'
 
 const OverflowContainer = styled.div `
   overflow: hidden;
@@ -53,8 +53,6 @@ const StyledHeader = styled.div `
 class Header extends Component {
   constructor(props) {
     super(props);
-    if (window.scrollY > 0) 
-      this.setState({nav: false})
   }
 
   componentDidMount() {
@@ -71,29 +69,37 @@ class Header extends Component {
         .props
         .updateNav(false)
       window.scrollTo(0, 3);
-    } else {
-      this
-        .props
-        .updateNav(true)
-      window.scrollTo(0, 0);
     }
+    // else {
+    //   this
+    //     .props
+    //     .updateNav(true)
+    //   window.scrollTo(0, 0);
+    // }
   }
 
   handleScroll = () => {
-    if (window.scrollY <= 300) {
-      // console.log(window.scrollY); console.log(this.props.nav);
-      if (window.scrollY > 0) {
-        this
-          .props
-          .updateNav(false)
-      } else {
-        this
-          .props
-          .updateNav(true)
-      }
+    if (window.scrollY > 0) {
+      this
+        .props
+        .updateNav(false)
     }
-
+    else {
+      this
+        .props
+        .updateNav(true)
+    }
   }
+
+  /** Code for one way nav opening */
+  // handleScroll = () => {
+  //   if (window.scrollY > 0 && this.props.nav) {
+  //     this
+  //       .props
+  //       .updateNav(false)
+  //     window.scrollTo(0, 1)
+  //   }
+  // }
 
   render() {
     return (

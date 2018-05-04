@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
 
-import Divider from 'Body/components/Divider'
-import Button from 'Body/components/Button'
+import Divider from 'components/Body/Divider'
+import Button from 'components/Body/Button'
 
 import mernDesktop from 'images/mern-article-manager-desktop.PNG'
 import mernMobile from 'images/mern-article-manager-mobile.PNG'

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
 
-import Divider from 'Body/components/Divider'
+import Divider from 'components/Body/Divider'
 
 const StyledSkillsSection = styled.div `
   display: flex;

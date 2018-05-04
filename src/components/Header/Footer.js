@@ -39,6 +39,7 @@ const StyledIcon = styled.a `
 
   margin: 15px;
   padding: 10px;
+  border-radius: 50%;
 
   img {
     transition: transform 200ms ease-in-out;

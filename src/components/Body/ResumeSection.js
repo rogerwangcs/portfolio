@@ -5,7 +5,7 @@ import {viewport} from 'utils/viewport'
 import {mainColors} from 'utils/theme'
 
 import ResumeGraphic from 'images/ResumeGraphic.png'
-import Divider from 'Body/components/Divider'
+import Divider from 'components/Body/Divider'
 
 const StyledResumeSection = styled.div `
   overflow: hidden;
@@ -62,6 +62,8 @@ const StyledResumeButton = styled.div `
   background-color: ${props => props.hover === false
   ? mainColors.darkblue
   : mainColors.hoverblue};
+
+  border-radius: 50px;
 
   position: absolute;
   margin: auto;
