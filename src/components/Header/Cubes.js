@@ -1,35 +1,22 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled, {keyframes} from 'styled-components'
-import {viewport} from 'utils/viewport'
+import styled, { keyframes } from "styled-components";
+import { viewport } from "constants/viewport";
+import theme from "constants/theme";
 
-import cubeImg from 'images/cube.png'
-import FadeIn from 'utils/FadeIn'
+import cubeImg from "media/cube.png";
+import FadeIn from "utils/FadeIn";
 
-const cubeAnimation = keyframes `
-  from {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(-0px);
-  }
-`;
-
-const Cube = styled.img `
+const Cube = styled.div`
   z-index: -101;
   position: absolute;
 
-  left: ${props => props.x + 'vw'};
-  top: ${props => props.y + 'vh'};
+  width: 75px;
+  height: 75px;
+  background-color: ${theme.colors.blue};
 
-  /* opacity: 0;
-
-  animation: ${cubeAnimation} 1000ms ease-in-out;
-  animation-delay: ${props => props.delay + 'ms'};
-  animation-fill-mode: forwards; */
+  left: ${props => props.x + "vw"};
+  top: ${props => props.y + "vh"};
 
   @media (max-width: ${viewport.MOBILE}) {
     width: 65px;
@@ -37,44 +24,36 @@ const Cube = styled.img `
   }
 `;
 
-const generateCubeCoords = (number) => {
+const generateCubeCoords = number => {
   let coordArray = [];
 
   for (var i = 0; i < number; i++) {
-    var xCoord = Math.random() * 100;
-    var yCoord = Math.random() * 100;
-    coordArray.push({index: i, x: xCoord, y: yCoord});
+    let xCoord = Math.random() * 100;
+    let yCoord = Math.random() * 100;
+    coordArray.push({ index: i, x: xCoord, y: yCoord });
   }
 
   return coordArray;
-}
+};
 
-const generateCube = (cube) => {
-  return <FadeIn delay={cube.index * 50 + 500}><Cube
-    src={cubeImg}
-    key={cube.index}
-    x={cube.x}
-    y={cube.y}
-    delay={cube.index * 50 + 500}/></FadeIn>
-}
+const generateCube = cube => {
+  return (
+    <FadeIn delay={cube.index * 50 + 500}>
+      <Cube src={cubeImg} key={cube.index} x={cube.x} y={cube.y} />
+    </FadeIn>
+  );
+};
 
 class Cubes extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cubes: generateCubeCoords(15)
-    }
+    };
   }
 
   render() {
-    return (
-      <div>
-        {this
-          .state
-          .cubes
-          .map((cube) => generateCube(cube))}
-      </div>
-    );
+    return <div>{this.state.cubes.map(cube => generateCube(cube))}</div>;
   }
 }
 

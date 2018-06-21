@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import Button from 'components/Body/Button'
+import Button from 'components/About/Button'
 
 const StyledBlogCard = styled.div `
   position: relative;
   z-index: 10;
-  background-color: ${mainColors.creme};
+  background-color: ${theme.colors.creme};
 
   width: 700px;
   height: 450px;
@@ -58,13 +58,13 @@ const StyledBlogCard = styled.div `
 
 const CardBG = styled.div `
   position: absolute;
-  background-color: ${mainColors.fadedblue};
+  background-color: ${theme.colors.fadedblue};
 
   width: 700px;
   height: 450px;
 
   margin: -10px auto 25px auto;
-  left: -30px; 
+  left: -30px;
   right: 0;
 
   @media (max-width: ${viewport.MOBILE}) {
@@ -76,7 +76,7 @@ const CardBG = styled.div `
   @media (min-width: ${viewport.MOBILE}) {
     width: 87%;
     margin: -10px auto 25px auto;
-    left: -30px; 
+    left: -30px;
     right: 0;
   }
   @media (min-width: ${viewport.DESKTOP}) {

@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import BlogCard from 'components/Body/BlogCard'
-import Jupyter from 'components/Body/Jupyter'
+import BlogCard from 'components/About/BlogCard'
+import Jupyter from 'components/About/Jupyter'
 
 const StyledBlogSection = styled.div `
   /* display: flex;
@@ -55,7 +55,7 @@ const BlogCard = (props) => {
                  </code>
              </pre>
       </div> */}
-      <Jupyter></Jupyter>
+      {/* <Jupyter></Jupyter> */}
     </StyledBlogSection>
   );
 }

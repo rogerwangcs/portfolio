@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import Divider from 'components/Body/Divider'
+import Divider from 'components/About/Divider'
 
 const StyledSkillsSection = styled.div `
   display: flex;
@@ -22,7 +22,7 @@ const StyledSkillsSection = styled.div `
 
 const SkillBox = styled.div `
 
-  /* background-color: ${mainColors.darkblue}; */
+  /* background-color: ${theme.colors.darkblue}; */
 
   width: 30%;
 

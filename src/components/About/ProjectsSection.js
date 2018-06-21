@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import Divider from 'components/Body/Divider'
-import Button from 'components/Body/Button'
+import Divider from 'components/About/Divider'
+import Button from 'components/About/Button'
 
-import mernDesktop from 'images/mern-article-manager-desktop.PNG'
-import mernMobile from 'images/mern-article-manager-mobile.PNG'
+import mernDesktop from 'media/mern-article-manager-desktop.PNG'
+import mernMobile from 'media/mern-article-manager-mobile.PNG'
 
 const ButtonGroup = styled.div `
 display: flex;

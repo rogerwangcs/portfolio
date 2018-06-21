@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 import styled from 'styled-components';
-import {mainColors} from 'utils/theme'
-import {viewport} from 'utils/viewport';
+import theme from 'constants/theme.js'
+import {viewport} from 'constants/viewport';
 
-import github from 'images/github.png';
-import linkedin from 'images/linkedin.png';
-import gmail from 'images/gmail.png';
+import github from 'media/github.png';
+import linkedin from 'media/linkedin.png';
+import gmail from 'media/gmail.png';
 
 const StyledFooter = styled.div `
   user-select: none;
@@ -14,15 +14,15 @@ const StyledFooter = styled.div `
   z-index: 100;
   position: relative;
 
-  background-color: ${mainColors.darkblue};
-  
+  background-color: ${theme.colors.darkblue};
+
   padding-top: 30px;
 
   height: 150px;
   width: 100vw;
 
   > p {
-    color: ${mainColors.textfadedblue};
+    color: ${theme.colors.textfadedblue};
     text-align: center;
   }
 `;
@@ -35,7 +35,7 @@ const StyledIcon = styled.a `
   display: inline-block;
   transition: all 200ms ease-in-out;
 
-  background-color: ${mainColors.fadedblue};
+  background-color: ${theme.colors.fadedblue};
 
   margin: 15px;
   padding: 10px;
@@ -49,7 +49,7 @@ const StyledIcon = styled.a `
   }
   :hover {
     cursor: pointer;
-    background-color: ${mainColors.hoverblue};
+    background-color: ${theme.colors.hoverblue};
     transform: scale(0.95);
     img {
       transform: scale(1.3);

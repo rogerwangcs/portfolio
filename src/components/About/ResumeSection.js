@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import ResumeGraphic from 'images/ResumeGraphic.png'
-import Divider from 'components/Body/Divider'
+import ResumeGraphic from 'media/ResumeGraphic.png'
+import Divider from 'components/About/Divider'
 
 const StyledResumeSection = styled.div `
   overflow: hidden;
@@ -60,8 +60,8 @@ const StyledResumeButton = styled.div `
   width: 300px;
   height: 100px;
   background-color: ${props => props.hover === false
-  ? mainColors.darkblue
-  : mainColors.hoverblue};
+  ? theme.colors.darkblue
+  : theme.colors.hoverblue};
 
   border-radius: 50px;
 
@@ -109,8 +109,8 @@ const StyledBlueBg = styled.div `
   bottom: 0;
 
   background-color: ${props => props.hover === false
-  ? mainColors.darkblue
-  : mainColors.hoverblue};
+  ? theme.colors.darkblue
+  : theme.colors.hoverblue};
   transform: ${props => props.hover === false
     ? 'scale(1)'
     : 'scale(10)'};

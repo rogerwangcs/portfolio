@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 
 import styled from 'styled-components'
-import {mainColors} from 'utils/theme'
+import theme from 'constants/theme.js'
 
 const StyledButton = styled.div `
   transition: all 300ms ease-in-out;
 
   background-color: ${props => props.type === 'outline'
   ? 'white'
-  : mainColors.fadedblue};
+  : theme.colors.fadedblue};
 
   height: ${props => props.height};
   width: ${props => props.width};
 
   border: ${props => props === 'outline'
-    ? 'solid 2px' + mainColors.fadedblue
-    : 'solid 2px' + mainColors.fadedblue};
+    ? 'solid 2px' + theme.colors.fadedblue
+    : 'solid 2px' + theme.colors.fadedblue};
 
   p {
     font-family: 'Raleway', sans-serif;
@@ -23,7 +23,7 @@ const StyledButton = styled.div `
     font-weight: 300;
 
     color: ${props => props.type === 'outline'
-      ? mainColors.fadedblue
+      ? theme.colors.fadedblue
       : 'white'};
 
     text-align: center;
@@ -34,11 +34,11 @@ const StyledButton = styled.div `
   :hover {
     cursor: pointer;
     border: ${props => props === 'outline'
-      ? 'solid 2px' + mainColors.hoverblue
-      : 'solid 2px' + mainColors.hoverblue};
+      ? 'solid 2px' + theme.colors.hoverblue
+      : 'solid 2px' + theme.colors.hoverblue};
     background-color: ${props => props.type === 'outline'
-        ? mainColors.fadedblue
-        : mainColors.hoverblue};
+        ? theme.colors.fadedblue
+        : theme.colors.hoverblue};
   }
 
 `;

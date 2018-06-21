@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import {viewport} from 'utils/viewport';
+import {viewport} from 'constants/viewport';
 import styled from 'styled-components';
 
-import downArrow from 'images/down-arrow.png';
+import downArrow from 'media/down-arrow.png';
 
 const StyledOpenArrow = styled.img `
 

@@ -4,7 +4,7 @@ import {HashRouter} from 'react-router-dom'
 
 import App from 'screens/App.js';
 
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from 'utils/registerServiceWorker';
 
 render((
     <HashRouter>

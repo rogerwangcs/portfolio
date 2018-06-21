@@ -13,38 +13,36 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  margin-bottom: 15px;
+  margin: 0px;
 }
 h1 {
-  user-select: none;
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
+  font-weight: 700;
   font-size: 5vw;
   color: white;
 }
 
 h2 {
-  user-select: none;
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 700;
   color: black;
   text-align: left;
 }
 
 h3 {
   font-family: 'Raleway', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 700;
   color: black;
   text-align: left;
 }
 
 h4,h5,h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  font-weight: 200;
-  color: white;
+  font-weight: 500;
+  color: black;
 }
 
 p {

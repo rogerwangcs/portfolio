@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import styled from "styled-components";
-import {viewport} from 'utils/viewport';
+import {viewport} from 'constants/viewport';
 
 const StyledPageContents = styled.div `
   margin: auto;

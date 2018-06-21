@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
-import RogerPortrait from 'images/Portrait.jpg'
+import RogerPortrait from 'media/Portrait.jpg'
 
 const PortraitGroup = styled.div `
   order: 1;
 
-  background-color: ${mainColors.darkblue};
+  background-color: ${theme.colors.darkblue};
   margin-top: 10px;
 
   width: 300px;

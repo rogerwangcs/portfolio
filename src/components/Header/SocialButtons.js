@@ -1,17 +1,17 @@
 import React, {Component} from 'react'
 
 import styled from 'styled-components'
-import {mainColors} from 'utils/theme'
+import theme from 'constants/theme.js'
 import MediaQuery from 'react-responsive'
-import {viewport} from 'utils/viewport'
+import {viewport} from 'constants/viewport'
 
-import github from 'images/github.png'
-import linkedin from 'images/linkedin.png'
-import gmail from 'images/gmail.png'
+import github from 'media/github.png'
+import linkedin from 'media/linkedin.png'
+import gmail from 'media/gmail.png'
 
 const StyledSocialButtons = styled.div `
   z-index: 100;
-  
+
   @media (max-width: ${viewport.MOBILE}) {
     padding-top: none;
     float: none;
@@ -41,7 +41,7 @@ const StyledIcon = styled.div `
       cursor: pointer;
       transform: scale(1.1);
       > a > h5 {
-        color: ${mainColors.hoverblue};
+        color: ${theme.colors.hoverblue};
       }
     }
 

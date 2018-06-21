@@ -1,6 +1,7 @@
-import styled, {keyframes} from 'styled-components'
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const fadeAnimation = keyframes `
+const fadeAnimation = keyframes`
   from {
     opacity: 0;
     transform: scale(0);
@@ -12,14 +13,14 @@ const fadeAnimation = keyframes `
   }
 `;
 
-const FadeIn = styled.div `
+const FadeIn = styled.div`
   > * {
     opacity: 0;
     transform-origin: center;
     animation: ${fadeAnimation} 600ms;
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    animation-delay: ${props => props.delay + 'ms'};
-    animation-fill-mode: forwards;  
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-delay: ${props => props.delay + "ms"};
+    animation-fill-mode: forwards;
   }
 `;
 

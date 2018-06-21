@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import {viewport} from 'utils/viewport'
-import {mainColors} from 'utils/theme'
+import {viewport} from 'constants/viewport'
+import theme from 'constants/theme.js'
 
 const StyledDivider = styled.div `
-  background-color: ${mainColors.lightblue};
+  background-color: ${theme.colors.lightblue};
   height: 4px;
   width: 100px;
 
-  /* border-bottom: ${ '4px solid ' + mainColors.lightblue}; */
-  
+  /* border-bottom: ${ '4px solid ' + theme.colors.lightblue}; */
+
   display: block;
   margin-bottom: 15px;
 
