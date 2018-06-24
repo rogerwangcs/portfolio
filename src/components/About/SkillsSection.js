@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled from 'styled-components'
-import {viewport} from 'constants/viewport'
-import theme from 'constants/theme.js'
+import styled from "styled-components";
+import { viewport } from "constants/viewport";
+import theme from "constants/theme.js";
 
-import Divider from 'components/About/Divider'
+import Divider from "components/generic/Divider";
 
-const StyledSkillsSection = styled.div `
+const StyledSkillsSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,28 +20,22 @@ const StyledSkillsSection = styled.div `
   }
 `;
 
-const SkillBox = styled.div `
-
-  /* background-color: ${theme.colors.darkblue}; */
-
+const SkillBox = styled.div`
   width: 30%;
 
   padding-left: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
 
-  h3 {
-    color: white;
-  }
-  p {
-    color: white;
-    margin-right: 15px;
-  }
+  text-align: left;
 
-  div {
+  .items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
+    > p {
+      margin-right: 10px;
+    }
   }
 
   @media (max-width: 750px) {
@@ -49,26 +43,29 @@ const SkillBox = styled.div `
   }
 `;
 
-const SkillsSection = (props) => {
+const SkillsSection = props => {
   return (
     <StyledSkillsSection>
       <SkillBox>
-        <h3>Web Development</h3>
-        <Divider/>
-        <div>
+        <Divider>
+          <h3>Web Development</h3>
+        </Divider>
+        <div className="items">
           <p>HTML</p>
           <p>CSS</p>
           <p>Javascript</p>
-          <p>React.js + Redux.js</p>
+          <p>React.js + Apollo.js</p>
           <p>Node.js</p>
           <p>Express.js</p>
+          <p>Graphql</p>
           <p>MongoDB</p>
         </div>
       </SkillBox>
       <SkillBox>
-        <h3>Machine Learning</h3>
-        <Divider/>
-        <div>
+        <Divider>
+          <h3>Machine Learning</h3>
+        </Divider>
+        <div className="items">
           <p>Python</p>
           <p>SciPy</p>
           <p>Pandas + Numpy</p>
@@ -78,17 +75,20 @@ const SkillsSection = (props) => {
         </div>
       </SkillBox>
       <SkillBox>
-        <h3>Tools</h3>
-        <Divider/>
-        <div>
-          <p>VS Code</p>
+        <Divider>
+          <h3>Tools</h3>
+        </Divider>
+        <div className="items">
           <p>Git</p>
+          <p>Ubuntu</p>
+          <p>Heroku</p>
           <p>Postman</p>
-          <p>Photoshop</p>
+          <p>Photoshop CC</p>
+          <p>Illustrator CC</p>
         </div>
       </SkillBox>
     </StyledSkillsSection>
   );
-}
+};
 
 export default SkillsSection;

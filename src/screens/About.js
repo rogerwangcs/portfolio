@@ -1,17 +1,19 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import theme from 'constants/theme.js'
-import Waypoint from 'react-waypoint'
+import theme from "constants/theme.js";
 
-import StyledPage from 'components/About/StyledPage'
-import StyledPageContents from 'components/About/StyledPageContents'
-import StyledPageSection from 'components/About/StyledPageSection'
-import Divider from 'components/About/Divider'
-import SummarySection from 'components/About/SummarySection'
-import SkillsSection from 'components/About/SkillsSection'
-import ProjectsSection from 'components/About/ProjectsSection'
-import BlogSection from 'components/About/BlogSection'
-import ResumeSection from 'components/About/ResumeSection'
+import PageSection from "components/generic/PageSection";
+import Divider from "components/generic/Divider";
+import SummarySection from "components/About/SummarySection";
+import SkillsSection from "components/About/SkillsSection";
+import ProjectsSection from "components/About/ProjectsSection";
+import BlogSection from "components/About/BlogSection";
+import ResumeSection from "components/About/ResumeSection";
+
+const StyledPage = styled.div`
+  text-align: center;
+`;
 
 class About extends Component {
   constructor(props) {
@@ -20,48 +22,42 @@ class About extends Component {
 
   render() {
     return (
-      <StyledPage id='element' nav={this.props.nav} updateNav={this.props.updateNav}>
-        <StyledPageSection color={theme.colors.creme} paddingBottom='50' paddingTop='20'>
-          <StyledPageContents>
-            <h2>Hey, I'm Roger</h2>
-            <Divider mobileAlign='center'/>
-            <SummarySection/>
-          </StyledPageContents>
-        </StyledPageSection>
-        <StyledPageSection
-          color={theme.colors.darkblue}
-          paddingBottom='50'
-          paddingTop='20'>
-          <StyledPageContents>
-            <h2 style={{
-              color: 'white'
-            }}>Tech Stack</h2>
-            <Divider mobileAlign='center'/>
-            <SkillsSection/>
-          </StyledPageContents>
-        </StyledPageSection>
-        <StyledPageSection color={theme.colors.creme} paddingBottom='50' paddingTop='20'>
-          <StyledPageContents>
+      <StyledPage>
+        <PageSection
+          color={theme.colors.gray2}
+          paddingBottom="50"
+          paddingTop="50"
+        >
+          <SummarySection />
+        </PageSection>
+        <PageSection
+          color={theme.colors.creme}
+          paddingBottom="50"
+          paddingTop="50"
+        >
+          <Divider centered={true} big={true}>
+            <h2>My Tech Stack</h2>
+          </Divider>
+          <SkillsSection />
+        </PageSection>
+        <PageSection
+          color={theme.colors.gray2}
+          paddingBottom="50"
+          paddingTop="50"
+        >
+          <Divider centered={true} big={true}>
             <h2>Projects</h2>
-            <Divider mobileAlign='center'/>
-            <ProjectsSection/>
-          </StyledPageContents>
-        </StyledPageSection>
-        <StyledPageSection
-          color={theme.colors.darkblue}
-          paddingBottom='50'
-          paddingTop='20'>
-          <StyledPageContents>
-            <h2 style={{
-              color: 'white'
-            }}>Blog</h2>
-            <Divider mobileAlign='center'/>
-            <BlogSection/>
-          </StyledPageContents>
-        </StyledPageSection>
-        <StyledPageSection color={theme.colors.creme} paddingBottom='0' paddingTop='0'>
-          <ResumeSection/>
-        </StyledPageSection>
+          </Divider>
+          <ProjectsSection />
+        </PageSection>
+        <PageSection
+          fullwidth={true}
+          color={theme.colors.creme}
+          paddingBottom="0"
+          paddingTop="0"
+        >
+          <ResumeSection />
+        </PageSection>
       </StyledPage>
     );
   }

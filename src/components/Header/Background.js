@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme.js";
 import { animationTimings } from "constants/animationTimings";
-import FadeIn from "utils/FadeIn";
+import FadeIn from "components/generic/FadeIn";
 
 import Cubes from "components/Header/Cubes";
 
@@ -27,6 +27,9 @@ const LogoWrapper = FadeIn.extend`
 
   top: 50%;
   left: 50%;
+
+  -webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
+  -webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
   transform: translate(-50%, -50%);
 
   > img {
@@ -60,10 +63,10 @@ class HeaderBg extends Component {
   render() {
     return (
       <StyledHeaderBg>
-        <Cubes />
         <LogoWrapper delay={animationTimings.loadDelay + 50}>
           <img draggable="false" src={Logo} />
         </LogoWrapper>
+        <Cubes />
       </StyledHeaderBg>
     );
   }

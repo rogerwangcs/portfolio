@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-import styled from 'styled-components';
-import theme from 'constants/theme.js'
-import {viewport} from 'constants/viewport';
+import styled from "styled-components";
+import theme from "constants/theme.js";
+import { viewport } from "constants/viewport";
 
-import github from 'media/github.png';
-import linkedin from 'media/linkedin.png';
-import gmail from 'media/gmail.png';
+import github from "media/github.png";
+import linkedin from "media/linkedin.png";
+import gmail from "media/gmail.png";
 
-const StyledFooter = styled.div `
+const StyledFooter = styled.div`
   user-select: none;
 
   z-index: 100;
@@ -22,37 +22,37 @@ const StyledFooter = styled.div `
   width: 100vw;
 
   > p {
-    color: ${theme.colors.textfadedblue};
+    font-size: 16px;
+    color: ${theme.colors.gray2};
     text-align: center;
   }
 `;
 
-const StyledSocialButtons = styled.div `
+const StyledSocialButtons = styled.div`
   text-align: center;
 `;
 
-const StyledIcon = styled.a `
+const StyledIcon = styled.a`
   display: inline-block;
-  transition: all 200ms ease-in-out;
 
-  background-color: ${theme.colors.fadedblue};
+  transition: all 200ms ease-in-out;
+  background-color: ${theme.colors.blue};
 
   margin: 15px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 25%;
 
   img {
     transition: transform 200ms ease-in-out;
     vertical-align: middle;
-    width:40px;
+    width: 40px;
     height: 40px;
   }
   :hover {
     cursor: pointer;
     background-color: ${theme.colors.hoverblue};
-    transform: scale(0.95);
     img {
-      transform: scale(1.3);
+      transform: scale(1.2);
     }
   }
 
@@ -68,29 +68,30 @@ const SocialButtons = () => {
   return (
     <StyledSocialButtons>
       <StyledIcon href="https://github.com/rogerwangcs" target="_blank">
-        <img draggable="false" src={github}/>
+        <img draggable="false" src={github} />
       </StyledIcon>
-      <StyledIcon href="https://www.linkedin.com/in/rogerwangcs/" target="_blank">
-        <img draggable="false" src={linkedin}/>
+      <StyledIcon
+        href="https://www.linkedin.com/in/rogerwangcs/"
+        target="_blank"
+      >
+        <img draggable="false" src={linkedin} />
       </StyledIcon>
       <StyledIcon href="mailto:rogerwangcs@gmail.com">
-        <img draggable="false" src={gmail}/>
+        <img draggable="false" src={gmail} />
       </StyledIcon>
     </StyledSocialButtons>
   );
-}
+};
 
-const Footer = (props) => {
-  let date = new Date()
+const Footer = props => {
+  let date = new Date();
 
   return (
     <StyledFooter>
-      <SocialButtons/>
-      <p>
-        © Roger Wang {date.getFullYear()}
-      </p>
+      <SocialButtons />
+      <p>© Roger Wang {date.getFullYear()}</p>
     </StyledFooter>
   );
-}
+};
 
 export default Footer;

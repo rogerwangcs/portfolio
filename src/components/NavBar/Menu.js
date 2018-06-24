@@ -73,13 +73,13 @@ const StyledButton = styled.div`
     transition: color 150ms ease-in-out;
     color: ${props =>
       props.activeSection === props.sectionID
-        ? theme.colors.lightblue
+        ? theme.colors.hoverblue
         : "white"};
   }
   :hover {
     cursor: pointer;
     > h4 {
-      color: ${theme.colors.lightblue};
+      color: ${theme.colors.hoverblue};
     }
   }
 `;
@@ -88,7 +88,7 @@ const NavUnderline = styled.div`
   width: 100%;
   height: 5px;
 
-  background-color: ${theme.colors.lightblue};
+  background-color: ${theme.colors.hoverblue};
 
   transition: transform 700ms ease-in-out;
   transform-origin: 30% 50%;

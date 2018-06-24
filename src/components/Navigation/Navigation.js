@@ -6,7 +6,7 @@ import styled from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme.js";
 import { animationTimings } from "constants/animationTimings";
-import FadeIn from "utils/FadeIn";
+import FadeIn from "components/generic/FadeIn";
 
 import Menu from "components/Navigation/Menu";
 

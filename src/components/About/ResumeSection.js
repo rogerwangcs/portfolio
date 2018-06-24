@@ -1,149 +1,95 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled from 'styled-components'
-import {viewport} from 'constants/viewport'
-import theme from 'constants/theme.js'
+import styled from "styled-components";
+import { viewport } from "constants/viewport";
+import theme from "constants/theme.js";
 
-import ResumeGraphic from 'media/ResumeGraphic.png'
-import Divider from 'components/About/Divider'
+import ResumeGraphic from "media/ResumeGraphic.png";
+import RoundButton from "components/generic/RoundButton";
 
-const StyledResumeSection = styled.div `
+const ResumeButton = styled.div`
+  margin-top: 50px;
+  position: relative;
+  z-index: 1;
+
+  &:hover ${BlueBG} {
+    background-color: green;
+  }
+`;
+
+const StyledResumeSection = styled.div`
   overflow: hidden;
   position: relative;
-  h3 {
-    text-align: center;
-  }
+  text-align: center;
 
   @media (max-width: ${viewport.MOBILE}) {
     height: 250px;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    height: 50vw;
-  }
-  @media (min-width: ${viewport.DESKTOP}) {
-    height: 500px;
+    height: 350px;
   }
 `;
 
-const StyledResumeGraphic = styled.img `
+const StyledResumeGraphic = styled.img`
   position: absolute;
+  z-index: 1;
 
   margin: auto;
   left: 0;
   right: 0;
   bottom: 0;
 
-  box-shadow: 3px 3px 20px -10px;
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15);
 
   transition: transform 300ms ease-in-out;
   transform-origin: bottom;
-  transform: ${props => props.hover === false
-  ? 'scale(1)'
-  : 'scale(1.05)'};
 
   @media (max-width: ${viewport.MOBILE}) {
     width: 90vw;
     box-shadow: 2px 2px 10px -6px;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    width: 75vw;
+    width: 60vw;
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    width: 800px;
-    right: 50px;
+    width: 600px;
   }
 `;
 
-const StyledResumeButton = styled.div `
-
-  transition: background-color 300ms ease-in-out;
-  width: 300px;
-  height: 100px;
-  background-color: ${props => props.hover === false
-  ? theme.colors.darkblue
-  : theme.colors.hoverblue};
-
-  border-radius: 50px;
-
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  margin-top: 50px;
-
-  > h3 {
-    display: inline-block;
-    color: white;
-  }
-  :hover {
-    cursor: pointer;
-  }
-
-  @media (max-width: ${viewport.MOBILE}) {
-    width: 200px;
-    height: 50px;
-
-    margin-top: 25px;
-
-    > h3 {
-      line-height: 10px;
-      font-size: 20px;
-  }
-  }
-
-`;
-
-const StyledBlueBg = styled.div `
+const BlueBG = styled.div`
   transition: all 300ms ease-in-out;
   position: absolute;
-
+  z-index: 0;
 
   width: 225px;
   height: 115px;
   border-radius: 25px;
 
+  transform: scale(20);
+  background-color: red;
   margin: auto;
   left: 0;
   right: 0;
   bottom: 0;
 
-  background-color: ${props => props.hover === false
-  ? theme.colors.darkblue
-  : theme.colors.hoverblue};
-  transform: ${props => props.hover === false
-    ? 'scale(1)'
-    : 'scale(10)'};
+${ResumeButton}:hover & {
+    fill: rebeccapurple;
+  }
 `;
 
 class ResumeSection extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hover: false
-    }
   }
-
-  handleHover = (hoverState) => {
-    this.setState({hover: hoverState});
-  }
-
   render() {
     return (
       <StyledResumeSection>
-        <StyledBlueBg hover={this.state.hover}/>
-        <a
-          href='https://drive.google.com/file/d/1h4cmZ8r2e2Kyj5ACfgXDe7Amiv6SVSN7/view?usp=sharing'
-          target="_blank">
-          <StyledResumeButton
-            onClick={() => this.handleHover(true)}
-            onMouseEnter={() => this.handleHover(true)}
-            onMouseLeave={() => this.handleHover(false)}
-            hover={this.state.hover}>
-            <h3>View Full Resume</h3>
-          </StyledResumeButton>
-        </a>
-        <StyledResumeGraphic src={ResumeGraphic} hover={this.state.hover}/>
+        <ResumeButton>
+          <RoundButton text="See Resume" />
+        </ResumeButton>
+        <StyledResumeGraphic draggable="false" src={ResumeGraphic} />
+        <BlueBG />
       </StyledResumeSection>
     );
   }

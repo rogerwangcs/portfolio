@@ -1,90 +1,36 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled from 'styled-components'
-import {viewport} from 'constants/viewport'
-import theme from 'constants/theme.js'
+import styled from "styled-components";
+import { viewport } from "constants/viewport";
+import theme from "constants/theme.js";
 
-import Divider from 'components/About/Divider'
-import Button from 'components/About/Button'
+import Card from "components/generic/Card";
+import RoundButton from "components/generic/RoundButton";
 
-import mernDesktop from 'media/mern-article-manager-desktop.PNG'
-import mernMobile from 'media/mern-article-manager-mobile.PNG'
+import mernDesktop from "media/mern-article-manager-desktop.PNG";
+import mernMobile from "media/mern-article-manager-mobile.PNG";
 
-const ButtonGroup = styled.div `
-display: flex;
+const StyledProjectsSection = styled.div`
+  text-align: center;
 
-  div {
-    margin-right: 25px;
-  }
-`;
-const ImageGroup = styled.div `
-
-  margin-top: 25px;
-  margin-bottom: 50px;
-
-  width: 100%;
-
-  @media (max-width: ${viewport.MOBILE}) {
+  .project-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 `;
 
-const MernDesktopImg = styled.img `
-  box-shadow: 3px 3px 20px -10px;
-  width: 70%;
-  @media (max-width: ${viewport.MOBILE}) {
-    box-shadow: 2px 2px 10px -6px;
-  }
-`;
-const MernMobileImg = styled.img `
-  position: absolute;
-  box-shadow: 3px 3px 20px -10px;
-  margin-left: 2%;
-  width: 25%;
-  @media (max-width: ${viewport.MOBILE}) {
-    box-shadow: 2px 2px 10px -6px;
-  }
-`;
-
-const StyledProjectsSection = styled.div `
-
-`;
-
-const ProjectsSection = (props) => {
+const ProjectsSection = props => {
   return (
     <StyledProjectsSection>
-      <ImageGroup>
-        <MernDesktopImg src={mernDesktop}/>
-        <MernMobileImg src={mernMobile}/>
-      </ImageGroup>
-      <h3>React Article Database Manager</h3>
-      <Divider/>
-      <p>A fully functional backend database article manager built with React frontend
-        with a Express and MongoDB backend. Beautiful responsive UI using Google
-        Material Design.</p>
-      <ButtonGroup>
-        <a
-          style={{
-          textDecoration: 'none'
-        }}
-          href="https://github.com/rogerwangcs/MERN-Article-Manager"
-          target="_blank">
-          <Button type='solid' width='70px' height='35px'>
-            <p>Demo</p>
-          </Button>
-        </a>
-        <a
-          style={{
-          textDecoration: 'none'
-        }}
-          href="https://github.com/rogerwangcs/MERN-Article-Manager"
-          target="_blank">
-          <Button type='solid' width='70px' height='35px'>
-            <p>Code</p>
-          </Button>
-        </a>
-      </ButtonGroup>
+      <div className="project-cards">
+        <Card title="React Article Manager" image={mernDesktop} />
+        <Card title="Blog Platform App" image={mernMobile} />
+      </div>
+      <RoundButton text="See All Projects" link="/projects" />
     </StyledProjectsSection>
   );
-}
+};
 
 export default ProjectsSection;

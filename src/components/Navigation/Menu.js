@@ -29,7 +29,7 @@ const Button = styled.div`
 const ButtonBG = styled.div`
   z-index: -1;
   position: absolute;
-  background-color: ${theme.colors.lightblue};
+  background-color: ${theme.colors.hoverblue};
   width: 100%;
   height: 44px;
   border-radius: 20px/50%;
@@ -37,7 +37,7 @@ const ButtonBG = styled.div`
   /* backface-visibility prevents the shaking/flickering effect during transition  */
   -webkit-backface-visibility: hidden;
   transition: all ease-out 200ms;
-  transform: scale(.5);
+  transform: scale(.8);
   opacity: 0;
 
   top: 0px;
@@ -54,7 +54,7 @@ const Underline = styled.div`
   width: 100%;
   height: 5px;
 
-  background-color: ${theme.colors.lightblue};
+  background-color: ${theme.colors.hoverblue};
 `;
 
 const Menu = props => {

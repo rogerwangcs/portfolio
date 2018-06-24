@@ -8,14 +8,12 @@ const StyledText = styled.div`
   text-align: center;
 
   > * {
+    display: block;
     color: white;
   }
 
   @media (max-width: ${viewport.MOBILE}) {
-    float: none;
-
-    width: 100%;
-
+    width: 80%;
     > h1 {
       font-size: 48px;
     }
@@ -25,10 +23,7 @@ const StyledText = styled.div`
     }
   }
   @media (min-width: ${viewport.MOBILE}) {
-    float: left;
-
-    width: 75%;
-
+    width: 80%;
     > h1 {
       font-size: 10vw;
     }
@@ -38,10 +33,7 @@ const StyledText = styled.div`
     }
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    float: left;
-
     width: 75%;
-
     > h1 {
       font-size: 108px;
     }

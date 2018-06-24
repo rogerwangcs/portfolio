@@ -1,77 +1,68 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled from 'styled-components'
-import {viewport} from 'constants/viewport'
-import theme from 'constants/theme.js'
+import styled from "styled-components";
+import ReactSVG from "react-svg";
+import PixelBg from "media/square-pixel-bg.svg";
 
-import RogerPortrait from 'media/Portrait.jpg'
+import RogerPortrait from "media/Portrait.jpg";
 
-const PortraitGroup = styled.div `
-  order: 1;
-
-  background-color: ${theme.colors.darkblue};
-  margin-top: 10px;
-
-  width: 300px;
-  height: 300px;
-
-  @media (max-width: ${viewport.MOBILE}) {
-    width: 250px;
-    height: 250px;
-  }
-
-  >img {
-    position: absolute;
-    margin-top: 12px;
-    margin-left: 12px;
-
-    width: 300px;
-    height: 300px;
-
-    box-shadow: 5px 5px 30px -10px;
-
-    @media (max-width: ${viewport.MOBILE}) {
-      width: 250px;
-      height: 250px;
-    }
-  }
-
-
-`;
-
-const StyledSummarySection = styled.div `
+const StyledSummarySection = styled.div`
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 
   margin-top: 10px;
 
-  >p {
+  > .textWrapper {
     white-space: wrap;
     order: 2;
-    width: calc(100% - 335px);
+    max-width: 400px;
     margin-right: 25px;
 
-    @media (max-width: 750px) {
-      width: 100%;
-      margin-top: 50px;
+    > p {
+      font-size: 24px;
+      @media (max-width: 775px) {
+        font-size: 22px;
+      }
+    }
+
+    @media (max-width: 775px) {
+      padding-top: 25px;
+      max-width: 100%;
+      text-align: center;
+      margin: 0 auto;
     }
   }
 `;
 
-const SummarySection = (props) => {
+const Portrait = styled.img`
+  order: 1;
+  width: 225px;
+  height: 225px;
+
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+
+  @media (max-width: 750px) {
+    width: 175px;
+    height: 175px;
+  }
+`;
+
+const SummarySection = () => {
   return (
     <StyledSummarySection>
-      <PortraitGroup>
-        <img src={RogerPortrait}/>
-      </PortraitGroup>
-      <p>
-        <p>I'm a computer science student at Boston College. I love things with elegant
-          designs and things with cool features.<br/></p>
-      </p>
+      <div className="textWrapper">
+        <p>
+          Hi, I'm Roger, a computer science student at Boston College and I love
+          creating things with elegant designs and with cool features.
+        </p>
+      </div>
+      <Portrait src={RogerPortrait} />
     </StyledSummarySection>
   );
-}
+};
 
 export default SummarySection;
