@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { viewport } from "constants/viewport.js";
 
 const StyledText = styled.div`

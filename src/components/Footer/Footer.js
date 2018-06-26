@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import theme from "constants/theme.js";
@@ -50,7 +50,7 @@ const StyledIcon = styled.a`
   }
   :hover {
     cursor: pointer;
-    background-color: ${theme.colors.hoverblue};
+    background-color: ${theme.colors.buttonblue};
     img {
       transform: scale(1.2);
     }
@@ -68,16 +68,16 @@ const SocialButtons = () => {
   return (
     <StyledSocialButtons>
       <StyledIcon href="https://github.com/rogerwangcs" target="_blank">
-        <img draggable="false" src={github} />
+        <img alt="github" draggable="false" src={github} />
       </StyledIcon>
       <StyledIcon
         href="https://www.linkedin.com/in/rogerwangcs/"
         target="_blank"
       >
-        <img draggable="false" src={linkedin} />
+        <img alt="linkedin" draggable="false" src={linkedin} />
       </StyledIcon>
       <StyledIcon href="mailto:rogerwangcs@gmail.com">
-        <img draggable="false" src={gmail} />
+        <img alt="gmail" draggable="false" src={gmail} />
       </StyledIcon>
     </StyledSocialButtons>
   );

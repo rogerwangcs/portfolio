@@ -19,14 +19,14 @@ const StyledHeaderBg = styled.div`
   left: 0;
 
   width: 100vw;
-  height: 100vh;
+  height: ${props => props.height + "px"};
 `;
 
 const LogoWrapper = FadeIn.extend`
   position: absolute;
 
-  top: 50%;
-  left: 50%;
+  top: ${props => props.height / 2 + "px"};
+  left: 50vw;
 
   -webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
   -webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
@@ -62,8 +62,11 @@ class HeaderBg extends Component {
   }
   render() {
     return (
-      <StyledHeaderBg>
-        <LogoWrapper delay={animationTimings.loadDelay + 50}>
+      <StyledHeaderBg height={window.innerHeight}>
+        <LogoWrapper
+          height={window.innerHeight}
+          delay={animationTimings.loadDelay + 50}
+        >
           <img draggable="false" src={Logo} />
         </LogoWrapper>
         <Cubes />

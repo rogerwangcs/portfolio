@@ -12,8 +12,8 @@ import Navigation from "components/Navigation/Navigation";
 const HeaderContent = styled.div`
   > * {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: ${props => props.height / 2 + "px"};
+    left: 50vw;
     transform: translate(-50%, -50%);
   }
 `;
@@ -27,7 +27,7 @@ class Header extends Component {
     return (
       <React.Fragment>
         <Background />
-        <HeaderContent>
+        <HeaderContent height={window.innerHeight}>
           <Text />
           <Navigation />
         </HeaderContent>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-import { viewport } from "constants/viewport";
-import theme from "constants/theme.js";
 
 import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
@@ -18,6 +16,8 @@ const StyledProjectsSection = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    margin-bottom: 25px;
   }
 `;
 

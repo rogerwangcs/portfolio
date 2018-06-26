@@ -10,6 +10,7 @@ const StyledCard = styled.div`
   height: calc(225px + 30px + 20px);
 
   margin-bottom: 50px;
+  margin-bottom: 50px;
 
   .header {
     position: absolute;

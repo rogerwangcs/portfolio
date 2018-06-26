@@ -32,21 +32,17 @@ const cubeAnimation = keyframes`
 
 const StyledCube = styled.div`
   position: absolute;
-  display: ${props => (props.mounted ? "block" : "none")};
 
   width: 75px;
   height: 75px;
   background-color: ${theme.colors.blue};
-
-  left: ${props => props.x + "vw"};
-  top: ${props => props.y + "vh"};
 
   opacity: 0;
   transform: scale(0);
 
   -webkit-backface-visibility: hidden;
   transform-origin: center;
-  animation: ${cubeAnimation} ${props => props.duration + "ms"};
+  animation: ${cubeAnimation} 10s;
   animation-timing-function: linear;
   animation-delay: 0ms;
   animation-fill-mode: forwards;
@@ -61,7 +57,7 @@ class Cube extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mounted: true
+      display: "block"
     };
   }
   componentWillReceiveProps = newProps => {
@@ -69,11 +65,22 @@ class Cube extends Component {
   };
 
   componentDidMount = () => {
-    window.setTimeout(() => this.setState({ mounted: false }), 10000);
+    window.setTimeout(() => this.setState({ display: "none" }), 10000);
   };
 
   render() {
-    return <StyledCube mounted={this.state.mounted} {...this.props} />;
+    return (
+      <StyledCube
+        style={{
+          position: "absolute",
+          top: this.props.y + "vh",
+          left: this.props.x + "vw",
+          display: this.state.display
+        }}
+        mounted={this.state.mounted}
+        {...this.props}
+      />
+    );
   }
 }
 
@@ -101,8 +108,7 @@ class Cubes extends Component {
       let newCube = {
         key: newCubes[newCubes.length - 1].key + 1,
         x: Math.floor(Math.random() * 90),
-        y: Math.floor(Math.random() * 70),
-        duration: Math.floor(Math.random() * 2000 + 8000)
+        y: Math.floor(Math.random() * 70)
       };
       newCubes.push(newCube);
       this.setState({ cubes: newCubes });
@@ -110,11 +116,7 @@ class Cubes extends Component {
   };
 
   render() {
-    return (
-      <React.Fragment>
-        {this.state.cubes.map(cube => <Cube {...cube} />)}
-      </React.Fragment>
-    );
+    return this.state.cubes.map(cube => <Cube {...cube} />);
   }
 }
 

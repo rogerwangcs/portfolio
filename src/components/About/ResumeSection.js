@@ -8,13 +8,10 @@ import ResumeGraphic from "media/ResumeGraphic.png";
 import RoundButton from "components/generic/RoundButton";
 
 const ResumeButton = styled.div`
+  display: inline-block;
   margin-top: 50px;
   position: relative;
   z-index: 1;
-
-  &:hover ${BlueBG} {
-    background-color: green;
-  }
 `;
 
 const StyledResumeSection = styled.div`
@@ -23,10 +20,10 @@ const StyledResumeSection = styled.div`
   text-align: center;
 
   @media (max-width: ${viewport.MOBILE}) {
-    height: 250px;
+    height: 350px;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    height: 350px;
+    height: 400px;
   }
 `;
 
@@ -42,54 +39,74 @@ const StyledResumeGraphic = styled.img`
   border-radius: 25px 25px 0px 0px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15);
 
-  transition: transform 300ms ease-in-out;
-  transform-origin: bottom;
-
   @media (max-width: ${viewport.MOBILE}) {
     width: 90vw;
     box-shadow: 2px 2px 10px -6px;
   }
   @media (min-width: ${viewport.MOBILE}) {
+    width: 80vw;
+  }
+  @media (min-width: 800px) {
     width: 60vw;
   }
-  @media (min-width: ${viewport.DESKTOP}) {
+  @media (min-width: 1000px) {
     width: 600px;
   }
+
+  transition: transform 300ms ease-in-out;
+  transform-origin: bottom;
+  transform: ${props => (props.hover ? "translateY(0px)" : "translateY(25px)")};
 `;
 
 const BlueBG = styled.div`
-  transition: all 300ms ease-in-out;
   position: absolute;
   z-index: 0;
 
-  width: 225px;
-  height: 115px;
+  width: 250px;
+  height: 125px;
   border-radius: 25px;
 
-  transform: scale(20);
-  background-color: red;
+  background-color: ${theme.colors.hoverblue};
   margin: auto;
   left: 0;
   right: 0;
   bottom: 0;
 
-${ResumeButton}:hover & {
-    fill: rebeccapurple;
-  }
+  transition: all 300ms ease-in-out;
+  transform: ${props => (props.hover ? "scale(10)" : "scale(1)")};
 `;
 
 class ResumeSection extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      hover: false
+    };
   }
+
+  handleHover = hoverState => {
+    this.setState({ hover: hoverState });
+  };
   render() {
     return (
       <StyledResumeSection>
-        <ResumeButton>
-          <RoundButton text="See Resume" />
-        </ResumeButton>
-        <StyledResumeGraphic draggable="false" src={ResumeGraphic} />
-        <BlueBG />
+        <a
+          href="https://drive.google.com/file/d/1e-MnxYNKdhXrgYxt3RQE_Snn9YXLkgx4/view?usp=sharing"
+          target="_blank"
+        >
+          <ResumeButton
+            onMouseEnter={() => this.handleHover(true)}
+            onMouseLeave={() => this.handleHover(false)}
+          >
+            <RoundButton text="See Resume" />
+          </ResumeButton>
+        </a>
+        <BlueBG hover={this.state.hover} />
+        <StyledResumeGraphic
+          hover={this.state.hover}
+          draggable="false"
+          src={ResumeGraphic}
+        />
       </StyledResumeSection>
     );
   }

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styled from "styled-components";
-import ReactSVG from "react-svg";
-import PixelBg from "media/square-pixel-bg.svg";
+// import ReactSVG from "react-svg";
+// import PixelBg from "media/square-pixel-bg.svg";
 
 import RogerPortrait from "media/Portrait.jpg";
 
@@ -10,7 +10,7 @@ const StyledSummarySection = styled.div`
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   margin-top: 10px;
@@ -60,7 +60,7 @@ const SummarySection = () => {
           creating things with elegant designs and with cool features.
         </p>
       </div>
-      <Portrait src={RogerPortrait} />
+      <Portrait draggable="false" src={RogerPortrait} />
     </StyledSummarySection>
   );
 };

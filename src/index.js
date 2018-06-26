@@ -12,6 +12,6 @@ render((
     </HashRouter>
 ), document.getElementById('root'));
 
-// the service worker allows the app to load faster by cacheing assets locally
-// and serving it the next visit. service worker disabled for github pages.
-// registerServiceWorker();
+if (module.hot) {
+  module.hot.accept();
+}

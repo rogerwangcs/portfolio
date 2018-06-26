@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styled from "styled-components";
-import { viewport } from "constants/viewport";
 import theme from "constants/theme.js";
 
 const Centerer = styled.div`

@@ -8,7 +8,6 @@ import Divider from "components/generic/Divider";
 import SummarySection from "components/About/SummarySection";
 import SkillsSection from "components/About/SkillsSection";
 import ProjectsSection from "components/About/ProjectsSection";
-import BlogSection from "components/About/BlogSection";
 import ResumeSection from "components/About/ResumeSection";
 
 const StyledPage = styled.div`
