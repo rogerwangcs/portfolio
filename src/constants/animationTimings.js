@@ -1,4 +1,4 @@
 export const animationTimings = {
-  loadDelay: 0
+  loadDelay: 300
 }
 //1200

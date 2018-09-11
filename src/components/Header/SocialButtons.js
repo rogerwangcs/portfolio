@@ -1,132 +1,104 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-import styled from 'styled-components'
-import theme from 'constants/theme.js'
-import MediaQuery from 'react-responsive'
-import {viewport} from 'constants/viewport'
+import styled from "styled-components";
+import theme from "constants/theme.js";
+import { animationTimings } from "constants/animationTimings";
+import FadeIn from "components/generic/FadeIn";
 
-import github from 'media/github.png'
-import linkedin from 'media/linkedin.png'
-import gmail from 'media/gmail.png'
+import github from "media/github.png";
+import linkedin from "media/linkedin.png";
+import gmail from "media/gmail.png";
 
-const StyledSocialButtons = styled.div `
-  z-index: 100;
+const StyledSocialButtons = FadeIn.extend`
+  position: absolute;
+  top: 0;
+  right: 5px;
+`;
 
-  @media (max-width: ${viewport.MOBILE}) {
-    padding-top: none;
-    float: none;
-    text-align: center;
+const StyledIcon = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin: 10px;
+  height: 42px;
+
+  img {
+    width: 42px;
+    height: 42px;
+    transition: all 200ms ease-in-out;
   }
-  @media (min-width: ${viewport.MOBILE}) {
-    padding-top: 5vw;
-    float: right;
-    width: 25%;
+  p {
+    font-size: 16px;
+    color: white;
+    margin-right: 10px;
+
+    transition: all ease-out 200ms;
+    transform: translateX(25px);
+    opacity: 0;
   }
-  @media (min-width: ${viewport.DESKTOP}) {
-    padding-top: 50px;
-    float: right;
-    width: 25%;
+  :hover {
+    p {
+      cursor: pointer;
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    img {
+      transform: scale(0.9);
+    }
   }
 `;
 
-const StyledIcon = styled.div `
-    transition: transform 200ms ease-in-out;
-    transform-origin: 0% 50%;
+const ButtonBG = styled.div`
+  position: absolute;
+  background-color: ${theme.colors.hoverblue};
+  width: 100%;
+  height: 44px;
+  border-radius: 20px/50%;
 
-    > a > h5 {
-      transition: color 200ms ease-in-out;
-    }
+  right: 3px;
 
-    :hover {
-      cursor: pointer;
-      transform: scale(1.1);
-      > a > h5 {
-        color: ${theme.colors.hoverblue};
-      }
-    }
+  /* backface-visibility prevents the shaking/flickering effect during transition  */
+  backface-visibility: hidden;
+  transition: all ease-out 200ms;
+  transform-origin: 90% 50%;
+  transform: scale(0.8);
+  opacity: 0;
 
-    @media (max-width: ${viewport.MOBILE}) {
-      display: inline;
-      margin: 15px;
-      > a {
-        display: inline;
-      }
-      > a > img {
-        vertical-align: middle;
-        width: 50px;
-        height: 50px;
-      }
-      > a > h5 {
-        margin-left: 8px;
-        display: inline;
-      }
-    }
-    @media (min-width: ${viewport.MOBILE}) {
-      > a > img {
-        vertical-align: middle;
-        width: 40px;
-        height: 40px;
-      }
-      > a > h5 {
-        margin-left: 8px;
-        display: inline;
-      }
-    }
-    @media (min-width: ${viewport.DESKTOP}) {
-      > a > img {
-        vertical-align: middle;
-        width: 50px;
-        height: 50px;
-      }
-      > a > h5 {
-        margin-left: 10px;
-        display: inline;
-      }
-    }
+  ${StyledIcon}:hover & {
+    cursor: pointer;
+    transform: scale(1);
+    opacity: 1;
   }
 `;
 
 const SocialButtons = () => {
   return (
-    <StyledSocialButtons>
-      <StyledIcon href="https://github.com/rogerwangcs">
-        <a
-          href='https://drive.google.com/file/d/1h4cmZ8r2e2Kyj5ACfgXDe7Amiv6SVSN7/view?usp=sharing'
-          target="_blank">
-          <img src={github}/>
-          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
-            <h5>
-              <span>Github</span>
-            </h5>
-          </MediaQuery>
+    <FadeIn delay={animationTimings.loadDelay + 1000}>
+      <StyledSocialButtons>
+        <a href="https://github.com/rogerwangcs" target="_blank">
+          <StyledIcon>
+            <ButtonBG />
+            <img src={github} />
+            <p>Github</p>
+          </StyledIcon>
         </a>
-      </StyledIcon>
-      <StyledIcon href="https://www.linkedin.com/in/rogerwangcs/">
-        <a
-          href='https://drive.google.com/file/d/1h4cmZ8r2e2Kyj5ACfgXDe7Amiv6SVSN7/view?usp=sharing'
-          target="_blank">
-          <img src={linkedin}/>
-          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
-            <h5>
-              <span>LinkedIn</span>
-            </h5>
-          </MediaQuery>
+        <a href="https://www.linkedin.com/in/rogerwangcs/" target="_blank">
+          <StyledIcon>
+            <ButtonBG />
+            <img src={linkedin} />
+            <p>LinkedIn</p>
+          </StyledIcon>
         </a>
-      </StyledIcon>
-      <StyledIcon href="mailto:rogerwangcs@gmail.com">
-        <a
-          href='https://drive.google.com/file/d/1h4cmZ8r2e2Kyj5ACfgXDe7Amiv6SVSN7/view?usp=sharing'
-          target="_blank">
-          <img src={gmail}/>
-          <MediaQuery query={'(min-width: ' + viewport.MOBILE + ')'}>
-            <h5>
-              <span>Email</span>
-            </h5>
-          </MediaQuery>
+        <a href="mailto:rogerwangcs@gmail.com" target="_blank">
+          <StyledIcon>
+            <ButtonBG />
+            <img src={gmail} />
+            <p>Email</p>
+          </StyledIcon>
         </a>
-      </StyledIcon>
-    </StyledSocialButtons>
+      </StyledSocialButtons>
+    </FadeIn>
   );
-}
+};
 
 export default SocialButtons;

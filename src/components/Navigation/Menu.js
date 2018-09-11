@@ -37,7 +37,7 @@ const ButtonBG = styled.div`
   /* backface-visibility prevents the shaking/flickering effect during transition  */
   -webkit-backface-visibility: hidden;
   transition: all ease-out 200ms;
-  transform: scale(.8);
+  transform: scale(0.8);
   opacity: 0;
 
   top: 0px;
@@ -50,13 +50,6 @@ const ButtonBG = styled.div`
   }
 `;
 
-const Underline = styled.div`
-  width: 100%;
-  height: 5px;
-
-  background-color: ${theme.colors.hoverblue};
-`;
-
 const Menu = props => {
   return (
     <ButtonGroup>
@@ -64,15 +57,20 @@ const Menu = props => {
         <h3>About</h3>
         <ButtonBG className="buttonBG" />
       </Button>
-      <Button onClick={() => props.handleRoute("/Projects")}>
+      <Button onClick={() => props.handleRoute("/projects")}>
         <h3>Projects</h3>
         <ButtonBG className="buttonBG" />
       </Button>
-      <Button onClick={() => props.handleRoute("/Blog")}>
+      {/* <Button onClick={() => props.handleRoute("/blog")}>
         <h3>Blog</h3>
         <ButtonBG className="buttonBG" />
-      </Button>
-      {/* <Underline /> */}
+      </Button> */}
+      <a href="https://medium.com/@roger.luojie.wang/latest" target="_blank">
+        <Button>
+          <h3>Blog</h3>
+          <ButtonBG className="buttonBG" />
+        </Button>
+      </a>
     </ButtonGroup>
   );
 };

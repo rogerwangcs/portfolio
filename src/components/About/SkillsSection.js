@@ -67,11 +67,8 @@ const SkillsSection = props => {
         </Divider>
         <div className="items">
           <p>Python</p>
-          <p>SciPy</p>
           <p>Pandas + Numpy</p>
-          <p>SciKit Learn</p>
-          <p>MatPlotLib</p>
-          <p>Seaborn</p>
+          <p>scikit-learn</p>
         </div>
       </SkillBox>
       <SkillBox>
@@ -82,7 +79,7 @@ const SkillsSection = props => {
           <p>Git</p>
           <p>Ubuntu</p>
           <p>Heroku</p>
-          <p>Postman</p>
+          <p>AWS</p>
           <p>Photoshop CC</p>
           <p>Illustrator CC</p>
         </div>

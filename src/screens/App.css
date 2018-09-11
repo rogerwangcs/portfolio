@@ -11,26 +11,28 @@ body {
   background-color: white;
 }
 
+::selection {
+  background: #effff7;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  text-rendering: optimizeLegibility;
+  font-family: 'Raleway', sans-serif;
   display: inline-block;
   margin: 0px;
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 5vw;
   color: white;
 }
 
 h2 {
-  font-family: 'Raleway', sans-serif;
   font-size: 42px;
   font-weight: 300;
   color: black;
@@ -38,7 +40,6 @@ h2 {
 }
 
 h3 {
-  font-family: 'Raleway', sans-serif;
   font-size: 28px;
   font-weight: 300;
   color: #222222;
@@ -48,18 +49,18 @@ h3 {
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 300;
-  color: black;
+  color: #222222;
 }
 
 p {
-  text-rendering: optimizeLegibility;
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
   font-weight: 100;
   color: rgb(50, 50, 50);
+  line-height: 32px;
 }
 
 a {

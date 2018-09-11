@@ -4,18 +4,18 @@ import styled, { keyframes } from "styled-components";
 const fadeAnimation = keyframes`
   from {
     opacity: 0;
-    transform: scale(0);
+    transform: scale(0) translateY(-100px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0px);
   }
 `;
 
 const FadeIn = styled.div`
   > * {
-    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     opacity: 0;
     transform-origin: center;
     animation: ${fadeAnimation} 600ms;

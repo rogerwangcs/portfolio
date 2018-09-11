@@ -9,8 +9,7 @@ const StyledCard = styled.div`
   width: 330px;
   height: calc(225px + 30px + 20px);
 
-  margin-bottom: 50px;
-  margin-bottom: 50px;
+  margin: 10px 25px 50px;
 
   .header {
     position: absolute;
@@ -29,15 +28,13 @@ const StyledCard = styled.div`
       color: white;
     }
   }
-  img {
-    width: 300px;
+  > img {
+    width: 315px;
     height: 225px;
 
     margin-top: 20px;
-
-    border: 15px solid white;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.15);
   }
 `;
 

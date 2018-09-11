@@ -1,7 +1,7 @@
 const colors = {
-  darkblue: "#08122b",
-  blue: "#09183d",
-  lightblue: "#4286f4",
+  darkblue: "#0c1e44",
+  blue: "#0a265f",
+  lightblue: "#185bc9",
   buttonblue: "#334d8c",
   hoverblue: "#559ced",
   creme: "#f9f9f4",

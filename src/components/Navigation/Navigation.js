@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import { withRouter } from "react-router-dom";
+import { animateScroll } from "react-scroll";
 
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
-import theme from "constants/theme.js";
 import { animationTimings } from "constants/animationTimings";
 import FadeIn from "components/generic/FadeIn";
 
 import Menu from "components/Navigation/Menu";
 
-const NavbarWrapper = styled.div`
+const NavbarWrapper = FadeIn.extend`
   text-align: center;
   @media (max-width: ${viewport.MOBILE}) {
     margin-top: 50px;
@@ -33,12 +32,16 @@ class Nav extends Component {
 
   handleRoute = url => {
     this.props.history.push(url);
+    animateScroll.scrollTo(window.innerHeight);
   };
 
   render() {
     return (
       <React.Fragment>
-        <NavbarWrapper nav={this.props.nav}>
+        <NavbarWrapper
+          nav={this.props.nav}
+          delay={animationTimings.loadDelay + 750}
+        >
           <Menu handleRoute={this.handleRoute} />
         </NavbarWrapper>
       </React.Fragment>

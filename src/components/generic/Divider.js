@@ -19,7 +19,7 @@ const StyledDivider = styled.div`
   width: 100%;
   border-radius: 3px/50%;
 
-  margin: 10px 0px;
+  margin: 10px 0px 15px;
 `;
 
 const Divider = props => {

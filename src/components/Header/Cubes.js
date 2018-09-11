@@ -4,9 +4,6 @@ import styled, { keyframes } from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme";
 
-import cubeImg from "media/cube.png";
-import FadeIn from "components/generic/FadeIn";
-
 const cubeAnimation = keyframes`
   0% {
     opacity: 0;
@@ -31,6 +28,7 @@ const cubeAnimation = keyframes`
 `;
 
 const StyledCube = styled.div`
+  z-index: -101;
   position: absolute;
 
   width: 75px;
@@ -95,7 +93,7 @@ class Cubes extends Component {
   componentDidMount = () => {
     let delay = true;
 
-    window.setTimeout(() => (delay = false), 10000);
+    window.setTimeout(() => (delay = false), 15000);
 
     window.setInterval(() => {
       let newCubes;

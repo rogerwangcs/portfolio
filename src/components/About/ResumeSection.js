@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from 'react-ga';
 
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
@@ -62,8 +63,8 @@ const BlueBG = styled.div`
   position: absolute;
   z-index: 0;
 
-  width: 250px;
-  height: 125px;
+  width: 175px;
+  height: 75px;
   border-radius: 25px;
 
   background-color: ${theme.colors.hoverblue};
@@ -73,7 +74,7 @@ const BlueBG = styled.div`
   bottom: 0;
 
   transition: all 300ms ease-in-out;
-  transform: ${props => (props.hover ? "scale(10)" : "scale(1)")};
+  transform: ${props => (props.hover ? "scale(15)" : "scale(1)")};
 `;
 
 class ResumeSection extends Component {
@@ -97,6 +98,12 @@ class ResumeSection extends Component {
           <ResumeButton
             onMouseEnter={() => this.handleHover(true)}
             onMouseLeave={() => this.handleHover(false)}
+            onClick={()=> {
+              ReactGA.event({
+                category: 'Navigate',
+                action: 'Viewed Resume'
+              });
+            }}
           >
             <RoundButton text="See Resume" />
           </ResumeButton>

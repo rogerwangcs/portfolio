@@ -22,13 +22,9 @@ const StyledSummarySection = styled.div`
     margin-right: 25px;
 
     > p {
-      font-size: 24px;
-      @media (max-width: 775px) {
-        font-size: 22px;
-      }
     }
 
-    @media (max-width: 775px) {
+    @media (max-width: 825px) {
       padding-top: 25px;
       max-width: 100%;
       text-align: center;
@@ -39,15 +35,15 @@ const StyledSummarySection = styled.div`
 
 const Portrait = styled.img`
   order: 1;
-  width: 225px;
-  height: 225px;
+  width: 300px;
+  height: 300px;
 
-  border-radius: 25px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
 
   @media (max-width: 750px) {
-    width: 175px;
-    height: 175px;
+    width: 225px;
+    height: 225px;
   }
 `;
 
@@ -56,8 +52,7 @@ const SummarySection = () => {
     <StyledSummarySection>
       <div className="textWrapper">
         <p>
-          Hi, I'm Roger, a computer science student at Boston College and I love
-          creating things with elegant designs and with cool features.
+          <strong>Hey!</strong> 👋<br/> I'm <strong>Roger</strong>, a computer science major at Boston College. I love exploring cutting edge technologies and building cool things with them.
         </p>
       </div>
       <Portrait draggable="false" src={RogerPortrait} />

@@ -19,17 +19,16 @@ const StyledHeaderBg = styled.div`
   left: 0;
 
   width: 100vw;
-  height: ${props => props.height + "px"};
+  height: ${props => (props.mobile ? props.height + "px" : "100vh")};
 `;
 
 const LogoWrapper = FadeIn.extend`
   position: absolute;
 
-  top: ${props => props.height / 2 + "px"};
+  top: ${props => (props.mobile ? props.height / 2 + "px" : "50vh")};
   left: 50vw;
 
   -webkit-backface-visibility: hidden; /* add to fix webkit bug jitter */
-  -webkit-transform: perspective(1000px); /* add to fix webkit bug jitter */
   transform: translate(-50%, -50%);
 
   > img {
@@ -60,16 +59,27 @@ class HeaderBg extends Component {
   shouldComponentUpdate(nextProps, nextState) {
     return false;
   }
+
+  isMobileDevice = () => {
+    return (
+      typeof window.orientation !== "undefined" ||
+      navigator.userAgent.indexOf("IEMobile") !== -1
+    );
+  };
+
   render() {
     return (
-      <StyledHeaderBg height={window.innerHeight}>
+      <StyledHeaderBg
+        mobile={this.isMobileDevice()}
+        height={window.innerHeight}
+      >
+        <Cubes />
         <LogoWrapper
           height={window.innerHeight}
-          delay={animationTimings.loadDelay + 50}
+          delay={animationTimings.loadDelay + 0}
         >
           <img draggable="false" src={Logo} />
         </LogoWrapper>
-        <Cubes />
       </StyledHeaderBg>
     );
   }

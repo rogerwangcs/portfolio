@@ -5,8 +5,8 @@ import styled from "styled-components";
 import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
 
-import mernDesktop from "media/mern-article-manager-desktop.PNG";
-import mernMobile from "media/mern-article-manager-mobile.PNG";
+import apolloBlogImg from "media/apollo-graphql-blog.PNG";
+import articleManagerImg from "media/mern-article-manager-desktop.PNG";
 
 const StyledProjectsSection = styled.div`
   text-align: center;
@@ -25,10 +25,10 @@ const ProjectsSection = props => {
   return (
     <StyledProjectsSection>
       <div className="project-cards">
-        <Card title="React Article Manager" image={mernDesktop} />
-        <Card title="Blog Platform App" image={mernMobile} />
+        <Card title="React Blog Platform" image={apolloBlogImg} />
+        <Card title="Crud Article Manager" image={articleManagerImg} />
       </div>
-      <RoundButton text="See All Projects" link="/projects" />
+      <RoundButton text="See All Projects" link="/projects" scroll />
     </StyledProjectsSection>
   );
 };

@@ -2,8 +2,10 @@ import React from "react";
 
 import styled from "styled-components";
 import { viewport } from "constants/viewport.js";
+import FadeIn from "components/generic/FadeIn";
+import { animationTimings } from "constants/animationTimings";
 
-const StyledText = styled.div`
+const StyledText = FadeIn.extend`
   margin-top: -75px;
   text-align: center;
 
@@ -46,10 +48,10 @@ const StyledText = styled.div`
 
 const HeaderText = props => {
   return (
-    <StyledText>
-      <h1>Roger Wang</h1>
-      <h4>College Student, Full Stack Developer</h4>
-    </StyledText>
+      <StyledText  delay={animationTimings.loadDelay + 550}>
+        <h1>Roger Wang</h1>
+        <h4>College Student, Full Stack Developer</h4>
+      </StyledText>
   );
 };
 
