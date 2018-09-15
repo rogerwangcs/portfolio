@@ -28,6 +28,7 @@ const StyledButton = styled.div`
 const RoundButton = props => {
   return (
     <StyledButton
+      className="RoundButton"
       {...props}
       onClick={() => {
         props.history.push(props.link);

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Document, Page } from "react-pdf";
+// import { Document, Page } from "react-pdf";
 
 import styled from "styled-components";
 import theme from "constants/theme";
@@ -8,14 +8,23 @@ import PageSection from "components/generic/PageSection.js";
 import Resume from "media/ResumeV2.pdf";
 
 const StyledResumeView = styled.div`
-  border-radius: 25px;
-  background-color: red;
+  .react-pdf {
+    &__Document {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .react-pdf__Page {
-    border-radius: 25px;
+    &__Page {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 
-    > * {
-      transform: translateX(250px);
+      canvas {
+        max-width: 100%;
+        height: auto !important;
+      }
+    }
+    &__Page__textContent {
+      display: none;
     }
   }
 `;
@@ -42,11 +51,11 @@ class ResumeView extends Component {
         paddingBottom="50"
         paddingTop="50"
       >
-        <StyledResumeView>
+        {/* <StyledResumeView>
           <Document file={Resume} onLoadSuccess={this.onDocumentLoad}>
             <Page pageNumber={pageNumber} />
           </Document>
-        </StyledResumeView>
+        </StyledResumeView> */}
       </PageSection>
     );
   }

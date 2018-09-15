@@ -1,5 +1,5 @@
 {
-  "name": "React-Personal-Website",
+  "name": "react-personal-website",
   "version": "1.1.0",
   "private": true,
   "homepage": "https://rogerwangcs.com",
@@ -7,7 +7,6 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-ga": "^2.5.3",
-    "react-pdf": "^3.0.5",
     "react-responsive": "^4.1.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",

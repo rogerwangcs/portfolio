@@ -5,8 +5,6 @@ import styled from "styled-components";
 import Divider from "components/generic/Divider";
 import RoundButton from "components/generic/RoundButton";
 
-import { Slide } from "react-slideshow-image";
-
 import writefast1 from "media/writefast1.PNG";
 import writefast2 from "media/writefast2.PNG";
 import writefast3 from "media/writefast3.PNG";
@@ -22,7 +20,7 @@ const StyledCard = styled.div`
 
   position: relative;
   width: 100%;
-  margin-bottom: 75px;
+  margin-bottom: 100px;
 
   h6 {
     font-size: 16px;
@@ -47,12 +45,16 @@ const StyledCard = styled.div`
       max-width: 100%;
     }
   }
+
+  .RoundButton {
+    margin-right: 15px;
+  }
 `;
 
 const Picture = styled.img`
   width: 400px;
   height: 250px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   object-fit: cover;
 
   border-radius: 25px;
@@ -77,10 +79,16 @@ const Card = props => {
         </Divider>
         <h6>{props.date}</h6>
         <p>{props.description}</p>
+        {props.website !== "" ? (
+          <a href={props.website} target="_blank">
+            <RoundButton small text="See It" />
+          </a>
+        ) : (
+          <React.Fragment />
+        )}
         <a href={props.github} target="_blank">
-          <RoundButton small text="See on Github" />
+          <RoundButton small text="Github Repo" />
         </a>
-        {/* <RoundButton small text="Demo" /> */}
       </div>
       <Picture src={props.image} />
     </StyledCard>

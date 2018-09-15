@@ -38,11 +38,11 @@ class App extends Component {
               path={process.env.PUBLIC_URL + "/projects"}
               component={withTracker(Projects)}
             />
-            <Route
+            {/* <Route
               exact
               path={process.env.PUBLIC_URL + "/resume"}
               component={withTracker(ResumeView)}
-            />
+            /> */}
             <Redirect
               from={process.env.PUBLIC_URL + "/*"}
               to={process.env.PUBLIC_URL + "/"}

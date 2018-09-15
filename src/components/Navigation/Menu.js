@@ -61,16 +61,12 @@ const Menu = props => {
         <h3>Projects</h3>
         <ButtonBG className="buttonBG" />
       </Button>
-      {/* <Button onClick={() => props.handleRoute("/blog")}>
-        <h3>Blog</h3>
-        <ButtonBG className="buttonBG" />
-      </Button> */}
-      <a href="https://medium.com/@roger.luojie.wang/latest" target="_blank">
+      {/* <a href="https://medium.com/@rogerwangcs/latest" target="_blank">
         <Button>
           <h3>Blog</h3>
           <ButtonBG className="buttonBG" />
         </Button>
-      </a>
+      </a> */}
     </ButtonGroup>
   );
 };

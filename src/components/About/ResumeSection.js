@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
@@ -91,17 +91,14 @@ class ResumeSection extends Component {
   render() {
     return (
       <StyledResumeSection>
-        <a
-          href="https://drive.google.com/file/d/1e-MnxYNKdhXrgYxt3RQE_Snn9YXLkgx4/view?usp=sharing"
-          target="_blank"
-        >
+        <a href={process.env.PUBLIC_URL + "/Resume.pdf"} target="_blank">
           <ResumeButton
             onMouseEnter={() => this.handleHover(true)}
             onMouseLeave={() => this.handleHover(false)}
-            onClick={()=> {
+            onClick={() => {
               ReactGA.event({
-                category: 'Navigate',
-                action: 'Viewed Resume'
+                category: "Navigate",
+                action: "Viewed Resume"
               });
             }}
           >

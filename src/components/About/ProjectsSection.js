@@ -6,7 +6,7 @@ import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
 
 import apolloBlogImg from "media/apollo-graphql-blog.PNG";
-import articleManagerImg from "media/mern-article-manager-desktop.PNG";
+import betterBCHousing from "media/better-bc-housing.PNG";
 
 const StyledProjectsSection = styled.div`
   text-align: center;
@@ -26,7 +26,7 @@ const ProjectsSection = props => {
     <StyledProjectsSection>
       <div className="project-cards">
         <Card title="React Blog Platform" image={apolloBlogImg} />
-        <Card title="Crud Article Manager" image={articleManagerImg} />
+        <Card title="Better BC Housing" image={betterBCHousing} />
       </div>
       <RoundButton text="See All Projects" link="/projects" scroll />
     </StyledProjectsSection>

@@ -48,13 +48,50 @@ const SkillsSection = props => {
     <StyledSkillsSection>
       <SkillBox>
         <Divider>
+          <h3>Programming Languages</h3>
+        </Divider>
+        <div className="items">
+          <p>Javascript(ES6)</p>
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>SQL</p>
+          <p>Python</p>
+          <p>Java</p>
+        </div>
+      </SkillBox>
+      <SkillBox>
+        <Divider>
+          <h3>Libraries + Frameworks + etc.</h3>
+        </Divider>
+        <div className="items">
+          <p>React.js + Apollo</p>
+          <p>Node.js + Express.js</p>
+          <p>Graphql</p>
+          <p>MongoDB</p>
+        </div>
+      </SkillBox>
+      <SkillBox>
+        <Divider>
+          <h3>Tools</h3>
+        </Divider>
+        <div className="items">
+          <p>Git</p>
+          <p>Unix</p>
+          <p>Heroku</p>
+          <p>Photoshop CC</p>
+        </div>
+      </SkillBox>
+      {/*
+      <SkillBox>
+        <Divider>
           <h3>Web Development</h3>
         </Divider>
         <div className="items">
           <p>HTML</p>
           <p>CSS</p>
-          <p>Javascript</p>
-          <p>React.js + Apollo.js</p>
+          <p>Javascript(ES6)</p>
+          <p>SQL</p>
+          <p>React.js + Apollo</p>
           <p>Node.js</p>
           <p>Express.js</p>
           <p>Graphql</p>
@@ -77,13 +114,24 @@ const SkillsSection = props => {
         </Divider>
         <div className="items">
           <p>Git</p>
-          <p>Ubuntu</p>
+          <p>Unix</p>
           <p>Heroku</p>
           <p>AWS</p>
           <p>Photoshop CC</p>
-          <p>Illustrator CC</p>
         </div>
       </SkillBox>
+      <SkillBox>
+        <Divider>
+          <h3>Tools</h3>
+        </Divider>
+        <div className="items">
+          <p>Git</p>
+          <p>Unix</p>
+          <p>Heroku</p>
+          <p>AWS</p>
+          <p>Photoshop CC</p>
+        </div>
+      </SkillBox>*/}
     </StyledSkillsSection>
   );
 };
