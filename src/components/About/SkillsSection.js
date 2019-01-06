@@ -24,7 +24,7 @@ const SkillBox = styled.div`
   width: 30%;
 
   padding-left: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 
   text-align: left;
 
@@ -34,7 +34,7 @@ const SkillBox = styled.div`
     flex-wrap: wrap;
     justify-content: left;
     > p {
-      margin-right: 10px;
+      margin: 6px 15px 6px 0px;
     }
   }
 
@@ -48,37 +48,36 @@ const SkillsSection = props => {
     <StyledSkillsSection>
       <SkillBox>
         <Divider>
-          <h3>Programming Languages</h3>
+          <h3>Languages</h3>
         </Divider>
         <div className="items">
-          <p>Javascript(ES6)</p>
+          <p>Python</p>
+          <p>Javascript</p>
+          <p>SQL</p>
+          <p>Java</p>
           <p>HTML</p>
           <p>CSS</p>
-          <p>SQL</p>
-          <p>Python</p>
-          <p>Java</p>
         </div>
       </SkillBox>
       <SkillBox>
         <Divider>
-          <h3>Libraries + Frameworks + etc.</h3>
+          <h3>App Development</h3>
         </Divider>
         <div className="items">
-          <p>React.js + Apollo</p>
-          <p>Node.js + Express.js</p>
+          <p>React.js</p>
+          <p>Node.js</p>
+          <p>Express.js</p>
           <p>Graphql</p>
           <p>MongoDB</p>
         </div>
       </SkillBox>
       <SkillBox>
         <Divider>
-          <h3>Tools</h3>
+          <h3>Data Analysis</h3>
         </Divider>
         <div className="items">
-          <p>Git</p>
-          <p>Unix</p>
-          <p>Heroku</p>
-          <p>Photoshop CC</p>
+          <p>Numpy + Pandas</p>
+          <p>Matplotlib</p>
         </div>
       </SkillBox>
       {/*

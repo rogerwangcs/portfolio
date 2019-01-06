@@ -5,10 +5,9 @@ import Divider from "components/generic/Divider";
 import PageSection from "components/generic/PageSection";
 import ProjectCard from "components/Projects/ProjectCard";
 
-import writefast1 from "media/writefast1.PNG";
-import apolloBlogImg from "media/apollo-graphql-blog.PNG";
+import writefast1 from "media/writefast1.jpg";
+import apolloBlogImg from "media/rogersblog1.jpg";
 import betterBCHousing from "media/better-bc-housing.PNG";
-import articleManagerImg from "media/mern-article-manager-desktop.PNG";
 
 const Projects = () => {
   return (
@@ -30,8 +29,8 @@ const Projects = () => {
         date="May 2018 - June 2018"
         description="Blogging Platform built using React, Apollo, Express, Graphql and
             MongoDB. Features authentication and authorization with Auth0, markup blog editor and individual user profiles."
-        website=""
-        github="https://github.com/rogerwangcs/React-Personal-Website"
+        website="https://rogers-react-blog.herokuapp.com/"
+        github=""
       />
       <ProjectCard
         title="Better BC Housing"
@@ -41,14 +40,6 @@ const Projects = () => {
         "
         website=""
         github="https://github.com/MikeN64/Better-BC-Housing"
-      />
-      <ProjectCard
-        title="Crud Article Manager"
-        date="December 2017 - January 2018"
-        image={articleManagerImg}
-        description="Crud project built using React, Express, and MongoDB. Features create, read, write, and delete functions wrapped in a material design UI."
-        website=""
-        github="https://github.com/rogerwangcs/MERN-Article-Manager"
       />
     </PageSection>
   );

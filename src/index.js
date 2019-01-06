@@ -8,8 +8,6 @@ import registerServiceWorker from "utils/registerServiceWorker";
 ReactGA.initialize('UA-56570124-2');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-
-
 render(<App />, document.getElementById("root"));
 
 if (module.hot) {

@@ -17,6 +17,7 @@ const Button = styled.div`
     user-select: none;
     line-height: 44px;
     color: white;
+    font-weight: 300;
   }
   @media (max-width: ${viewport.MOBILE}) {
     padding: 0 15px;

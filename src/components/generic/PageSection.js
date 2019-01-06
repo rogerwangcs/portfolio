@@ -14,14 +14,14 @@ const StyledPageContents = styled.div`
   margin: auto;
 
   @media (max-width: ${viewport.MOBILE}) {
-    width: 88vw;
+    width: 92vw;
     h2 {
       text-align: center;
       margin: auto;
     }
   }
   @media (min-width: ${viewport.MOBILE}) {
-    width: 80vw;
+    width: 90vw;
     text-align: left;
   }
   @media (min-width: ${viewport.DESKTOP}) {

@@ -15,11 +15,11 @@ const DividerWrapper = styled.div`
 
 const StyledDivider = styled.div`
   background-color: ${theme.colors.lightblue};
-  height: ${props => (props.big ? "4px" : "3px")};
+  height: ${props => (props.big ? "5px" : "4px")};
   width: 100%;
-  border-radius: 3px/50%;
+  border-radius: 2px/50%;
 
-  margin: 10px 0px 15px;
+  margin: 15px 0px 15px;
 `;
 
 const Divider = props => {

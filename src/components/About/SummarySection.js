@@ -4,11 +4,10 @@ import styled from "styled-components";
 // import ReactSVG from "react-svg";
 // import PixelBg from "media/square-pixel-bg.svg";
 
-import RogerPortrait from "media/Portrait.jpg";
+import RogerPortrait from "media/Profile-Picture.png";
 
 const StyledSummarySection = styled.div`
   display: flex;
-  flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -50,12 +49,15 @@ const Portrait = styled.img`
 const SummarySection = () => {
   return (
     <StyledSummarySection>
+      <Portrait draggable="false" src={RogerPortrait} />
       <div className="textWrapper">
         <p>
-          <strong>Hey!</strong> 👋<br/> I'm <strong>Roger</strong>, a computer science major at Boston College. I love exploring cutting edge technologies and building cool things with them.
+          <strong>Hey!</strong> 👋
+          <br /> I'm <strong>Roger</strong>, a computer science major at Boston
+          College. I love exploring cutting edge technologies and building cool
+          things with them.
         </p>
       </div>
-      <Portrait draggable="false" src={RogerPortrait} />
     </StyledSummarySection>
   );
 };

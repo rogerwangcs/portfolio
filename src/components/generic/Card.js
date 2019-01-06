@@ -31,6 +31,7 @@ const StyledCard = styled.div`
   > img {
     width: 315px;
     height: 225px;
+    object-fit: cover;
 
     margin-top: 20px;
     border-radius: 30px;

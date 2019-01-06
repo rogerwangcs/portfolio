@@ -5,12 +5,6 @@ import styled from "styled-components";
 import Divider from "components/generic/Divider";
 import RoundButton from "components/generic/RoundButton";
 
-import writefast1 from "media/writefast1.PNG";
-import writefast2 from "media/writefast2.PNG";
-import writefast3 from "media/writefast3.PNG";
-
-const images = [writefast1, writefast2, writefast3];
-
 const StyledCard = styled.div`
   display: flex;
   flex-direction: row-reverse;
@@ -86,9 +80,13 @@ const Card = props => {
         ) : (
           <React.Fragment />
         )}
-        <a href={props.github} target="_blank">
-          <RoundButton small text="Github Repo" />
-        </a>
+        {props.github !== "" ? (
+          <a href={props.github} target="_blank">
+            <RoundButton small text="Github Repo" />
+          </a>
+        ) : (
+          <React.Fragment />
+        )}
       </div>
       <Picture src={props.image} />
     </StyledCard>

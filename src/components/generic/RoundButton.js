@@ -15,6 +15,7 @@ const StyledButton = styled.div`
 
   h3 {
     color: white;
+    font-weight: 300;
     font-size: ${props => (props.small ? "18px" : "auto")};
   }
 

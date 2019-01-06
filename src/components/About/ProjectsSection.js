@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
 
-import apolloBlogImg from "media/apollo-graphql-blog.PNG";
+import apolloBlogImg from "media/rogersblog1.jpg";
 import betterBCHousing from "media/better-bc-housing.PNG";
 
 const StyledProjectsSection = styled.div`
