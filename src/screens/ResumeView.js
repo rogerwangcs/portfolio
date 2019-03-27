@@ -5,7 +5,7 @@ import styled from "styled-components";
 import theme from "constants/theme";
 import PageSection from "components/generic/PageSection.js";
 
-import Resume from "media/ResumeV2.pdf";
+import Resume from "media/resume.pdf";
 
 const StyledResumeView = styled.div`
   .react-pdf {
