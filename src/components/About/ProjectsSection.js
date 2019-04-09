@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
 
+import liveSubtitles from 'media/live-subtitles.png';
 import apolloBlogImg from "media/rogersblog1.jpg";
 import betterBCHousing from "media/better-bc-housing.PNG";
 
@@ -15,7 +16,7 @@ const StyledProjectsSection = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     margin-bottom: 25px;
   }
@@ -25,6 +26,7 @@ const ProjectsSection = props => {
   return (
     <StyledProjectsSection>
       <div className="project-cards">
+        <Card title="Live AR Subtitles" image={liveSubtitles} />
         <Card title="React Blog Platform" image={apolloBlogImg} />
         <Card title="Better BC Housing" image={betterBCHousing} />
       </div>

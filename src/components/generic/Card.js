@@ -29,7 +29,7 @@ const StyledCard = styled.div`
     }
   }
   > img {
-    width: 315px;
+    width: 325px;
     height: 225px;
     object-fit: cover;
 
