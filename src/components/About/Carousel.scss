@@ -1,0 +1,125 @@
+#carousel {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  // background-color: gray;
+}
+
+.arrow {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #228291;
+  line-height: 30px;
+  margin-top: 85px;
+  z-index: 1000;
+}
+
+.arrow-right {
+  right: 0px;
+}
+
+$level-1-left: 60%;
+$level0-left: 32%;
+$level1-left: 4%;
+
+$item-center-scale: 1.25;
+$item-side-scale: 0.75;
+$item-out-scale: 0.25;
+$enter-out-distance: 5%;
+$carousel-speed: 0.8s;
+
+.carousel-item {
+  position: absolute;
+  transform-origin: 50% 65%;
+  transition: transform $carousel-speed, left $carousel-speed,
+    opacity $carousel-speed;
+}
+
+.level-1 {
+  z-index: 9;
+  transform: scale($item-side-scale);
+  left: $level-1-left;
+}
+
+.level0 {
+  z-index: 10;
+  transform: scale($item-center-scale);
+  left: $level0-left;
+}
+
+.level1 {
+  z-index: 9;
+  transform: scale($item-side-scale);
+  left: $level1-left;
+}
+
+// When Tiles move to the right
+.left-enter {
+  opacity: 0;
+  transform: scale($item-out-scale);
+  left: $level1-left - $enter-out-distance;
+}
+
+.left-enter.left-enter-active {
+  opacity: 1;
+  transform: scale($item-side-scale);
+  left: $level1-left;
+  transition: transform $carousel-speed, left $carousel-speed,
+    opacity $carousel-speed;
+}
+
+.left-leave {
+  z-index: 1;
+  opacity: 1;
+  transform: scale($item-side-scale);
+  left: $level-1-left;
+}
+
+.left-leave.left-leave-active {
+  z-index: 1;
+  opacity: 0;
+  transform: scale($item-out-scale);
+  left: $level-1-left + $enter-out-distance;
+  transition: transform $carousel-speed, left $carousel-speed,
+    opacity $carousel-speed;
+}
+
+// When times move to the left
+.right-enter {
+  opacity: 0;
+  transform: scale($item-out-scale);
+  left: $level-1-left + $enter-out-distance;
+}
+
+.right-enter.right-enter-active {
+  opacity: 1;
+  transform: scale($item-side-scale);
+  left: $level-1-left;
+  transition: transform $carousel-speed, left $carousel-speed,
+    opacity $carousel-speed;
+}
+
+.right-leave {
+  z-index: 1;
+  opacity: 1;
+  transform: scale($item-side-scale);
+  left: $level1-left;
+}
+
+.right-leave.right-leave-active {
+  z-index: 1;
+  opacity: 0;
+  transform: scale($item-out-scale);
+  left: $level1-left - $enter-out-distance;
+  transition: transform $carousel-speed, left $carousel-speed,
+    opacity $carousel-speed;
+}

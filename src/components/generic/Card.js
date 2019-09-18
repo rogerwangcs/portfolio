@@ -11,6 +11,12 @@ const StyledCard = styled.div`
 
   margin: 10px 25px 50px;
 
+  :hover {
+    transform: scale(1.03) translateY(-5px);
+    cursor: pointer;
+  }
+  transition: transform 0.1s ease-in;
+
   .header {
     position: absolute;
     background-color: ${theme.colors.buttonblue};

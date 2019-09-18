@@ -7,14 +7,11 @@ import {
 } from "react-router-dom";
 import withTracker from "utils/withTracker";
 
-import styled from "styled-components";
-
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer.js";
 import About from "screens/About";
 import Projects from "screens/Projects";
-import ResumeView from "screens/ResumeView";
-import "screens/App.css";
+import "screens/App.scss";
 
 class App extends Component {
   constructor(props) {

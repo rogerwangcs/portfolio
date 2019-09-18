@@ -4,32 +4,30 @@ import styled from "styled-components";
 
 import Card from "components/generic/Card";
 import RoundButton from "components/generic/RoundButton";
+import ProjectCarousel from "components/About/ProjectCarousel";
+import "components/About/Carousel.scss";
 
-import liveSubtitles from 'media/live-subtitles.png';
+import liveSubtitles from "media/live-subtitles.png";
 import apolloBlogImg from "media/rogersblog1.jpg";
 import betterBCHousing from "media/better-bc-housing.PNG";
 
 const StyledProjectsSection = styled.div`
   text-align: center;
-
-  .project-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-    margin-bottom: 25px;
-  }
 `;
+
+let projects = [
+  <Card title="Live AR Subtitles" image={liveSubtitles} />,
+  <Card title="React Blog Platform" image={apolloBlogImg} />,
+  <Card title="Better BC Housing" image={betterBCHousing} />
+];
 
 const ProjectsSection = props => {
   return (
     <StyledProjectsSection>
-      <div className="project-cards">
-        <Card title="Live AR Subtitles" image={liveSubtitles} />
-        <Card title="React Blog Platform" image={apolloBlogImg} />
-        <Card title="Better BC Housing" image={betterBCHousing} />
-      </div>
+      <ProjectCarousel
+        components={[...projects, ...projects, ...projects]}
+        active={0}
+      />
       <RoundButton text="See All Projects" link="/projects" scroll />
     </StyledProjectsSection>
   );
