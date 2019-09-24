@@ -75,21 +75,33 @@ const SocialButtons = () => {
   return (
     <FadeIn delay={animationTimings.loadDelay + 1000}>
       <StyledSocialButtons>
-        <a href="https://github.com/rogerwangcs" target="_blank">
+        <a
+          href="https://github.com/rogerwangcs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <ButtonBG />
             <img src={github} />
             <p>Github</p>
           </StyledIcon>
         </a>
-        <a href="https://www.linkedin.com/in/rogerwangcs/" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/rogerwangcs/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <ButtonBG />
             <img src={linkedin} />
             <p>LinkedIn</p>
           </StyledIcon>
         </a>
-        <a href="mailto:rogerwangcs@gmail.com" target="_blank">
+        <a
+          href="mailto:rogerwangcs@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <StyledIcon>
             <ButtonBG />
             <img src={gmail} />

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import { viewport } from "constants/viewport";
 import styled from "styled-components";
@@ -74,14 +74,14 @@ const Card = props => {
         <h6>{props.date}</h6>
         <p>{props.description}</p>
         {props.website !== "" ? (
-          <a href={props.website} target="_blank">
+          <a href={props.website} target="_blank" rel="noopener noreferrer">
             <RoundButton small text="See It" />
           </a>
         ) : (
           <React.Fragment />
         )}
         {props.github !== "" ? (
-          <a href={props.github} target="_blank">
+          <a href={props.github} target="_blank" rel="noopener noreferrer">
             <RoundButton small text="Github Repo" />
           </a>
         ) : (

@@ -91,7 +91,11 @@ class ResumeSection extends Component {
   render() {
     return (
       <StyledResumeSection>
-        <a href={process.env.PUBLIC_URL + "/resume.pdf"} target="_blank">
+        <a
+          href={process.env.PUBLIC_URL + "/resume.pdf"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ResumeButton
             onMouseEnter={() => this.handleHover(true)}
             onMouseLeave={() => this.handleHover(false)}

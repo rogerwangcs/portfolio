@@ -64,6 +64,7 @@ class About extends Component {
                 <SkillsSection />
               </PageSection>
               <PageSection
+                fullwidth={true}
                 color={theme.colors.gray2}
                 paddingBottom="50"
                 paddingTop="50"

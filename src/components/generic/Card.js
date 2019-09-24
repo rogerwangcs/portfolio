@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import theme from "constants/theme";
-import { viewport } from "constants/viewport";
 
 const StyledCard = styled.div`
   position: relative;
@@ -12,7 +11,7 @@ const StyledCard = styled.div`
   margin: 10px 25px 50px;
 
   :hover {
-    transform: scale(1.03) translateY(-5px);
+    transform: scale(1.01) translateY(-3px);
     cursor: pointer;
   }
   transition: transform 0.1s ease-in;

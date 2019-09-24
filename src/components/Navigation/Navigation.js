@@ -12,13 +12,13 @@ import Menu from "components/Navigation/Menu";
 const NavbarWrapper = FadeIn.extend`
   text-align: center;
   @media (max-width: ${viewport.MOBILE}) {
-    margin-top: 50px;
+    margin-top: 125px;
   }
   @media (min-width: ${viewport.MOBILE}) {
-    margin-top: 100px;
+    margin-top: 150px;
   }
   @media (min-width: ${viewport.DESKTOP}) {
-    margin-top: 125px;
+    margin-top: 200px;
   }
 `;
 

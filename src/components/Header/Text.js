@@ -6,7 +6,7 @@ import FadeIn from "components/generic/FadeIn";
 import { animationTimings } from "constants/animationTimings";
 
 const StyledText = FadeIn.extend`
-  margin-top: -75px;
+  margin-top: -50px;
   text-align: center;
 
   > * {
@@ -15,9 +15,10 @@ const StyledText = FadeIn.extend`
   }
 
   @media (max-width: ${viewport.MOBILE}) {
+    margin-top: -10px;
     width: 80%;
     > h1 {
-      font-size: 48px;
+      font-size: 3em;
     }
     > h4 {
       margin-top: 25px;
@@ -27,17 +28,17 @@ const StyledText = FadeIn.extend`
   @media (min-width: ${viewport.MOBILE}) {
     width: 80%;
     > h1 {
-      font-size: 10vw;
+      font-size: 5em;
     }
     > h4 {
       font-size: 18px;
-      margin-top: 25px;
+      margin-top: 40px;
     }
   }
   @media (min-width: ${viewport.DESKTOP}) {
     width: 75%;
     > h1 {
-      font-size: 108px;
+      font-size: 8em;
     }
     > h4 {
       font-size: 20px;
@@ -48,10 +49,10 @@ const StyledText = FadeIn.extend`
 
 const HeaderText = props => {
   return (
-      <StyledText  delay={animationTimings.loadDelay + 550}>
-        <h1>Roger Wang</h1>
-        <h4>College Student, Full Stack Developer</h4>
-      </StyledText>
+    <StyledText delay={animationTimings.loadDelay + 550}>
+      <h1>Roger Wang</h1>
+      <h4>College Student, Full Stack Developer</h4>
+    </StyledText>
   );
 };
 

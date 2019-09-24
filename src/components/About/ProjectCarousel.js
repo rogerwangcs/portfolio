@@ -1,5 +1,28 @@
 import React, { Component } from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import styled from "styled-components";
+import { viewport } from "constants/viewport";
+
+const SCarousel = styled.div`
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  width: 100%;
+  padding: 50px 0px;
+
+  @media (max-width: ${viewport.MOBILE}) {
+    height: 250px;
+    padding: 20px 0px;
+  }
+`;
+
+SCarousel.Carousel = styled.div`
+  transform-origin: center;
+  transform: scale(1);
+  @media (max-width: ${viewport.MOBILE}) {
+    transform: scale(0.65);
+  }
+`;
 
 class Carousel extends Component {
   constructor(props) {
@@ -12,7 +35,9 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-    this.carouselTimer = setInterval(() => this.moveRight(), 5000);
+    this.carouselTimer = setInterval(() => {
+      if (document.hasFocus()) this.moveLeft();
+    }, 5000);
   }
 
   componentWillUnmount() {
@@ -21,13 +46,15 @@ class Carousel extends Component {
 
   restartTimer = () => {
     clearInterval(this.carouselTimer);
-    this.carouselTimer = setInterval(() => this.moveRight(), 5000);
+    this.carouselTimer = setInterval(() => {
+      if (document.hasFocus()) this.moveLeft();
+    }, 5000);
   };
 
   generateItems() {
     var carouselItems = [];
     var level;
-    let items = [...this.state.items, ...this.state.items, ...this.state.items];
+    let items = this.state.items;
     for (var i = this.state.active - 1; i < this.state.active + 2; i++) {
       var index = i;
       if (i < 0) {
@@ -62,6 +89,7 @@ class Carousel extends Component {
   };
 
   moveRight = () => {
+    this.restartTimer();
     var newActive = this.state.active;
     this.setState({
       active: (newActive + 1) % this.state.items.length,
@@ -71,17 +99,17 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div id="carousel" className="noselect">
-        {/* <div className="arrow arrow-left" onClick={this.leftClick}>
-          <i className="fi-arrow-left"></i>
-        </div> */}
-        <ReactCSSTransitionGroup transitionName={this.state.direction}>
-          {this.generateItems()}
-        </ReactCSSTransitionGroup>
-        {/* <div className="arrow arrow-right" onClick={this.rightClick}>
-          <i className="fi-arrow-right"></i>
-        </div> */}
-      </div>
+      <SCarousel id="carousel" className="noselect">
+        <SCarousel.Carousel>
+          <ReactCSSTransitionGroup
+            transitionEnterTimeout={0}
+            transitionLeaveTimeout={0}
+            transitionName={this.state.direction}
+          >
+            {this.generateItems()}
+          </ReactCSSTransitionGroup>
+        </SCarousel.Carousel>
+      </SCarousel>
     );
   }
 }
