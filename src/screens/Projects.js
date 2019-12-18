@@ -9,6 +9,7 @@ import liveSubtitles from "media/live-subtitles.png";
 import writefast1 from "media/writefast1.jpg";
 import apolloBlogImg from "media/rogersblog1.jpg";
 import betterBCHousing from "media/better-bc-housing.PNG";
+import dijkstras from "media/dijkstras.png";
 
 const Projects = () => {
   return (
@@ -17,11 +18,19 @@ const Projects = () => {
         <h2>My Projects</h2>
       </Divider>
       <ProjectCard
+        title="Dijkstra's Arena"
+        date="April 2019"
+        image={dijkstras}
+        description="Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment."
+        website="http://dijkstras-arena.rogerwangcs.com/"
+        github="https://github.com/rogerwangcs/Dijkstras-Arena"
+      />
+      <ProjectCard
         title="Live Subtitles"
         date="April 2019"
         image={liveSubtitles}
         description="Display what people are saying as they are talking in real time! A quick app built during Hack Dartmouth V. Created by Roger Wang, David Shen, Jerry Han, and Alex Sun using React, Tensorflow.js, and Chrome's speech-to-text API."
-        website="https://live-subtitles.herokuapp.com/"
+        website="http://live-subtitles.rogerwangcs.com/"
         github="https://github.com/rogerwangcs/ar-dialogue-subtitles"
       />
       <ProjectCard
@@ -30,7 +39,7 @@ const Projects = () => {
         date="May 2018 - Dec 2018"
         description="Blogging Platform built using React, Apollo, Express, Graphql and
             MongoDB. Features authentication and authorization with Auth0, markup blog editor and individual user profiles."
-        website="https://rogers-react-blog.herokuapp.com/"
+        website="http://rogers-blog.rogerwangcs.com/"
         github=""
       />
       <ProjectCard
