@@ -1,10 +1,8 @@
 import React from "react";
 
 import styled from "styled-components";
-// import ReactSVG from "react-svg";
-// import PixelBg from "media/square-pixel-bg.svg";
 
-import RogerPortrait from "media/Profile-Picture.png";
+import RogerPortrait from "media/rogerwang.png";
 
 const StyledSummarySection = styled.div`
   display: flex;
