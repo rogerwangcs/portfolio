@@ -2,7 +2,7 @@
   "name": "react-personal-website",
   "version": "1.1.0",
   "private": true,
-  "homepage": "https://rogerwangcs.com",
+  "homepage": "https://rogerwangcs.github.io/React-Personal-Website/",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.4.1",
