@@ -1,12 +1,11 @@
-import React from "react";
-
 import styled from "styled-components";
 import theme from "constants/theme";
 import { viewport } from "constants/viewport";
+import { socials } from "constants/content";
 
-import github from "media/github.png";
-import linkedin from "media/linkedin.png";
-import gmail from "media/gmail.png";
+import github from "assets/github.png";
+import linkedin from "assets/linkedin.png";
+import gmail from "assets/gmail.png";
 
 const StyledFooter = styled.div`
   user-select: none;
@@ -67,25 +66,17 @@ const StyledIcon = styled.a`
 const SocialButtons = () => {
   return (
     <StyledSocialButtons>
-      <StyledIcon href="https://github.com/rogerwangcs" target="_blank">
-        <img alt="github" draggable="false" src={github} />
-      </StyledIcon>
-      <StyledIcon
-        href="https://www.linkedin.com/in/rogerwangcs/"
-        target="_blank"
-      >
-        <img alt="linkedin" draggable="false" src={linkedin} />
-      </StyledIcon>
-      <StyledIcon href="mailto:rogerwangcs@gmail.com">
-        <img alt="gmail" draggable="false" src={gmail} />
-      </StyledIcon>
+      {socials.map((social, idx) => (
+        <StyledIcon key={idx} href={social.link} target="_blank">
+          <img alt={social.name} draggable="false" src={social.image} />
+        </StyledIcon>
+      ))}
     </StyledSocialButtons>
   );
 };
 
-const Footer = (props) => {
+const Footer = () => {
   let date = new Date();
-
   return (
     <StyledFooter>
       <SocialButtons />

@@ -1,11 +1,11 @@
 import { viewport } from "constants/viewport";
 import styled from "styled-components";
-import Divider from "components/generic/Divider";
-import RoundButton from "components/generic/RoundButton";
+import Divider from "components/common/Divider";
+import RoundButton from "components/common/RoundButton";
 
 const StyledCard = styled.div`
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: ${(props) => (props.idx % 2 === 0 ? "row-reverse" : "row")};
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -64,7 +64,7 @@ const Picture = styled.img`
 `;
 const Card = (props) => {
   return (
-    <StyledCard>
+    <StyledCard idx={props.idx}>
       <div className="textWrapper">
         <Divider>
           <h4>{props.title}</h4>

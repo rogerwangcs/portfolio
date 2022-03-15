@@ -1,13 +1,8 @@
-import React, { Component } from "react";
-
 import styled from "styled-components";
 import theme from "constants/theme";
 import { animationTimings } from "constants/animationTimings";
-import FadeIn from "components/generic/FadeIn";
-
-import github from "media/github.png";
-import linkedin from "media/linkedin.png";
-import gmail from "media/gmail.png";
+import FadeIn from "components/common/FadeIn";
+import { socials } from "constants/content";
 
 const StyledSocialButtons = styled(FadeIn)`
   position: absolute;
@@ -29,6 +24,7 @@ const StyledIcon = styled.div`
   }
   p {
     font-size: 16px;
+    font-weight: 700;
     color: white;
     margin-right: 10px;
 
@@ -75,39 +71,20 @@ const SocialButtons = () => {
   return (
     <FadeIn delay={animationTimings.loadDelay + 1000}>
       <StyledSocialButtons>
-        <a
-          href="https://github.com/rogerwangcs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <ButtonBG />
-            <img src={github} />
-            <p>Github</p>
-          </StyledIcon>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/rogerwangcs/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <ButtonBG />
-            <img src={linkedin} />
-            <p>LinkedIn</p>
-          </StyledIcon>
-        </a>
-        <a
-          href="mailto:rogerwangcs@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledIcon>
-            <ButtonBG />
-            <img src={gmail} />
-            <p>Email</p>
-          </StyledIcon>
-        </a>
+        {socials.map((social, idx) => (
+          <a
+            key={idx}
+            href={social.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <StyledIcon>
+              <ButtonBG />
+              <img alt={social.name} src={social.image} />
+              <p>{social.name}</p>
+            </StyledIcon>
+          </a>
+        ))}
       </StyledSocialButtons>
     </FadeIn>
   );

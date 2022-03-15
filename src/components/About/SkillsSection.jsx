@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Divider from "components/generic/Divider";
+import Divider from "components/common/Divider";
 import { skills } from "constants/content";
 
 const StyledSkillsSection = styled.div`

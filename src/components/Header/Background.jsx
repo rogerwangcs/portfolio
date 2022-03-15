@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme";
 import { animationTimings } from "constants/animationTimings";
-import FadeIn from "components/generic/FadeIn";
+import FadeIn from "components/common/FadeIn";
 
 import Cubes from "components/Header/Cubes";
 
-import Logo from "media/bg-logo-foreground.png";
+import Logo from "assets/bg-logo-foreground.png";
 
 const StyledHeaderBg = styled.div`
   overflow-x: hidden;

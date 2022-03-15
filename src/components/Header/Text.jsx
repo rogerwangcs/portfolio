@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
-import FadeIn from "components/generic/FadeIn";
+import FadeIn from "components/common/FadeIn";
 import { animationTimings } from "constants/animationTimings";
 import { header } from "constants/content";
 
 const StyledText = styled(FadeIn)`
   margin-top: -50px;
   text-align: center;
-
   > * {
     display: block;
     color: white;
@@ -21,7 +20,7 @@ const StyledText = styled(FadeIn)`
     }
     > h4 {
       margin-top: 25px;
-      font-size: 14px;
+      font-size: 18px;
     }
   }
   @media (min-width: ${viewport.MOBILE}) {
@@ -30,7 +29,7 @@ const StyledText = styled(FadeIn)`
       font-size: 5em;
     }
     > h4 {
-      font-size: 18px;
+      font-size: 24px;
       margin-top: 40px;
     }
   }
@@ -40,7 +39,7 @@ const StyledText = styled(FadeIn)`
       font-size: 8em;
     }
     > h4 {
-      font-size: 20px;
+      font-size: 28px;
       margin-top: 50px;
     }
   }

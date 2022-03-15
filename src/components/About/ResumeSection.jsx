@@ -5,8 +5,8 @@ import styled from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme";
 
-import ResumeGraphic from "media/ResumeGraphic.png";
-import RoundButton from "components/generic/RoundButton";
+import ResumeGraphic from "assets/ResumeGraphic.png";
+import RoundButton from "components/common/RoundButton";
 
 const ResumeButton = styled.div`
   display: inline-block;

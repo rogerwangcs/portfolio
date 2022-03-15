@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-import Card from "components/generic/Card";
-import RoundButton from "components/generic/RoundButton";
+import Card from "components/common/Card";
+import RoundButton from "components/common/RoundButton";
 import ProjectCarousel from "components/About/ProjectCarousel";
 import "components/About/Carousel.scss";
 
-import liveSubtitles from "media/live-subtitles.png";
-import apolloBlogImg from "media/rogersblog1.jpg";
-import betterBCHousing from "media/better-bc-housing.png";
-import dijkstras from "media/dijkstras.png";
+import liveSubtitles from "assets/live-subtitles.png";
+import apolloBlogImg from "assets/rogersblog1.jpg";
+import betterBCHousing from "assets/better-bc-housing.png";
+import dijkstras from "assets/dijkstras.png";
 
 const StyledProjectsSection = styled.div`
   text-align: center;

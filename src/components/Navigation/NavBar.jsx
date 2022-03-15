@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
@@ -7,7 +7,7 @@ import { viewport } from "constants/viewport";
 import { animationTimings } from "constants/animationTimings";
 
 import { animateScroll } from "react-scroll";
-import FadeIn from "components/generic/FadeIn";
+import FadeIn from "components/common/FadeIn";
 
 const NavAnimateC = styled(FadeIn)`
   text-align: center;

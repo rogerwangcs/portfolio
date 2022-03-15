@@ -1,6 +1,6 @@
 import theme from "constants/theme";
-import Divider from "components/generic/Divider";
-import PageSection from "components/generic/PageSection";
+import Divider from "components/common/Divider";
+import PageSection from "components/common/PageSection";
 import ProjectCard from "components/Projects/ProjectCard";
 import { projects } from "constants/content";
 
@@ -11,7 +11,7 @@ const Projects = () => {
         <h2>My Projects</h2>
       </Divider>
       {projects.map((project, projectIdx) => (
-        <ProjectCard key={projectIdx} {...project} />
+        <ProjectCard key={projectIdx} idx={projectIdx} {...project} />
       ))}
     </PageSection>
   );
