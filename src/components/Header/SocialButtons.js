@@ -9,7 +9,7 @@ import github from "media/github.png";
 import linkedin from "media/linkedin.png";
 import gmail from "media/gmail.png";
 
-const StyledSocialButtons = FadeIn.extend`
+const StyledSocialButtons = styled(FadeIn)`
   position: absolute;
   top: 0;
   right: 5px;

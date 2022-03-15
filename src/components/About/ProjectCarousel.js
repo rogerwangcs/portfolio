@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
 
@@ -30,7 +30,7 @@ class Carousel extends Component {
     this.state = {
       items: this.props.components,
       active: this.props.active,
-      direction: ""
+      direction: "",
     };
   }
 
@@ -64,15 +64,17 @@ class Carousel extends Component {
       }
       level = this.state.active - i;
       carouselItems.push(
-        <CarouselItem
-          key={index}
-          className={"carousel-item level" + level}
-          id={index}
-          level={level}
-          component={items[index]}
-          moveLeft={this.moveLeft}
-          moveRight={this.moveRight}
-        ></CarouselItem>
+        <CSSTransition key={i} timeout={{ enter: 0, exit: 0 }}>
+          <CarouselItem
+            key={index}
+            className={"carousel-item level" + level}
+            id={index}
+            level={level}
+            component={items[index]}
+            moveLeft={this.moveLeft}
+            moveRight={this.moveRight}
+          ></CarouselItem>
+        </CSSTransition>
       );
     }
     return carouselItems;
@@ -84,7 +86,7 @@ class Carousel extends Component {
     newActive--;
     this.setState({
       active: newActive < 0 ? this.state.items.length - 1 : newActive,
-      direction: "left"
+      direction: "left",
     });
   };
 
@@ -93,7 +95,7 @@ class Carousel extends Component {
     var newActive = this.state.active;
     this.setState({
       active: (newActive + 1) % this.state.items.length,
-      direction: "right"
+      direction: "right",
     });
   };
 
@@ -101,13 +103,7 @@ class Carousel extends Component {
     return (
       <SCarousel id="carousel" className="noselect">
         <SCarousel.Carousel>
-          <ReactCSSTransitionGroup
-            transitionEnterTimeout={0}
-            transitionLeaveTimeout={0}
-            transitionName={this.state.direction}
-          >
-            {this.generateItems()}
-          </ReactCSSTransitionGroup>
+          <TransitionGroup>{this.generateItems()}</TransitionGroup>
         </SCarousel.Carousel>
       </SCarousel>
     );
@@ -118,11 +114,11 @@ class CarouselItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      level: this.props.level
+      level: this.props.level,
     };
   }
 
-  moveItem = level => {
+  moveItem = (level) => {
     if (level > 0) this.props.moveLeft();
     if (level < 0) this.props.moveRight();
   };

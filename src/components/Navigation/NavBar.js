@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
-import { withRouter } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 import theme from "constants/theme";
@@ -9,7 +9,7 @@ import { animationTimings } from "constants/animationTimings";
 import { animateScroll } from "react-scroll";
 import FadeIn from "components/generic/FadeIn";
 
-const NavAnimateC = FadeIn.extend`
+const NavAnimateC = styled(FadeIn)`
   text-align: center;
   @media (max-width: ${viewport.MOBILE}) {
     margin-top: 125px;
@@ -54,7 +54,7 @@ const NavButtonBG = styled.div`
   border-radius: 20px/50%;
 
   /* backface-visibility prevents the shaking/flickering effect during transition  */
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: all ease-out 200ms;
   transform: scale(0.8);
   opacity: 0;
@@ -70,11 +70,12 @@ const NavButtonBG = styled.div`
 `;
 
 const NavBar = (props) => {
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const navRef = useRef(null);
 
-  const handleRoute = (url) => {
-    props.history.push(url);
+  const handleNavigate = (url) => {
+    navigate(url);
     if (window.scrollY < window.innerHeight) {
       animateScroll.scrollTo(window.innerHeight);
     }
@@ -84,10 +85,8 @@ const NavBar = (props) => {
     const navPos = navRef.current.getBoundingClientRect().top;
     if (navPos < 0) {
       setIsSticky(true);
-      console.log("yes");
     } else {
       setIsSticky(false);
-      console.log("no");
     }
   };
 
@@ -102,24 +101,18 @@ const NavBar = (props) => {
     <NavAnimateC delay={animationTimings.loadDelay + 750}>
       <div ref={navRef}>
         <SNavBar isSticky={isSticky}>
-          <NavButton onClick={() => handleRoute("/")}>
+          <NavButton onClick={() => handleNavigate("/")}>
             <h3>About</h3>
             <NavButtonBG className="navButtonBG" />
           </NavButton>
-          <NavButton onClick={() => handleRoute("/projects")}>
+          <NavButton onClick={() => handleNavigate("/projects")}>
             <h3>Projects</h3>
             <NavButtonBG className="navButtonBG" />
           </NavButton>
-          {/* <a href="https://medium.com/@rogerwangcs/latest" target="_blank">
-        <NavButton>
-          <h3>Blog</h3>
-          <NavButtonBG className="navButtonBG" />
-        </NavButton>
-      </a> */}
         </SNavBar>
       </div>
     </NavAnimateC>
   );
 };
 
-export default withRouter(NavBar);
+export default NavBar;

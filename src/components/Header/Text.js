@@ -5,7 +5,7 @@ import { viewport } from "constants/viewport.js";
 import FadeIn from "components/generic/FadeIn";
 import { animationTimings } from "constants/animationTimings";
 
-const StyledText = FadeIn.extend`
+const StyledText = styled(FadeIn)`
   margin-top: -50px;
   text-align: center;
 
@@ -47,7 +47,7 @@ const StyledText = FadeIn.extend`
   }
 `;
 
-const HeaderText = props => {
+const HeaderText = (props) => {
   return (
     <StyledText delay={animationTimings.loadDelay + 550}>
       <h1>Roger Wang</h1>

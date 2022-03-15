@@ -1,32 +1,38 @@
 {
-  "name": "react-personal-website",
-  "version": "1.1.0",
+  "name": "portfolio",
+  "version": "0.1.0",
   "private": true,
-  "homepage": "https://rogerwangcs.github.io/React-Personal-Website/",
   "dependencies": {
-    "node-sass": "4.14.1",
-    "react": "^16.4.1",
-    "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.4.1",
-    "react-ga": "^2.5.3",
-    "react-responsive": "^4.1.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "3.1.1",
-    "react-scroll": "^1.7.9",
-    "react-svg": "^4.0.17",
-    "react-transition-group": "^4.3.0",
-    "styled-components": "^3.3.3"
-  },
-  "devDependencies": {
-    "gh-pages": "^1.2.0"
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^16.11.26",
+    "@types/react": "^17.0.40",
+    "@types/react-dom": "^17.0.13",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "react-scroll": "^1.8.6",
+    "react-transition-group": "^4.4.2",
+    "sass": "^1.49.9",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.6.2",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

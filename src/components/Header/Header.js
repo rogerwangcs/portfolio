@@ -17,23 +17,17 @@ const HeaderContent = styled.div`
   }
 `;
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Background />
-        <SocialButtons />
-        <HeaderContent height={window.innerHeight}>
-          <Text />
-          <NavBar />
-        </HeaderContent>
-      </React.Fragment>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <>
+      <Background />
+      <SocialButtons />
+      <HeaderContent height={window.innerHeight}>
+        <Text />
+        <NavBar />
+      </HeaderContent>
+    </>
+  );
+};
 
 export default Header;

@@ -64,7 +64,7 @@ const Picture = styled.img`
     border-radius: 15px;
   }
 `;
-const Card = props => {
+const Card = (props) => {
   return (
     <StyledCard>
       <div className="textWrapper">
@@ -78,14 +78,14 @@ const Card = props => {
             <RoundButton small text="See It" />
           </a>
         ) : (
-          <React.Fragment />
+          <></>
         )}
         {props.github !== "" ? (
           <a href={props.github} target="_blank" rel="noopener noreferrer">
             <RoundButton small text="Github Repo" />
           </a>
         ) : (
-          <React.Fragment />
+          <></>
         )}
       </div>
       <Picture src={props.image} />
