@@ -17,11 +17,7 @@ const colors = {
   primary2: "#305DB6",
   primary3: "#284D96",
   primary4: "#243D6F",
-  primary5: "#1C2B4A"
+  primary5: "#1C2B4A",
 };
 
-export default {
-  colors
-};
-
-// import theme from 'constants/theme.js';
+export default colors;

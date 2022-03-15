@@ -18,7 +18,7 @@ const StyledCard = styled.div`
 
   .header {
     position: absolute;
-    background-color: ${theme.colors.buttonblue};
+    background-color: ${theme.buttonblue};
     text-align: center;
 
     width: 80%;
@@ -44,7 +44,7 @@ const StyledCard = styled.div`
   }
 `;
 
-const Card = props => {
+const Card = (props) => {
   return (
     <StyledCard>
       <div className="header">

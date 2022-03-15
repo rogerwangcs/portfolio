@@ -1,5 +1,3 @@
-import React from "react";
-
 import { viewport } from "constants/viewport";
 import styled from "styled-components";
 import Divider from "components/generic/Divider";
@@ -73,16 +71,16 @@ const Card = (props) => {
         </Divider>
         <h6>{props.date}</h6>
         <p>{props.description}</p>
-        {props.website !== "" ? (
+        {props.website ? (
           <a href={props.website} target="_blank" rel="noopener noreferrer">
             <RoundButton small text="See It" />
           </a>
         ) : (
           <></>
         )}
-        {props.github !== "" ? (
+        {props.github ? (
           <a href={props.github} target="_blank" rel="noopener noreferrer">
-            <RoundButton small text="Github Repo" />
+            <RoundButton small text="Source Code" />
           </a>
         ) : (
           <></>

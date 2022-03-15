@@ -3,7 +3,7 @@ import ReactGA from "react-ga";
 
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
-import theme from "constants/theme.js";
+import theme from "constants/theme";
 
 import ResumeGraphic from "media/ResumeGraphic.png";
 import RoundButton from "components/generic/RoundButton";
@@ -56,7 +56,8 @@ const StyledResumeGraphic = styled.img`
 
   transition: transform 300ms ease-in-out;
   transform-origin: bottom;
-  transform: ${props => (props.hover ? "translateY(0px)" : "translateY(25px)")};
+  transform: ${(props) =>
+    props.hover ? "translateY(0px)" : "translateY(25px)"};
 `;
 
 const BlueBG = styled.div`
@@ -67,25 +68,25 @@ const BlueBG = styled.div`
   height: 75px;
   border-radius: 25px;
 
-  background-color: ${theme.colors.hoverblue};
+  background-color: ${theme.hoverblue};
   margin: auto;
   left: 0;
   right: 0;
   bottom: 0;
 
   transition: all 300ms ease-in-out;
-  transform: ${props => (props.hover ? "scale(15)" : "scale(1)")};
+  transform: ${(props) => (props.hover ? "scale(15)" : "scale(1)")};
 `;
 
 class ResumeSection extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false
+      hover: false,
     };
   }
 
-  handleHover = hoverState => {
+  handleHover = (hoverState) => {
     this.setState({ hover: hoverState });
   };
   render() {
@@ -102,7 +103,7 @@ class ResumeSection extends Component {
             onClick={() => {
               ReactGA.event({
                 category: "Navigate",
-                action: "Viewed Resume"
+                action: "Viewed Resume",
               });
             }}
           >

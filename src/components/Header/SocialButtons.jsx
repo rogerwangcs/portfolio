@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import styled from "styled-components";
-import theme from "constants/theme.js";
+import theme from "constants/theme";
 import { animationTimings } from "constants/animationTimings";
 import FadeIn from "components/generic/FadeIn";
 
@@ -50,7 +50,7 @@ const StyledIcon = styled.div`
 
 const ButtonBG = styled.div`
   position: absolute;
-  background-color: ${theme.colors.hoverblue};
+  background-color: ${theme.hoverblue};
   width: 100%;
   height: 44px;
   border-radius: 20px/50%;

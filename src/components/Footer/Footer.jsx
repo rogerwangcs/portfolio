@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import theme from "constants/theme.js";
+import theme from "constants/theme";
 import { viewport } from "constants/viewport";
 
 import github from "media/github.png";
@@ -14,7 +14,7 @@ const StyledFooter = styled.div`
   z-index: 100;
   position: relative;
 
-  background-color: ${theme.colors.darkblue};
+  background-color: ${theme.darkblue};
 
   padding-top: 30px;
 
@@ -23,7 +23,7 @@ const StyledFooter = styled.div`
 
   > p {
     font-size: 16px;
-    color: ${theme.colors.gray2};
+    color: ${theme.gray2};
     text-align: center;
   }
 `;
@@ -36,7 +36,7 @@ const StyledIcon = styled.a`
   display: inline-block;
 
   transition: all 200ms ease-in-out;
-  background-color: ${theme.colors.blue};
+  background-color: ${theme.blue};
 
   margin: 15px;
   padding: 10px;
@@ -50,7 +50,7 @@ const StyledIcon = styled.a`
   }
   :hover {
     cursor: pointer;
-    background-color: ${theme.colors.buttonblue};
+    background-color: ${theme.buttonblue};
     img {
       transform: scale(1.2);
     }
@@ -83,7 +83,7 @@ const SocialButtons = () => {
   );
 };
 
-const Footer = props => {
+const Footer = (props) => {
   let date = new Date();
 
   return (

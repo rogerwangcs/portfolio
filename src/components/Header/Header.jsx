@@ -1,7 +1,4 @@
-import React, { Component } from "react";
-
 import styled from "styled-components";
-
 import Background from "components/Header/Background";
 import Text from "components/Header/Text";
 import NavBar from "components/Navigation/NavBar";

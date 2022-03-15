@@ -34,7 +34,7 @@ class ResumeView extends Component {
     super(props);
     this.state = {
       numPages: null,
-      pageNumber: 1
+      pageNumber: 1,
     };
   }
 
@@ -46,11 +46,7 @@ class ResumeView extends Component {
     const { pageNumber, numPages } = this.state;
 
     return (
-      <PageSection
-        color={theme.colors.gray2}
-        paddingBottom="50"
-        paddingTop="50"
-      >
+      <PageSection color={theme.gray2} paddingBottom="50" paddingTop="50">
         {/* <StyledResumeView>
           <Document file={Resume} onLoadSuccess={this.onDocumentLoad}>
             <Page pageNumber={pageNumber} />

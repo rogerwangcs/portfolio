@@ -48,7 +48,7 @@ const NavButton = styled.div`
 const NavButtonBG = styled.div`
   z-index: -1;
   position: absolute;
-  background-color: ${theme.colors.hoverblue};
+  background-color: ${theme.hoverblue};
   width: 100%;
   height: 44px;
   border-radius: 20px/50%;

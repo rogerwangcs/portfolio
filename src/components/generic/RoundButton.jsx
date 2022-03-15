@@ -1,12 +1,10 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import styled from "styled-components";
 import theme from "constants/theme";
 
 const StyledButton = styled.div`
   display: inline-block;
-  background-color: ${theme.colors.buttonblue};
+  background-color: ${theme.buttonblue};
 
   padding: ${(props) => (props.small ? "10px 18px" : "12px 28px")};
   border-radius: ${(props) => (props.small ? "20px/50%" : "25px/50%")};
@@ -21,7 +19,7 @@ const StyledButton = styled.div`
   transition: background-color ease-out 200ms;
   :hover {
     cursor: pointer;
-    background-color: ${theme.colors.hoverblue};
+    background-color: ${theme.hoverblue};
   }
 `;
 

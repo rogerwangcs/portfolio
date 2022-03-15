@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { viewport } from "constants/viewport";
 import theme from "constants/theme";
 
@@ -27,20 +27,24 @@ const cubeAnimation = keyframes`
   }
 `;
 
+const cubeAnimationRule = css`
+  ${cubeAnimation} 10s;
+`;
+
 const StyledCube = styled.div`
   z-index: -101;
   position: absolute;
 
   width: 75px;
   height: 75px;
-  background-color: ${theme.colors.blue};
+  background-color: ${theme.blue};
 
   opacity: 0;
   transform: scale(0);
 
   -webkit-backface-visibility: hidden;
   transform-origin: center;
-  animation: ${cubeAnimation} 10s;
+  animation: ${cubeAnimationRule};
   animation-timing-function: linear;
   animation-delay: 0ms;
   animation-fill-mode: forwards;
@@ -55,10 +59,10 @@ class Cube extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: "block"
+      display: "block",
     };
   }
-  componentWillReceiveProps = newProps => {
+  UNSAFE_componentWillReceiveProps = (newProps) => {
     this.setState({ duration: newProps.duration });
   };
 
@@ -73,7 +77,7 @@ class Cube extends Component {
           position: "absolute",
           top: this.props.y + "vh",
           left: this.props.x + "vw",
-          display: this.state.display
+          display: this.state.display,
         }}
         mounted={this.state.mounted}
         {...this.props}
@@ -86,7 +90,7 @@ class Cubes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cubes: [{ key: 0 }]
+      cubes: [{ key: 0 }],
     };
   }
 
@@ -106,7 +110,7 @@ class Cubes extends Component {
       let newCube = {
         key: newCubes[newCubes.length - 1].key + 1,
         x: Math.floor(Math.random() * 90),
-        y: Math.floor(Math.random() * 70)
+        y: Math.floor(Math.random() * 70),
       };
       newCubes.push(newCube);
       this.setState({ cubes: newCubes });
@@ -114,7 +118,7 @@ class Cubes extends Component {
   };
 
   render() {
-    return this.state.cubes.map(cube => <Cube {...cube} />);
+    return this.state.cubes.map((cube) => <Cube {...cube} />);
   }
 }
 

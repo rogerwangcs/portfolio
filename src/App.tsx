@@ -1,16 +1,11 @@
-import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "components/Header/Header";
-import Footer from "components/Footer/Footer.js";
+import Footer from "components/Footer/Footer";
 import About from "screens/About";
 import Projects from "screens/Projects";
-import "screens/App.scss";
+import "App.scss";
 
 // add google analytics
 

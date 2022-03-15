@@ -1,13 +1,12 @@
 import React from "react";
-
 import styled from "styled-components";
 import { viewport } from "constants/viewport";
 
 const StyledPageSection = styled.div`
-  background-color: ${props => props.color};
+  background-color: ${(props) => props.color};
   width: 100%;
-  padding-top: ${props => props.paddingTop + "px"};
-  padding-bottom: ${props => props.paddingBottom + "px"};
+  padding-top: ${(props) => props.paddingTop + "px"};
+  padding-bottom: ${(props) => props.paddingBottom + "px"};
 `;
 
 const StyledPageContents = styled.div`
@@ -29,7 +28,7 @@ const StyledPageContents = styled.div`
   }
 `;
 
-const PageSection = props => {
+const PageSection = (props) => {
   return (
     <StyledPageSection {...props}>
       {props.fullwidth ? (
