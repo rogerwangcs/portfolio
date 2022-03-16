@@ -11,8 +11,7 @@ export const SummaryText = () => {
     <p>
       <strong>Hey!</strong> 👋
       <br /> I'm <strong>Roger</strong>. currently a software engineer based in
-      NYC working on the Discovery+ 🦈 Roku platform client team. Building out
-      UI and Rok
+      NYC working on the Discovery+ 🦈 Roku client team.
     </p>
   );
 };
@@ -34,7 +33,7 @@ export const skills = [
   },
   {
     name: "Development",
-    items: ["React", "Node", "Graphql", "MongoDB", "PostGres"],
+    items: ["React", "Node", "Roku", "Flutter", "Graphql", "MongoDB", "MySQL"],
   },
   {
     name: "Data Analysis",
@@ -57,6 +56,25 @@ export const projects = [
       {
         name: "See It",
         link: "https://www.linkedin.com/posts/vitaly-tarasov-1137008_my-coworker-roger-wang-and-i-recently-wrote-activity-6907478605467893760--p9M?utm_source=linkedin_share&utm_medium=member_desktop_web",
+      },
+    ],
+  },
+  {
+    name: "IRL Among Us",
+    subtitle: "Spring 2021  - Boston College ACF",
+    images: [
+      require("assets/amongus1.png"),
+      require("assets/amongus2.png"),
+      require("assets/amongus3.png"),
+      require("assets/amongus4.png"),
+    ],
+    imageFit: "contain",
+    description:
+      "An ambitious project to bring the fun of Among Us to real life. Using proximity detection by emitting and receiving high frequency sounds and QR code scanning, players can complete tasks, kill, sabotage, and call for meetings. Developed with Flutter along with David Shen for Boston College ACF.",
+    links: [
+      {
+        name: "Source Code",
+        link: "https://github.com/rogerwangcs/acf-among-us",
       },
     ],
   },

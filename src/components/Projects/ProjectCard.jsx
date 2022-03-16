@@ -72,7 +72,7 @@ const Card = (props) => {
         </div>
         {linkComponents}
       </div>
-      <CarouselCard images={props.images} />
+      <CarouselCard images={props.images} imageFit={props.imageFit} />
     </StyledCard>
   );
 };

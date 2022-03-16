@@ -8,7 +8,8 @@ const SCarouselCard = styled.div`
     width: 460px;
     height: 345px;
     margin-bottom: 15px;
-    object-fit: cover;
+    object-fit: ${(props) => (props.imageFit ? props.imageFit : "cover")};
+    background-color: black;
 
     border-radius: 25px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
@@ -37,11 +38,12 @@ const CarouselDot = styled.div`
   height: 10px;
   margin: 3px;
   border-radius: 10px;
-  background-color: ${props => props.selected ? theme.buttonblue : theme.gray0};
+  background-color: ${(props) =>
+    props.selected ? theme.buttonblue : theme.gray0};
 
   :hover {
-      cursor: pointer;
-      background-color: ${theme.hoverblue}
+    cursor: pointer;
+    background-color: ${theme.hoverblue};
   }
 `;
 
@@ -56,12 +58,18 @@ const CarouselCard = (props) => {
 
   const handleDotClick = (e, idx) => {
     setSelectedIdx(idx);
-  }
+  };
 
-  const dotComponents = images.map((image, idx) => <CarouselDot key={idx} selected={idx === selectedIdx} onClick={(e) => handleDotClick(e, idx)}/>);
+  const dotComponents = images.map((image, idx) => (
+    <CarouselDot
+      key={idx}
+      selected={idx === selectedIdx}
+      onClick={(e) => handleDotClick(e, idx)}
+    />
+  ));
 
   return (
-    <SCarouselCard clickable={clickable}>
+    <SCarouselCard clickable={clickable} imageFit={props.imageFit}>
       <img
         alt="carouselCard"
         className="carouselImage"
