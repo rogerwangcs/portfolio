@@ -46,9 +46,9 @@ const Card = (props) => {
   return (
     <StyledCard>
       <div className="header">
-        <h4>{props.title}</h4>
+        <h4>{props.name}</h4>
       </div>
-      <img draggable="false" src={props.image} />
+      <img alt="card" draggable="false" src={props.image} />
     </StyledCard>
   );
 };

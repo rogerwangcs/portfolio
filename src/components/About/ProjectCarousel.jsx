@@ -30,7 +30,7 @@ class Carousel extends Component {
     this.state = {
       items: this.props.components,
       active: this.props.active,
-      direction: "",
+      direction: "left",
     };
   }
 
@@ -54,7 +54,7 @@ class Carousel extends Component {
   generateItems() {
     var carouselItems = [];
     var level;
-    let items = this.state.items;
+    let items = this.state.items.reverse();
     for (var i = this.state.active - 1; i < this.state.active + 2; i++) {
       var index = i;
       if (i < 0) {
@@ -64,13 +64,18 @@ class Carousel extends Component {
       }
       level = this.state.active - i;
       carouselItems.push(
-        <CSSTransition key={i} timeout={{ enter: 0, exit: 0 }}>
+        <CSSTransition
+          classNames={this.state.direction}
+          key={i}
+          timeout={{ enter: 0, exit: 500 }}
+        >
           <CarouselItem
             key={index}
             className={"carousel-item level" + level}
             id={index}
             level={level}
             component={items[index]}
+            handleClick={this.props.handleClick}
             moveLeft={this.moveLeft}
             moveRight={this.moveRight}
           ></CarouselItem>
@@ -118,16 +123,17 @@ class CarouselItem extends React.Component {
     };
   }
 
-  moveItem = (level) => {
-    if (level > 0) this.props.moveLeft();
-    if (level < 0) this.props.moveRight();
+  handleClick = () => {
+    if (this.props.level > 0) this.props.moveLeft();
+    else if (this.props.level < 0) this.props.moveRight();
+    else this.props.handleClick();
   };
 
   render() {
     return (
       <div
         className={"carousel-item level" + this.props.level}
-        onClick={() => this.moveItem(this.props.level)}
+        onClick={this.handleClick}
       >
         {this.props.component}
       </div>
