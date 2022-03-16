@@ -44,12 +44,70 @@ export const skills = [
 
 export const projects = [
   {
+    name: "Roku Testing Framework",
+    shortname: "Roku Test Framework",
+    subtitle: "Spring 2022 - Discovery Inc.",
+    images: [
+      require("assets/rokutesting1.png"),
+      require("assets/rokutesting2.png"),
+    ],
+    description:
+      "Developed a headless automated testing framework for the Roku platform with fellow engineer Vitaly Tarasov at Discovery. The framework allows for extensive functionality testing suites and remote automated testing.",
+    links: [
+      {
+        name: "See It",
+        link: "https://www.linkedin.com/posts/vitaly-tarasov-1137008_my-coworker-roger-wang-and-i-recently-wrote-activity-6907478605467893760--p9M?utm_source=linkedin_share&utm_medium=member_desktop_web",
+      },
+    ],
+  },
+  {
+    name: "Boston Foods Explorer",
+    shortname: "Boston Food Explorer",
+    subtitle: "Fall 2020",
+    images: [
+      require("assets/bostonfood1.png"),
+      require("assets/bostonfood2.png"),
+    ],
+    description:
+      "For Pr. Nam Wook Kim's Visualization course at Boston College. An interactive visualization with drill-down functionality to explore various restaurants in the Greater Boston area and learn more about the nutrition of their menu items. Built with d3.js",
+    links: [
+      {
+        name: "Source Code",
+        link: "https://github.com/rogerwangcs/boston-food-vis",
+      },
+    ],
+  },
+  {
     name: "Observation Visualization Tool",
     shortname: "Obs Vis",
     subtitle: "Summer 2020 - NASA Jet Propulsion Lab",
     images: [require("assets/obsvis1.png"), require("assets/obsvis2.png")],
     description:
-      "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
+      "This tool interfaces with a database of observed telemetry. It provides a user friendly interface for instrument operators view past observations, note anomalies and errors, as well as generate an anomly report. The tool is developed as part of the MAIA mission. Built with React.js",
+    links: [
+      {
+        name: "Mission Status",
+        link: "https://www.jpl.nasa.gov/missions/multi-angle-imager-for-aerosols-maia",
+      },
+    ],
+  },
+  {
+    name: "LiteDoc - Distributed Collab Editor",
+    shortname: "LiteDoc",
+    subtitle: "March 2020 - Percom 2020",
+    images: [require("assets/litedoc1.png"), require("assets/litedoc2.png")],
+    description:
+      "Under the guidance of Pr. Lewis Tseng (Boston College), I implementated LiteDoc, a distributed collaborative text editor. LiteDoc proposes a fault tolerant approach to consensus using a set of single write multi read (SWMR) atomic registered to separate different parts of a given document.",
+    links: [
+      {
+        name: "Conference Paper",
+        link: "https://ieeexplore.ieee.org/document/9156221",
+      },
+      {
+        name: "Source Code",
+        link: "https://github.com/LiteDoc",
+      },
+    ],
   },
   {
     name: "Dijkstra's Arena",

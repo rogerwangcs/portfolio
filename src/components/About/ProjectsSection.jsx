@@ -29,7 +29,7 @@ const ProjectsSection = (props) => {
         handleClick={() => {
           navigate("/projects");
         }}
-        active={projectCards.length} // start halfway through to avoid buggy transitions at start
+        active={projectCards.length - 1} // start halfway through to avoid buggy transitions at start
       />
       <RoundButton text="See All Projects" link="/projects" scroll />
     </StyledProjectsSection>

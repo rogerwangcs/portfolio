@@ -54,7 +54,7 @@ class Carousel extends Component {
   generateItems() {
     var carouselItems = [];
     var level;
-    let items = this.state.items;
+    let items = this.state.items.reverse();
     for (var i = this.state.active - 1; i < this.state.active + 2; i++) {
       var index = i;
       if (i < 0) {

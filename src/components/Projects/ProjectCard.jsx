@@ -5,7 +5,7 @@ import CarouselCard from "components/common/CarouselCard";
 
 const StyledCard = styled.div`
   display: flex;
-  flex-direction: ${(props) => (props.idx % 2 === 0 ? "row-reverse" : "row")};
+  flex-direction: ${(props) => (props.idx % 2 === 1 ? "row-reverse" : "row")};
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
@@ -42,7 +42,6 @@ const StyledCard = styled.div`
     }
   }
 
-
   .RoundButton {
     margin-right: 15px;
     margin-bottom: 15px;
@@ -69,7 +68,7 @@ const Card = (props) => {
         </Divider>
         <h6>{props.subtitle}</h6>
         <div className="descriptionContainer">
-         <p>{props.description}</p>
+          <p>{props.description}</p>
         </div>
         {linkComponents}
       </div>
