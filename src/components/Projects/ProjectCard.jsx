@@ -15,7 +15,7 @@ const StyledCard = styled.div`
   margin-bottom: 100px;
 
   h6 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   p {
@@ -67,7 +67,7 @@ const Card = (props) => {
     <StyledCard idx={props.idx}>
       <div className="textWrapper">
         <Divider>
-          <h4>{props.title}</h4>
+          <h4>{props.name}</h4>
         </Divider>
         <h6>{props.date}</h6>
         <p>{props.description}</p>

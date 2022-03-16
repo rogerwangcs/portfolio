@@ -44,7 +44,22 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Dijkstra's Arena",
+    name: "Observation Visualization",
+    shortname: "Obs Vis",
+    date: "Summer 2020",
+    image: require("assets/obsvis2.png"),
+    description:
+      "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
+  },
+  {
+    name: "Telemetry Dashboard",
+    date: "Summer 2020",
+    image: require("assets/obsvis2.png"),
+    description:
+      "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
+  },
+  {
+    name: "Dijkstra's Arena",
     date: "Fall 2019",
     image: require("assets/dijkstras.png"),
     description:
@@ -53,7 +68,7 @@ export const projects = [
     github: "https://github.com/rogerwangcs/Dijkstras-Arena",
   },
   {
-    title: "Live Subtitles",
+    name: "Live Subtitles",
     date: "April 2019",
     image: require("assets/live-subtitles.png"),
     description:
@@ -62,7 +77,7 @@ export const projects = [
     github: "https://github.com/rogerwangcs/ar-dialogue-subtitles",
   },
   {
-    title: "Write Fast",
+    name: "Write Fast",
     date: "Summer 2018",
     image: require("assets/writefast1.jpg"),
     description:
@@ -71,7 +86,7 @@ export const projects = [
     github: "https://github.com/rogerwangcs/writefast",
   },
   {
-    title: "Better BC Housing",
+    name: "Better BC Housing",
     date: "April 2018",
     image: require("assets/better-bc-housing.png"),
     description:

@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <PageSection color={theme.gray2} paddingBottom="50" paddingTop="50">
       <Divider centered={true} big={true}>
-        <h2>My Projects</h2>
+        <h2>Projects</h2>
       </Divider>
       {projects.map((project, projectIdx) => (
         <ProjectCard key={projectIdx} idx={projectIdx} {...project} />
