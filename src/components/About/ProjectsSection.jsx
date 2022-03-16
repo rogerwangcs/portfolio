@@ -17,19 +17,19 @@ const ProjectsSection = (props) => {
   const projectCards = projects.map((project, idx) => (
     <Card
       key={idx}
-      title={project.shortname !== undefined ? project.shortname : project.name}
-      image={project.image}
+      name={project.shortname !== undefined ? project.shortname : project.name}
+      image={project.images[0]}
     />
   ));
 
   return (
     <StyledProjectsSection>
       <ProjectCarousel
-        components={[...projectCards, ...projectCards, ...projectCards]}
+        components={[...projectCards, ...projectCards]}
         handleClick={() => {
           navigate("/projects");
         }}
-        active={1}
+        active={projectCards.length} // start halfway through to avoid buggy transitions at start
       />
       <RoundButton text="See All Projects" link="/projects" scroll />
     </StyledProjectsSection>

@@ -1,7 +1,7 @@
-import { viewport } from "constants/viewport";
 import styled from "styled-components";
 import Divider from "components/common/Divider";
 import RoundButton from "components/common/RoundButton";
+import CarouselCard from "components/common/CarouselCard";
 
 const StyledCard = styled.div`
   display: flex;
@@ -22,7 +22,8 @@ const StyledCard = styled.div`
     font-size: 16px;
   }
 
-  > .textWrapper {
+  .cardContent {
+    /* text-align: ${(props) => (props.idx % 2 === 0 ? "right" : "")}; */
     white-space: wrap;
     order: 2;
     max-width: 400px;
@@ -30,6 +31,9 @@ const StyledCard = styled.div`
     p + div {
       margin-right: 15px;
     }
+    /* .descriptionContainer {
+      text-align: justify;
+    } */
 
     @media (max-width: 950px) {
       padding-top: 30px;
@@ -38,55 +42,38 @@ const StyledCard = styled.div`
     }
   }
 
+
   .RoundButton {
     margin-right: 15px;
+    margin-bottom: 15px;
   }
 `;
 
-const Picture = styled.img`
-  width: 400px;
-  height: 250px;
-  margin-bottom: 30px;
-  object-fit: cover;
-
-  border-radius: 25px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
-
-  @media (max-width: 950px) {
-    width: 450px;
-    height: 300px;
-  }
-  @media (max-width: ${viewport.MOBILE}) {
-    width: 90%;
-    height: auto;
-    border-radius: 15px;
-  }
-`;
 const Card = (props) => {
+  const linkComponents = props.links ? (
+    props.links.map((link, idx) => (
+      <a key={idx} href={link.link} target="_blank" rel="noopener noreferrer">
+        <RoundButton small text={link.name} />
+      </a>
+    ))
+  ) : (
+    <></>
+  );
+  console.log(linkComponents);
+
   return (
     <StyledCard idx={props.idx}>
-      <div className="textWrapper">
+      <div className="cardContent">
         <Divider>
           <h4>{props.name}</h4>
         </Divider>
-        <h6>{props.date}</h6>
-        <p>{props.description}</p>
-        {props.website ? (
-          <a href={props.website} target="_blank" rel="noopener noreferrer">
-            <RoundButton small text="See It" />
-          </a>
-        ) : (
-          <></>
-        )}
-        {props.github ? (
-          <a href={props.github} target="_blank" rel="noopener noreferrer">
-            <RoundButton small text="Source Code" />
-          </a>
-        ) : (
-          <></>
-        )}
+        <h6>{props.subtitle}</h6>
+        <div className="descriptionContainer">
+         <p>{props.description}</p>
+        </div>
+        {linkComponents}
       </div>
-      <Picture src={props.image} />
+      <CarouselCard images={props.images} />
     </StyledCard>
   );
 };

@@ -9,6 +9,7 @@ const colors = {
   gray3: "rgb(250, 250, 250)",
   gray2: "rgb(230, 230, 230)",
   gray1: "rgb(200, 200, 200)",
+  gray0: "rgb(150, 150, 150)",
 
   black1: "rgb(41, 41, 41)",
 

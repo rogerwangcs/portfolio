@@ -44,71 +44,130 @@ export const skills = [
 
 export const projects = [
   {
-    name: "Observation Visualization",
+    name: "Observation Visualization Tool",
     shortname: "Obs Vis",
-    date: "Summer 2020",
-    image: require("assets/obsvis2.png"),
-    description:
-      "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
-  },
-  {
-    name: "Telemetry Dashboard",
-    date: "Summer 2020",
-    image: require("assets/obsvis2.png"),
+    subtitle: "Summer 2020 - NASA Jet Propulsion Lab",
+    images: [require("assets/obsvis1.png"), require("assets/obsvis2.png")],
     description:
       "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
   },
   {
     name: "Dijkstra's Arena",
-    date: "Fall 2019",
-    image: require("assets/dijkstras.png"),
+    subtitle: "Fall 2019",
+    images: [
+      require("assets/dijkstras1.png"),
+      require("assets/dijkstras2.png"),
+      require("assets/dijkstras3.png"),
+    ],
     description:
       "Dijkstra’s Arena is a web browser game aimed to educate players on the basis of Dijkstra’s algorithm and other graph theory shortest path problems in a fun, challenging, and interactive environment.",
-    website: "http://dijkstras-arena.rogerwangcs.com/",
-    github: "https://github.com/rogerwangcs/Dijkstras-Arena",
+    links: [
+      {
+        name: "See It",
+        link: "http://dijkstras-arena.rogerwangcs.com/",
+      },
+      {
+        name: "Source Code",
+        link: "https://github.com/rogerwangcs/Dijkstras-Arena",
+      },
+    ],
   },
   {
     name: "Live Subtitles",
-    date: "April 2019",
-    image: require("assets/live-subtitles.png"),
+    subtitle: "April 2019 - Hack Dartmouth V",
+    images: [
+      require("assets/live-subtitles1.png"),
+      require("assets/live-subtitles2.png"),
+    ],
     description:
       "Display what people are saying as they are talking in real time! A quick app built during Hack Dartmouth V. Created by Roger Wang, David Shen, Jerry Han, and Alex Sun using React and Google Chrome's speech-to-text API.",
-    website: "http://live-subtitles.rogerwangcs.com/",
-    github: "https://github.com/rogerwangcs/ar-dialogue-subtitles",
+    links: [
+      {
+        name: "See It",
+        link: "http://live-subtitles.rogerwangcs.com/",
+      },
+      {
+        name: "Devpost",
+        link: "https://devpost.com/software/live-subtitles",
+      },
+      {
+        name: "Source Code",
+        link: "https://github.com/rogerwangcs/ar-dialogue-subtitles",
+      },
+    ],
   },
   {
     name: "Write Fast",
-    date: "Summer 2018",
-    image: require("assets/writefast1.jpg"),
+    subtitle: "Summer 2018",
+    images: [
+      require("assets/writefast1.jpg"),
+      require("assets/writefast2.jpg"),
+      require("assets/writefast3.jpg"),
+    ],
     description:
       "An attempt to relieve writers block. A clean writing interface without distractions helps you focus, while the glowy red border nudges to continue writing.",
-    website: "https://rogerwangcs.github.io/writefast",
-    github: "https://github.com/rogerwangcs/writefast",
+    links: [
+      {
+        name: "See It",
+        link: "https://rogerwangcs.github.io/writefast",
+      },
+      {
+        name: "Source Code",
+        link: "https://github.com/rogerwangcs/writefast",
+      },
+    ],
+  },
+  {
+    name: "GraphQL Blogging Platform",
+    shortname: "Blog Platform",
+    subtitle: "Summer 2018",
+    images: [
+      require("assets/rogersblog1.jpg"),
+      require("assets/rogersblog2.jpg"),
+      require("assets/rogersblog3.jpg"),
+    ],
+    description:
+      "Blogging Platform built using React, Apollo, Express, Graphql and MongoDB. Features authentication and authorization with Auth0, markup blog editor and individual user profiles.",
+    links: [
+      {
+        name: "See it",
+        link: "https://rogers-react-blog.herokuapp.com/",
+      },
+    ],
   },
   {
     name: "Better BC Housing",
-    date: "April 2018",
-    image: require("assets/better-bc-housing.png"),
+    subtitle: "April 2018",
+    images: [require("assets/better-bc-housing.png")],
     description:
-      "Reinvents the obsolete housing selection system at Boston College with a React, Node, and MongoDB single page web application. Features Beautiful and interactive map interface where students can navigate to buildings and rooms of choice. Accommodates live room picking, giving students real time feedback during the selection process. 🏆 Won best UI/UX at BC's Hack The Heights 2018 hackathon.",
-    github: "https://github.com/MikeN64/Better-BC-Housing",
+      "Reinvents the obsolete housing selection system at Boston College with a React, Node, and MongoDB single page web application. Features Beautiful and interactive map interface where students can navigate to buildings and rooms of choice. Accommosubtitles live room picking, giving students real time feedback during the selection process. 🏆 Won best UI/UX at BC's Hack The Heights 2018 hackathon.",
+    links: [
+      {
+        name: "Devpost",
+        link: "https://devpost.com/software/better-bc-housing",
+      },
+      {
+        name: "Source Code",
+        link: "https://github.com/MikeN64/Better-BC-Housing",
+      },
+    ],
   },
 ];
 
 export const socials = [
   {
     name: "Github",
-    image: require("assets/github.png"),
+    image: [require("assets/github.png")],
     link: "https://github.com/rogerwangcs",
   },
   {
     name: "LinkedIn",
-    image: require("assets/linkedin.png"),
+    image: [require("assets/linkedin.png")],
     link: "https://www.linkedin.com/in/rogerwangcs/",
   },
   {
     name: "Email",
-    image: require("assets/gmail.png"),
+    image: [require("assets/gmail.png")],
     link: "mailto:rogerwangcs@gmail.com",
   },
 ];
