@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Card from "components/common/Card";
 import RoundButton from "components/common/RoundButton";
+import { animateScroll } from "react-scroll";
 import ProjectCarousel from "components/About/ProjectCarousel";
 import "components/About/Carousel.scss";
 
@@ -28,6 +29,7 @@ const ProjectsSection = (props) => {
         components={[...projectCards, ...projectCards]}
         handleClick={() => {
           navigate("/projects");
+          animateScroll.scrollTo(window.innerHeight);
         }}
         active={projectCards.length - 1} // start halfway through to avoid buggy transitions at start
       />

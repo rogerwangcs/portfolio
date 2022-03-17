@@ -22,6 +22,7 @@ const SCarouselCard = styled.div`
       height: 360px;
     }
     @media (max-width: ${viewport.MOBILE}) {
+      margin-left: 5%;
       width: 90%;
       height: auto;
       border-radius: 15px;

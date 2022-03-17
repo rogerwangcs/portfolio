@@ -24,11 +24,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "docker run -dit --restart unless-stopped -p 50001:80 portfolio:prod",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "docker build -f Dockerfile.prod -t portfolio:prod .",
-    "deploy": "docker run -dit --restart unless-stopped -p 50001:80 portfolio:prod"
+    "predeploy": "docker build -f Dockerfile.prod -t portfolio:prod ."
   },
   "eslintConfig": {
     "extends": [

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import ReactGA from "react-ga";
 import styled from "styled-components";
 import theme from "constants/theme";
 import PageSection from "components/common/PageSection";
@@ -33,6 +35,10 @@ const StyledTransition = styled.div`
 `;
 
 const About = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <StyledTransition>
       <CSSTransition classNames="fade" timeout={1000}>
@@ -43,7 +49,7 @@ const About = () => {
             </PageSection>
             <PageSection color={theme.creme} paddingBottom="50" paddingTop="50">
               <Divider centered={true} big={true}>
-                <h2>My Tech Stack</h2>
+                <h2>Tech Stack</h2>
               </Divider>
               <SkillsSection />
             </PageSection>
