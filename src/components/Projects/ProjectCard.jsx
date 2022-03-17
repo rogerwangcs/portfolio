@@ -58,7 +58,6 @@ const Card = (props) => {
   ) : (
     <></>
   );
-  console.log(linkComponents);
 
   return (
     <StyledCard idx={props.idx}>

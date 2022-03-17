@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { viewport } from "constants/viewport";
 
 const SCarousel = styled.div`
-  overflow-y: hidden;
+  overflow: hidden;
   position: relative;
   height: 350px;
   width: 100%;

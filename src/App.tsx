@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ReactGA from "react-ga";
 
 import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
@@ -9,6 +11,10 @@ import "App.scss";
 // add google analytics
 
 const App = () => {
+  useEffect(() => {
+    ReactGA.initialize("UA-56570124-2");
+  }, []);
+
   return (
     <Router>
       <div className="App">
@@ -19,10 +25,6 @@ const App = () => {
             path={process.env.PUBLIC_URL + "/projects"}
             element={<Projects />}
           />
-          {/* <Route
-            path={process.env.PUBLIC_URL + "/*"}
-            element={<Navigate replace to={process.env.PUBLIC_URL + "/"} />}
-          /> */}
         </Routes>
         <Footer />
       </div>
