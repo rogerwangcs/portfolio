@@ -93,7 +93,7 @@ class ResumeSection extends Component {
     return (
       <StyledResumeSection>
         <a
-          href={process.env.PUBLIC_URL + "/resume.pdf"}
+          href={process.env.PUBLIC_URL + "/roger_wang_resume.pdf"}
           target="_blank"
           rel="noopener noreferrer"
         >
